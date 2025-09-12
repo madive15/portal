@@ -1,0 +1,21 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <a-tab-pane class="common-tab-item">
+    <div class="common-tab-content">
+      <slot />
+    </div>
+  </a-tab-pane>
+</template>
+
+
+
+
+
+
+
+<style scoped lang="scss">
+@use '~/components/ui/tab/tab.scss';
+</style>

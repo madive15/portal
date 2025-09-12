@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .common-form__area {
+    table {
+      tbody {
+        th {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+}

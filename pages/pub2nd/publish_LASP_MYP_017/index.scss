@@ -1,0 +1,145 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+
+.section2 {
+  margin-top: 20px;
+}
+
+.content-header {
+  border-bottom: solid 1px #dadce1;
+  padding-bottom: 15px;
+
+  .info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+    }
+
+    span {
+      font-size: 15px;
+      color: #555;
+      font-weight: 500;
+    }
+    .inner-box {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+  }
+}
+
+.content-body {
+  padding: 30px;
+  border-bottom: 1px solid #dadce1;
+
+  p {
+    margin-top: 0;
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+    line-height: 23px;
+  }
+}
+
+.content-footer {
+  border-bottom: solid 1px #dadce1;
+  border-top: solid 1px #dadce1;
+  padding: 15px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 5px;
+
+    span {
+      img {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  .preview-button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    .icon-span {
+      width: 20px;
+      height: 20px;
+
+      svg {
+        fill: #606060;
+      }
+    }
+  }
+
+  .file-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 30px;
+
+    .file-box {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+
+      span {
+        a {
+          font-size: 15px;
+          color: #555;
+        }
+
+        &.title-span {
+          color: #222;
+        }
+      }
+    }
+  }
+}
+
+.board-comment-box {
+  margin-top: 40px;
+
+  .content-header {
+    border-bottom: 2px solid #555;
+
+    h4 {
+      font-size: 25px;
+      color: #222;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .content-body {
+    min-height: 170px;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include board-view-box-common-mo;
+  .board-comment-box {
+    .content-header {
+      border-bottom: 1px solid #dadce1;
+    }
+  }
+}

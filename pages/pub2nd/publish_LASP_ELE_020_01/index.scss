@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+@include receipt-form;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .section2 {
+    &:deep() {
+      .common-table__box {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        > table {
+          min-width: 800px;
+        }
+      }
+    }
+  }
+}

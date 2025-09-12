@@ -1,0 +1,380 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section1 .tab-box {
+  margin-top: 30px;
+}
+
+.section1 .red-span {
+  color: #da0000;
+  font-size: 16px;
+}
+
+.normal-button {
+  width: 93px;
+  height: 37px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+  background: #edeff2;
+  margin-right: 20px;
+}
+
+.table-box {
+  margin-top: 30px;
+
+  .info-txt {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #555;
+    letter-spacing: -0.3px;
+  }
+
+  table {
+    width: 100%;
+    border-top: solid 1px #000;
+    border-collapse: separate;
+
+    tbody {
+      th {
+        background: #f5f7fa;
+        font-size: 15px;
+        color: #222;
+        font-weight: 600;
+        padding: 18px 20px;
+        text-align: left;
+        width: 14%;
+        border-bottom: solid 1px #e1e3e1;
+        vertical-align: middle;
+      }
+
+      td {
+        padding: 18px 20px;
+        border-bottom: solid 1px #e1e3e1;
+        vertical-align: middle;
+
+        input {
+          box-shadow: none !important;
+          height: 50px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .lost-box {
+    input {
+      width: 330px;
+    }
+  }
+
+  .cellphone-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+}
+
+.button-box {
+  text-align: center;
+  margin-top: 80px;
+
+  button {
+    width: 315px;
+    height: 60px;
+    font-size: 19px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    background: #0d6efd;
+    border-radius: 15px;
+  }
+}
+
+.id-find-box {
+  position: relative;
+  text-align: left;
+
+  .content-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #f5f7fa;
+    position: absolute;
+    top: -20px;
+    width: 320px;
+    left: -20px;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    h2 {
+      font-size: 21px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .content-body {
+    padding-top: 80px;
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      font-weight: 500 !important;
+      color: #555 !important;
+    }
+
+    .id-result-box {
+      background: #f5f7fa;
+      border-radius: 10px;
+      padding: 27px 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 15px;
+
+      span {
+        font-size: 20px;
+        font-weight: bold;
+        color: #222;
+
+        &.vr {
+          opacity: 1;
+          background: #000 !important;
+        }
+      }
+    }
+  }
+}
+
+button.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: url('/image/sub/login/popup_close.svg') no-repeat center center /
+    14px 14px;
+}
+
+.email-confirm-box {
+  display: flex;
+  align-items: center;
+}
+
+.head-group-box {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+
+  button {
+    width: 110px;
+    height: 50px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    justify-content: center;
+
+    span {
+      color: #222;
+      font-size: 15px;
+      font-weight: 400;
+
+      img {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  input {
+    width: 329px;
+    height: 50px;
+  }
+}
+
+.number-confirm-input {
+  margin-top: 10px;
+  width: 329px;
+  height: 50px;
+}
+
+// 간편인증으로 찾기 텝
+.auth-box {
+  margin-top: 22px;
+
+  .info-box {
+    text-align: center;
+    background: #f5f7fa;
+    border-radius: 15px;
+    padding: 40px 0;
+
+    .img-box {
+      margin-bottom: 23px;
+
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+
+    .text-box {
+      strong {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -0.5px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-top: 20px;
+        line-height: 25px;
+        letter-spacing: -0.3px;
+        font-weight: 500;
+      }
+    }
+
+    .button-box {
+      margin-top: 27px;
+
+      button {
+        padding: 0;
+        width: 315px;
+        height: 60px;
+        background: #0d6efd;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        column-gap: 7px;
+
+        span {
+          color: #fff;
+          font-size: 19px;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+
+          img {
+            width: 19px;
+            height: 19px;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 태그가 확인 되지 않은 Style
+.id-find-box {
+  .group-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  strong {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 0 0 30%;
+  }
+
+  input {
+    height: 50px;
+    width: 65%;
+    box-shadow: none !important;
+  }
+
+  .error-span {
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  &.email-reset {
+    .content-header {
+      width: 320px;
+      .close-button {
+        width: 20px;
+        height: 20px;
+        top: 15px;
+        right: 15px;
+        background-image: none;
+      }
+    }
+  }
+
+  .modal-button-box {
+    text-align: center;
+    margin-top: 30px;
+
+    button {
+      width: 93px !important;
+      height: 37px !important;
+      border-radius: 10px !important;
+
+      &.cancle-button {
+        background: #edeff2 !important;
+        color: #222 !important;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .info-p {
+    text-align: left !important;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .modal-box:deep() {
+    .text-box {
+      width: 90%;
+      max-width: 320px;
+    }
+    .id-find-box {
+      h2 {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 1.2;
+      }
+      .content-header {
+        width: calc(100% + 40px);
+        padding: 8px 16px;
+      }
+      .content-body {
+        padding-top: 40px;
+        .id-result-box {
+          padding: 16px;
+          margin-bottom: 16px;
+          .id-title,
+          .id-result {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.2;
+          }
+          .vr {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+  @include search-info-common-mo;
+}

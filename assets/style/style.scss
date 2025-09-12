@@ -1,0 +1,62 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+@use "~/assets/style/pages/common/mixins_global" as *;
+@use "./pages/common/_antd-customer";
+@use "./pages/common/_layout";
+@use "./pages/common/_header";
+@use "./pages/common/_form";
+@use "./pages/common/_panel";
+@use "./pages/common/_table";
+@use "./pages/common/_stepindicator";
+@use "./pages/common/_calendar";
+@use "./pages/common/_breadcrumb";
+@use "./pages/common/_title";
+@use "./pages/common/_satisfaction";
+@use "./pages/common/_search";
+@use "./pages/common/_button";
+@use "./pages/common/_dropdown";
+@use "./pages/common/_bulllist";
+@use "./pages/common/_modal";
+@use "./pages/common/_sidemenu";
+@use "./pages/common/_card";
+@use "./pages/common/_tab";
+@use "./pages/common/_accordion";
+@use "./pages/common/_badge";
+
+
+.skip-nav {
+  text-align: center;
+
+  a {
+    color: #fff;
+    font-size: 15px;
+    display: block;
+    vertical-align: middle;
+    line-height: 32px;
+    background-color: #1D1D1D;
+    height: 32px;
+  }
+}
+
+input[type=text] {
+  &::placeholder {
+    color: var(--color-grayscale-60);
+  }
+}
+
+@media (max-width: 1199px) {
+  .pc-visible {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mo-visible {
+    display: none !important;
+  }
+
+}
+
+
+

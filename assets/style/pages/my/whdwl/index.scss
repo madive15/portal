@@ -1,0 +1,245 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.navigation-box {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .row {
+    text-align: center;
+    margin: 0;
+
+    > div {
+      padding: 0;
+
+      a {
+        font-size: 17px;
+        font-weight: 500;
+        color: #555;
+        display: block;
+        background: #f5f7fa;
+        padding: 15px 0;
+      }
+
+      &.active {
+        a {
+          background: #3382e9;
+          border-radius: 5px;
+          color: #fff;
+          font-weight: 700;
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    .left-col {
+      a {
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      .right-col {
+        a {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+.form-box {
+  .reason-box {
+    label {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      display: block;
+    }
+  }
+
+  .content-box {
+    margin-top: 35px;
+
+    label {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      display: block;
+    }
+  }
+
+  select {
+    border: solid 1px #dadce1;
+    height: 50px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 400;
+    box-shadow: none;
+  }
+
+  textarea {
+    min-height: 250px;
+    border: solid 1px #dadce1;
+    color: #555;
+    font-size: 15px;
+    font-weight: 400;
+    box-shadow: none;
+    padding: 21px;
+    resize: none;
+  }
+
+  .notice-p {
+    color: #1856ae;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin-top: 15px;
+  }
+
+  .apply-box {
+    margin-top: 50px;
+    background: #f5f7fa;
+    border-radius: 15px;
+    padding: 24px 0 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .form-check {
+      margin-bottom: 0;
+    }
+
+    input {
+      width: 19px;
+      height: 19px;
+      // border: solid 1px #dadce1;
+      box-shadow: none;
+      position: relative;
+      top: -6px;
+
+      &:checked {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin-left: 5px;
+    }
+  }
+
+  .submit-box {
+    margin-top: 55px;
+    text-align: center;
+
+    button {
+      width: 110px;
+      height: 50px;
+      font-size: 15px !important;
+
+      &.withdraw-button {
+        background: #0d6efd;
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      &.cancle-button {
+        border: solid 1px #0d6efd !important;
+        color: #0d6efd;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .sub-content-box {
+    padding-top: 36px;
+  }
+
+  .form-box {
+    .reason-box {
+      label {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      select {
+        height: 40px;
+      }
+    }
+
+    .content-box {
+      margin-top: 20px;
+
+      label {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      textarea {
+        padding: 16px 12px;
+        min-height: 160px;
+      }
+    }
+
+    > .notice-p {
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 400;
+      margin-top: 8px;
+    }
+
+    .apply-box {
+      margin-top: 40px;
+      padding: 16px 12px;
+
+      .form-check {
+        display: flex;
+        padding: 0;
+        align-items: center;
+        column-gap: 8px;
+
+        input {
+          position: static;
+          flex: none;
+          margin: 0;
+        }
+
+        label {
+          margin: 0;
+          line-height: 1.5;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .submit-box {
+      margin-top: 40px;
+      row-gap: 10px;
+      flex-wrap: wrap;
+
+      .btn {
+        width: 100%;
+        margin: 0 !important;
+      }
+    }
+  }
+  @include my-common-mo;
+}

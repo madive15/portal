@@ -1,0 +1,58 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+//@include counsel-bull-list;
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .top-info-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #555;
+    .ico-box {
+      flex-shrink: 0;
+      width: 74px;
+      height: 74px;
+      background: {
+        color: #f5f7fa;
+        image: url(/image/sub/receipt/receipt_comp_icon.png);
+        repeat: no-repeat;
+        position: center center;
+        size: 33px auto;
+      }
+      border-radius: 100%;
+    }
+    .txt-box {
+      font: {
+        size: 21px;
+        weight: 700;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .top-info-box {
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+
+      .ico-box {
+        width: 50px;
+        height: 50px;
+        background-size: 27px auto;
+      }
+    }
+
+    .bull-list-box {
+      border-radius: 8px;
+    }
+  }
+}

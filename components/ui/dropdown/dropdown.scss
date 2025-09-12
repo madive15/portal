@@ -1,0 +1,130 @@
+.common-table-dropdown-click-button {
+    width: 130px;
+    height: 50px;
+    font-size: 15px;
+    color: #555;
+    border: solid 1px #dadce1 !important;
+    box-shadow: none;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+}
+
+.arrow {
+  font-size:13px;
+}
+
+.common-drop-slot-button {
+  width:100%;
+  box-shadow: none;
+}
+
+:global(.common-drop-slot .common-drop-item) {
+  padding:10px 0 !important;
+  border-bottom:0 !important;
+  color:#555 !important;
+}
+
+:global(.common-drop-slot .common-drop-item:hover) {
+  background-color: transparent !important;
+}
+
+.common-service-dropdown-click-button {
+  border: solid 1px #dadce1 !important;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 15px !important;
+  align-items: center;
+  color:#555;
+  font-size: 13px !important;
+}
+
+:global(.common-drop-slot-button.service) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #333;
+  column-gap: 15px;
+}
+
+:global(.common-drop-slot-button.service span img) {
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+
+
+:global(.common-drop-slot-button.service span) {
+  font-size:13px !important;
+}
+
+
+:global(.common-drop-item.service) {
+  padding:0 !important;
+}
+
+:global(.common-drop-slot.service) {
+  padding:15px;
+}
+
+.common-hit-search-dropdown-click-button {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.common-hit-search-dropdown-click-button .num-span {
+  color:#fff;
+  font-size:12px;
+  font-weight: 700;
+  display: flex;
+  background: #055843;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 3px 6px;
+}
+
+:global(.common-drop-slot.hitsearch) {
+  padding:15px;
+}
+
+:global(.common-drop-slot-button.hitsearch) {
+  display: inline-flex;
+  column-gap: 10px;
+  height: auto;
+  text-align: left;
+  align-items: center;
+
+}
+
+:global(.common-drop-slot-button.hitsearch .num-span) {
+  color:#fff;
+  font-size:12px;
+  font-weight: 700;
+  display: flex;
+  background: #055843;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 3px 6px;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all .3s ease;
+}
+.fade-slide-enter-form {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}

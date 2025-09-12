@@ -1,0 +1,86 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section1 {
+  .text-wrap {
+    margin-top: 30px;
+  }
+
+  h4 {
+    font-size: 21px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      content: '';
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      background: #fff;
+      border-radius: 30px;
+      border: solid 6px #3e80eb;
+      left: 0;
+      top: 1px;
+    }
+  }
+
+  .text-box {
+    background: #f5f7fa;
+    margin-top: 16px;
+    border-radius: 10px;
+    padding: 31px;
+
+    &.box1 {
+      margin-bottom: 40px;
+    }
+
+    ul {
+      padding-left: 10px;
+
+      li {
+        font-size: 16px;
+        color: #555;
+        font-weight: 400;
+        letter-spacing: -0.3px;
+        line-height: 25px;
+        position: relative;
+        margin-bottom: 25px;
+
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      line-height: 25px;
+      position: relative;
+    }
+  }
+}
+
+.section2 {
+  margin-top: 85px;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .text-box {
+    ul {
+      br {
+        display: none;
+      }
+    }
+  }
+  @include sub-content-box-common-mo;
+}

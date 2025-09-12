@@ -1,0 +1,8 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include chat-bot;
+
+/*mo*/
+@media (max-width: 1199px) {
+}

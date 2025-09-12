@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+span {
+  display: inline-block;
+}
+
+.slide-board-list {
+  .list-link {
+    span {
+      display: initial;
+    }
+  }
+}
+
+.service-slide-box {
+  .truncate-span {
+    span {
+      display: initial;
+    }
+  }
+}
+
+// ai 대화기록 말줄임
+.answer-list-txt {
+  .truncate-span {
+    span {
+      word-break: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .answer-list-txt {
+    .truncate-span {
+      span {
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+}

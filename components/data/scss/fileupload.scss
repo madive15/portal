@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+
+/*mo*/
+@media (max-width: 1199px) {
+  .w-full:deep() {
+    .ant-upload-wrapper {
+      > .ant-upload {
+        border: 1px solid #DADCE1;
+      }
+      /* 접근성 이슈로 주석처리 - 25-04-14 엄 */
+      //.ant-upload-btn {
+      //  display: flex;
+      //  padding: 6px;
+      //  > div {
+      //    display: flex;
+      //    column-gap: 10px;
+      //    p {
+      //      display: flex;
+      //      align-items: center;
+      //      text-align: left;
+      //      line-height: 1.2;
+      //
+      //      &:first-child {
+      //        &::before {
+      //          content: "찾아보기";
+      //          width: 72px;
+      //          height: 28px;
+      //          display: inline-flex;
+      //          flex: none;
+      //          font-size: 13px;
+      //          color: #fff;
+      //          background-color: #0D6EFD;
+      //          border-radius: 5px;
+      //          align-items: center;
+      //          justify-content: center;
+      //        }
+      //        span {
+      //          display: none;
+      //        }
+      //      }
+      //      &:last-child {
+      //        margin: 0 !important;
+      //        color: #999999;
+      //        display: none;
+      //      }
+      //    }
+      //  }
+      //}
+    }
+
+  }
+}

@@ -1,0 +1,204 @@
+.btn-download {
+  width: 20px;
+  flex: none;
+}
+.btn-attach {
+  width: 16px;
+  height: 23px;
+}
+.download-box {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  button {
+    height: initial !important;
+  }
+}
+.active-span {
+  align-items: center;
+  background: #dce8f8;
+  border-radius: 5px;
+  color: #1856ae;
+  display: inline-flex;
+  height: 27px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.common-table__box {
+  table {
+    border-top: solid 1px #000;
+    width: 100%;
+
+    thead {
+      th {
+        //padding: 16px 0;
+        text-align: center;
+        background: #f5f7fa;
+        border-right: solid 1px #dadce1;
+        border-bottom: solid 1px #dadce1;
+        font-size: 16px;
+        color: #222;
+        font-weight: 700;
+        height: 70px;
+        vertical-align: middle;
+        width: 10%;
+        &.num-th {
+          width: 8%;
+        }
+        &.category-th {
+          width: 14%;
+          .common-select {
+            &.ant-select {
+              margin: 0 20px;
+              text-align: left;
+            }
+          }
+          &:has(.common-select) {
+            width: 28%;
+          }
+        }
+        &.title-th {
+          width: auto;
+        }
+        &.date-th {
+          width: 13%;
+        }
+        &.hit-th {
+          width: 10%;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 18px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #222;
+        border-bottom: solid 1px #dadce1;
+        border-right: solid 1px #dadce1;
+        vertical-align: middle;
+        height: 70px;
+        text-align: center;
+        a {
+          //padding: 0 5px;
+          line-height: 1.2;
+        }
+        &.num-td {
+          padding: 0;
+        }
+        &.title-td {
+          text-align: left;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+        &:has(.download-box) {
+          padding: 10px 0;
+          .bx-btn {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+          }
+        }
+        .icon-notice {
+          width: 20px;
+          height: 20px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+
+.common-table__list {
+  ul {
+    border-top: 2px solid var(--color-grayscale-80);
+    background-color: var(--color-grayscale-0);
+  }
+  li {
+    padding: 16px 0 16px 10px;
+    display: flex;
+    column-gap: 10px;
+    align-items: baseline;
+    border-bottom: 1px solid #DADCE1;
+    .bx-num {
+      width: 16px;
+      height: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      text-align: center;
+    }
+    .bx {
+      flex: 1;
+      .text-title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      .bx-info {
+        padding-top: 12px;
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+          color: var(--color-grayscale-60);
+          row-gap: 4px;
+          line-height: 1.2;
+          .tit {
+            color: var(--color-grayscale-80);
+            font-weight: 500;
+            width: 100%;
+          }
+          dd {
+            display: flex;
+            padding-left: 8px;
+            &:nth-of-type(1) {
+              padding-left: 0;
+              &:before {
+                display: none;
+              }
+            }
+            &:before {
+              display: block;
+              content: '';
+              width: 1px;
+              height: 12px;
+              background-color: var(--color-secondary-50);
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+      .bx-btn {
+        padding-top: 12px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        .btn-attach {
+          width: 28px;
+        }
+        .download-box {
+          width: initial;
+          justify-content: flex-start;
+          column-gap: 15px;
+          .btn-download {
+            width: 24px;
+          }
+           [class^=btn]{
+              height: 24px !important;
+             line-height: initial !important;
+          }
+        }
+      }
+    }
+  }
+}
+

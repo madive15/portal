@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+@use '../common' as *;
+
+/*모바일 board view box*/
+@mixin board-view-box-common-mo {
+  .board-view-box,
+  .board-comment-box {
+    .content-header {
+      .info-box {
+        flex-flow: column;
+        align-items: flex-start;
+
+        .title-box {
+          h4 {
+            line-height: 1.2;
+          }
+          .share-box {
+            display: inline-flex;
+
+            .ex-share-dropbox:deep() {
+              height: 25px;
+              .btn {
+                height: 25px;
+              }
+              .dropdown-menu.show {
+                transform: translate3d(0px, 30px, 0px) !important;
+              }
+            }
+          }
+        }
+
+        .inner-box {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .content-body {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .content-footer {
+      margin-top: 16px;
+      flex-flow: column;
+      align-items: flex-start;
+      padding: 16px 10px;
+      .file-box {
+        flex-flow: column;
+        align-items: flex-start;
+        column-gap: 0;
+        .file-span {
+          color: #555;
+          margin-top: 8px;
+          line-height: 1.2;
+        }
+        .title-span {
+          display: block;
+        }
+      }
+      .file-info-box {
+        column-gap: 4px;
+        margin-top: 12px;
+      }
+      .btn.download-button {
+        height: 28px;
+        background-color: #f5f7fa;
+        border-radius: 5px;
+        border: 1px solid #dadce1 !important;
+        padding: 0 7px !important;
+        &::before {
+          width: 16px;
+          height: 16px;
+        }
+        .text-span {
+          font-size: 13px;
+        }
+      }
+      .btn.preview-button {
+        height: 28px;
+        background-color: #0d6efd;
+        border-radius: 5px;
+        border: 1px solid #0d6efd !important;
+        padding: 0 7px !important;
+        &::before {
+          width: 17px;
+          height: 17px;
+          background-image: url('/image/sub/service/img_preview.svg');
+          display: inline-flex;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          content: '';
+          flex: none;
+        }
+        .icon-span {
+          display: none;
+        }
+        .text-span {
+          font-size: 13px;
+          color: #fff;
+        }
+      }
+      .file-wrap-box {
+        .file-box {
+          padding-bottom: 16px;
+          .file-title-box {
+            flex-flow: column;
+            align-items: flex-start;
+            .file-span,
+            .file-span a {
+              color: #555;
+              margin-top: 8px;
+              line-height: 1.2;
+            }
+          }
+          + .file-box {
+            padding-top: 16px;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+    ~ .button-list-box {
+      .list-button {
+        width: 100%;
+      }
+    }
+  }
+  .board-comment-box {
+    .content-header .info-box .title-box {
+      border-bottom: 1px solid #555555;
+      width: 100%;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}

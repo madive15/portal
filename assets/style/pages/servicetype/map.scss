@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+
+body {
+  overflow: hidden !important;
+}
+.map_popup {
+  margin: 0 auto;
+  max-width: 800px;
+
+  #map {
+    width: 100%;
+    height: calc(100vh - 6rem);
+  }
+
+  .map_popup_header {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+
+    div {
+      padding: 0.5rem;
+      display: inline-block;
+      &.closeButton {
+        padding-right: 1rem;
+      }
+      button {
+        // 닫기버튼
+      }
+    }
+  }
+  .map_popup_footer {
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}

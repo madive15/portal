@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+.sub-content-box {
+  padding-bottom: 140px;
+}
+
+.section2 b {
+  color: #e80000;
+}
+
+::v-deep(.section2 b) {
+  color: #e80000;
+}
+
+.section2 .service-box .list-box .inner-box .inner-body .info-box {
+  padding: 19px;
+  min-height: 97px;
+}

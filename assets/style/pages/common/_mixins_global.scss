@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@mixin inputBox {
+  height: 50px;
+  line-height: 1.2;
+  padding: 0 12px;
+  font-size: 13px;
+  flex: 1;
+  box-shadow: none;
+  color: #555;
+  border-radius: 8px;
+  background-color: #fff;
+}
+@mixin iconContent {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+}
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20px;
+}

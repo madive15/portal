@@ -1,0 +1,126 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+//@include counsel-button-box;
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  // 라디오 버튼형
+  .ant-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+
+    .radio-btn-bx {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 0 22px;
+      background-color: #e7eaf0;
+      border: 0;
+      border-radius: 8px;
+      color: #555;
+      font: {
+        size: 16px;
+        weight: 400;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      &.ant-radio-button-wrapper-checked {
+        background-color: #0d6efd;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .button-box {
+    margin-top: 27px;
+  }
+
+  [class^='common-form'][class*='area'] {
+    margin-top: 30px;
+
+    .text-bx {
+      max-width: 454px;
+    }
+  }
+
+  .thead-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+    font: {
+      size: 16px;
+      weight: 600;
+    }
+
+    .case-txt {
+      color: #0d6efd;
+    }
+  }
+
+  [class^='common-table'][class*='box'] {
+    table {
+      thead {
+        th {
+          &.name-th {
+            width: 23%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    // 셀렉트 박스
+    .common-select {
+      &.type-blue {
+        &:deep() {
+          .ant-select-selector {
+            height: 50px;
+            background-color: #246beb;
+            border-color: #246beb;
+
+            .ant-select-selection-search-input {
+              height: 100%;
+              color: #fff;
+            }
+
+            .ant-select-selection-placeholder,
+            .ant-select-selection-item {
+              height: 50px;
+              line-height: 50px;
+              font-size: 16px;
+              color: #fff;
+            }
+          }
+
+          .ant-select-arrow {
+            .anticon {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .button-box {
+      .btn {
+        &.wide {
+          width: 110px;
+        }
+      }
+    }
+  }
+}

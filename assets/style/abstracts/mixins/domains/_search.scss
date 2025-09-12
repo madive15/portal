@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+@use '../common' as *;
+
+
+/*pc 서브 검색 정보 박스*/
+@mixin sub-search-info-box-common {
+  .search-info-wrap {
+    .list-search-box {
+      display: flex;
+      .search-info-inputs {
+        display: flex;
+        column-gap: 5px;
+        .form-select {
+          width: 130px;
+        }
+      }
+      .search-info-btns {
+        display: flex;
+        column-gap: 5px;
+      }
+    }
+  }
+}
+
+/*모바일 서브 검색 정보 박스*/
+@mixin sub-search-info-box-common-mo {
+  .search-info-wrap {
+    flex-flow: column;
+    align-items: flex-start;
+    .view-box {
+      width: 100%;
+      justify-content: space-between;
+
+      .form-select {
+        height: 32px;
+      }
+      .select-box:deep() {
+        .dropdown-toggle {
+          height: 32px;
+
+          &::after {
+            top: 11px;
+          }
+        }
+      }
+    }
+    .list-search-box {
+      + .view-box {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/*검색 정보 박스*/
+@mixin search-info-box-mo {
+  .search-info-wrap {
+    flex-flow: column;
+    align-items: flex-start;
+    .list-search-box {
+      position: relative;
+      flex-flow: column;
+      align-items: flex-start;
+      width: 100%;
+      strong {
+        margin-bottom: 12px;
+      }
+      .search-input {
+        height: 40px;
+        width: calc(100% - 48px);
+      }
+      .search-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    .view-box {
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 12px;
+
+      .view-select {
+        height: 32px;
+        line-height: 1.2;
+      }
+      .dropdown.select-box .dropdown-toggle {
+        height: 32px;
+        line-height: 1.2;
+        &::after {
+          top: 11px;
+        }
+      }
+      .select-box:deep() {
+        .dropdown-toggle {
+          height: 32px;
+
+          &::after {
+            top: 11px;
+          }
+        }
+      }
+    }
+
+    .search-info-inputs {
+      display: flex;
+      flex-flow: column;
+      width: 100% ;
+      .form-select {
+        height: 40px;
+        width: 100% !important;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+      .search-input {
+        width: calc(100% - 90px);
+      }
+    }
+    .search-info-btns {
+      display: flex;
+      gap: 4px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      .search-button {
+        position: static;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        + .search-button {
+          font-size: 0 !important;
+          width: 40px !important;
+          &::before {
+            display: block;
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: url("/image/sub/search/refresh_white.svg") no-repeat center;
+            background-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*모바일 검색박스*/
+@mixin all-search-common-mo {
+  .all-search-wrap {
+    .search-box {
+      .search-container {
+      }
+      .search-header {
+      }
+      .search-body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 400px;
+        .row > div + div {
+          margin-top: 20px;
+        }
+        .search-hit-box {
+          .hit-body {
+            ul {
+              display: flex;
+              row-gap: 8px;
+              column-gap: 16px;
+              flex-wrap: wrap;
+              > .text-span {
+                color: #555;
+                font-size: 14px;
+                display: inline-flex;
+                + .icon-span {
+                  display: inline-flex;
+                  position: relative;
+                  left: -10px;
+                  top: 2px;
+                }
+              }
+              li {
+                width: calc(50% - 8px);
+              }
+            }
+          }
+        }
+        .search-keyword-box {
+          .keyword-body {
+            ul {
+              display: flex;
+              row-gap: 8px;
+              column-gap: 16px;
+              flex-wrap: wrap;
+              > .text-span {
+                color: #555;
+                font-size: 14px;
+                display: inline-flex;
+                + .icon-span {
+                  display: inline-flex;
+                  position: relative;
+                  left: -10px;
+                  top: 2px;
+                }
+              }
+              li {
+                width: calc(50% - 8px);
+              }
+            }
+          }
+        }
+        .link-search-box {
+          .content-body {
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              row-gap: 8px;
+              column-gap: 16px;
+              > .text-span {
+                color: #555;
+                font-size: 14px;
+                display: inline-flex;
+                + .icon-span {
+                  display: inline-flex;
+                  position: relative;
+                  left: -10px;
+                  top: 2px;
+                }
+              }
+              li {
+                width: calc(50% - 8px);
+                > a,button {
+                  flex-wrap: nowrap;
+                  column-gap: 4px;
+                }
+                .text-span {
+                  line-height: 1.2;
+                  text-align: left;
+                }
+                .icon-span {
+                  flex: none;
+                }
+              }
+            }
+          }
+        }
+        .link-move-box {
+          height: auto;
+          min-height: inherit;
+          max-height: inherit;
+          overflow: hidden;
+          .content-body {
+            ul {
+              > .text-span {
+                color: #555;
+                font-size: 14px;
+                display: inline-flex;
+                + .icon-span {
+                  display: inline-flex;
+                  position: relative;
+                  left: 4px;
+                  top: 4px;
+                }
+              }
+              li {
+                .text-span {
+                  width: 100%;
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .close-button-box {
+        top: -50px;
+        right: 0px;
+        button {
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,267 @@
+@charset "utf-8";
+@use 'sass:list';
+$circle-codes: (
+        "\2460", "\2461", "\2462", "\2463", "\2464",
+        "\2465", "\2466", "\2467", "\2468", "\2469",
+);
+
+.counsel-num-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  row-gap: 15px;
+  > li {
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-grayscale-60);
+    line-height: 1.4;
+
+    strong {
+      color: var(--color-grayscale-80);
+    }
+
+    .num {
+      margin-right: 3px;
+      flex: none;
+    }
+  }
+  .sub-list {
+    margin-top: 10px;
+    > li {
+      display: flex;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--color-grayscale-60);
+      line-height: 1.4;
+
+      .num {
+        margin-right: 3px;
+      }
+
+      &.blue {
+        color: #3382e9;
+      }
+
+      &.block {
+        display: block;
+      }
+    }
+  }
+  &.num-type1 {
+    counter-reset: period 0;
+    li {
+      position: relative;
+      display: block;
+      padding-left: 17px;
+      &::before {
+        position: absolute;
+        left: 0;
+        counter-increment: period 1;
+        content: counter(period)'.';
+      }
+    }
+  }
+  &.num-type2 {
+    gap: 4px;
+    li {
+      position: relative;
+      display: block;
+      padding-left: 17px;
+      color: #222;
+      &::before {
+        position: absolute;
+        left: 0;
+        display: block;
+      }
+    }
+    @for $i from 1 through list.length($circle-codes) {
+      li {
+        &:nth-child(#{$i})::before {
+          content: list.nth($circle-codes, $i);
+        }
+      }
+    }
+  }
+  &.num-type3 {
+    row-gap: 27px;
+    counter-reset: circle 0;
+    > li {
+      position: relative;
+      display: block;
+      padding-left: 29px;
+      color: #222;
+      &::before {
+        position: absolute;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 21px;
+        height: 21px;
+        background-color: #0d6efd;
+        border-radius: 100%;
+        color: #fff;
+        counter-increment: circle 1;
+        content: counter(circle) ;
+        font: {
+          size: 13px;
+          weight: 600;
+        }
+      }
+    }
+  }
+}
+.counsel-bull-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  row-gap: 20px;
+  > li {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-grayscale-80);
+    line-height: 1.4;
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      background-color: #3e80eb;
+      margin-right: 10px;
+      flex: none;
+      margin-top: 7px;
+    }
+
+    .font-mid {
+      font-weight: 400;
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    .is-red-emphasis {
+      color: #dd0202;
+      font-weight: bold;
+    }
+  }
+  .sub-list {
+    > li {
+      display: flex;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--color-grayscale-60);
+      line-height: 1.4;
+
+      .num {
+        margin-right: 3px;
+      }
+
+      &.blue {
+        color: #3382e9;
+      }
+
+      &.block {
+        display: block;
+      }
+    }
+  }
+}
+.counsel-bull-sub-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  row-gap: 10px;
+  margin-top: 15px;
+  > li {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--color-grayscale-60);
+    line-height: 1.4;
+    &:before {
+      content: '\203B';
+      display: block;
+      margin-right: 3px;
+    }
+    &.blue {
+      color: #3382e9;
+    }
+
+    &.block {
+      display: block;
+    }
+  }
+}
+.bull-list-box {
+  padding: 33px;
+  background-color: var(--color-secondary-10);
+  border-radius: 15px;
+  margin-top: 17px;
+
+  > .txt {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-grayscale-60);
+    line-height: 1.6;
+  }
+
+  .txt-wrap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a,
+    button {
+      margin-top: -3px;
+    }
+  }
+}
+.counsel-r-num-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  row-gap: 20px;
+  > li {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-grayscale-80);
+    line-height: 1.4;
+
+    .num {
+      margin-right: 10px;
+      width: 21px;
+      height: 21px;
+      font-size: 13px;
+      font-weight: 500;
+      background-color: var(--color-primary-40);
+      color: var(--color-primary-0);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .bull-list-box {
+    padding: 20px 17px;
+  }
+  .counsel-num-list {
+    &.num-type3 {
+      gap: 10px;
+      > li {
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,149 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-button-box;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.section2 {
+  margin-top: 40px;
+}
+
+// 아이콘
+.ico-private {
+  position: relative;
+  padding-left: 18px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 17px;
+    background: {
+      image: url(/image/sub/mypage/ico_private_black.png);
+      repeat: no-repeat;
+      position: center;
+    }
+  }
+}
+
+.ico-public {
+  position: relative;
+  padding-left: 18px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 18px;
+    background: {
+      image: url(/image/sub/mypage/ico_public_black.png);
+      repeat: no-repeat;
+      position: center;
+    }
+  }
+}
+
+.search-center__wrap {
+  margin-bottom: 24px;
+}
+
+.common-table__box {
+  table {
+    thead {
+      th {
+        width: auto;
+      }
+    }
+  }
+
+  .link-txt {
+    display: inline-flex;
+    height: auto;
+
+    &:hover,
+    &:focus-visible {
+      color: #0647bf;
+      text-decoration: underline !important;
+    }
+  }
+}
+
+// 데이터 없는 경우
+.board-empty-box {
+  margin: 0;
+  padding: 120px 0;
+  border-top: 1px solid #000 !important;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .common-dropdown {
+    & + .common-dropdown {
+      margin-top: 10px;
+    }
+  }
+
+  .common-category__button {
+    margin-bottom: 20px;
+  }
+
+  [class^='common-table'][class*='list'] {
+    li {
+      padding-left: 0;
+    }
+  }
+
+  .table-mo-cont {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    width: 100%;
+
+    dl {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      line-height: 1.4;
+
+      dt {
+        padding: 4px 13px;
+        background-color: #f5f7fa;
+        border-radius: 5px;
+        text-align: center;
+        font: {
+          size: 14px;
+          weight: 600;
+        }
+      }
+
+      dd {
+        font: {
+          size: 15px;
+          weight: 500;
+        }
+      }
+    }
+
+    .link-txt {
+      height: auto;
+      color: #0647bf;
+      text-decoration: underline !important;
+    }
+  }
+}

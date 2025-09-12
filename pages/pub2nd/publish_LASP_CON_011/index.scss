@@ -1,0 +1,36 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+//@include counsel-table;
+@include counsel-top-header;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.counsel-top-header {
+  .inner {
+    background-image: url(/image/sub/counsel/counsel_top_bg_05.png);
+  }
+}
+
+.img-box-wrap + .counsel-num-list {
+  margin-top: 20px;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-top-header {
+    .inner {
+      background-image: url(/image/sub/counsel/counsel_top_bg_05.png);
+    }
+  }
+  h4 ~ h4 + .bull-list-box {
+    margin-bottom: 17px;
+  }
+}

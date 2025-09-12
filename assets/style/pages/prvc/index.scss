@@ -1,0 +1,408 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 55px;
+}
+
+.section2 h4 {
+  font-size: 21px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 10px;
+}
+
+.section2 h4:before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  position: absolute;
+  background: #3e80eb;
+  border-radius: 5px;
+  left: 0;
+  top: 2px;
+}
+//
+//.section2 h4 {
+//  font-size: 21px;
+//  font-weight: 600;
+//  position: relative;
+//  padding-left: 10px;
+//}
+//
+//.section2 h4:before {
+//  content: '';
+//  width: 4px;
+//  height: 16px;
+//  position: absolute;
+//  background: #3e80eb;
+//  border-radius: 5px;
+//  left: 0;
+//  top: 2px;
+//}
+
+.section2 p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+/*
+.section2 .txt-red{
+  color: #e80000;
+  font-weight: 500;
+}
+
+ */
+
+.section2 table {
+  width: 100%;
+  border-top: solid 1px #222;
+  border-left: solid 1px #dadce1;
+  border-right: solid 1px #dadce1;
+  border-collapse: separate;
+}
+
+.section2 table thead th {
+  background: #f5f7fa;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  border-bottom: solid 1px #dadce1;
+  padding: 20px 0;
+}
+
+.section2 table tbody td {
+  border-right: solid 1px #dadce1;
+  vertical-align: middle;
+  border-bottom: solid 1px #dadce1;
+}
+
+.section2 table tbody td:last-child {
+  border-right: 0;
+}
+
+.section2 table tbody th {
+  &.title-th {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    vertical-align: middle;
+    border-bottom: solid 1px #dadce1;
+
+    &:not(:last-of-type) {
+      border-right: solid 1px #dadce1;
+    }
+  }
+}
+
+.section2 table tbody td.title-td {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+.section2 table tbody td.content-td {
+  padding: 50px;
+}
+
+.section2 table tbody td.content-td .content-box {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.section2 table tbody td.content-td .content-box p {
+  margin-top: 0;
+}
+
+.section2 .table-box {
+  margin-top: 30px;
+}
+
+.section2 .notice-p {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.section2 .table-list-box {
+  margin-top: 57px;
+}
+
+.section2 .table-list-box .icon-td span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.section2 .table-list-box .icon-td span:last-child {
+  margin-bottom: 0;
+}
+
+.section2 .table-list-box .icon-td {
+  text-align: center;
+  padding: 20px;
+}
+
+.section2 .table-list-box .title-td {
+  text-align: left;
+  padding: 0 40px;
+}
+
+.section2 .list-box {
+  margin-top: 70px;
+}
+
+.section2 .list-box .content-header {
+  display: flex;
+  align-items: center;
+}
+
+//.section2 .list-box .content-header h4 {
+//  margin-right: 20px;
+//}
+
+.section2 .list-box .content-header h3 {
+  margin-right: 20px;
+}
+
+.section2 .list-box .title-img-span {
+  margin-right: 10px;
+}
+
+.section2 .list-box ul {
+  margin-top: 10px;
+}
+.section2 .list-box ul li span.num-span {
+  width: 25px;
+  height: 25px;
+  background: #0d6efd;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section2 .list-box ul li span.text-span {
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 25px;
+}
+
+.section2 .list-box ul li {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section2 .list-box ul li:last-child {
+  margin-bottom: 0;
+}
+
+.section2 .list-box .content-body {
+  margin-top: 20px;
+}
+
+.section2 .list-box.box1 table thead th {
+  border-right: solid 1px #dadce1;
+}
+
+.section2 .list-box.box1 table thead th:last-child {
+  border-right: 0;
+}
+
+.section2 .list-box.box1 table tbody td {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 25px;
+}
+
+.section2 .list-box b {
+  font-weight: 500;
+  color: #222;
+}
+
+.section2 .etc-box {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  column-gap: 15px;
+}
+
+.section2 .etc-box button {
+  width: 150px;
+  height: 40px !important;
+  border: solid 1px #3382e9 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px !important;
+}
+
+.section2 .etc-box button span {
+  color: #3382e9 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.section2 .etc-box button span img {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: -2px;
+}
+
+.section2 .list-box table tbody td {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 25px;
+}
+
+.section2 .list-box strong {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.section2 .list-box dl {
+  margin-top: 35px;
+}
+
+.section2 .list-box dl dt {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.section2 .list-box dl dd {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 25px;
+}
+
+.section2 .list-box.box10 table tbody td {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+.section2 .list-box.box10 .table-box b {
+  font-weight: 500;
+  color: #222;
+  font-size: 16px;
+  padding: 30px;
+  display: block;
+}
+
+.section2 .list-box.box10 table.table-2 {
+  margin-bottom: 30px;
+}
+
+.section2 .list-box.box12 .etc-box button {
+  width: 220px;
+}
+
+.section2 .list-box.box12 .etc-box ul li {
+  display: block;
+}
+
+/** pages/prvc 에서만 사용 */
+.btn {
+  &.search-privarcy-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+    border: solid 1px #0d6efd;
+    padding: 0 15px;
+    .text-span {
+      color: #0d6efd;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    &::after {
+      content: '';
+      display: inline-flex;
+      transform: translateY(-1px);
+      width: 14px;
+      height: 14px;
+      background-image: url('/public/image/sub/service/shortcut_black.svg');
+      background-repeat: no-repeat;
+    }
+
+    &:active {
+      border-color: #3382e9;
+    }
+  }
+}
+
+.num-content-box {
+  .link-list {
+    li {
+      display: flex;
+      flex-direction: row;
+      color: #555;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 25px;
+    }
+  }
+}
+
+.section2 {
+  ul.link-list {
+    margin-top: 0;
+
+    li:not(:last-of-type) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .section2 {
+    .link-list {
+      display: flex;
+      flex-flow: column;
+      gap: 6px;
+    }
+  }
+  @include etc-common-mo;
+}

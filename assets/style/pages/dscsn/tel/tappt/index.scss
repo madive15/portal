@@ -1,0 +1,32 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+//@include counsel-bull-list;
+//@include counsel-button-box;
+@include counsel-reservation;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2:deep() {
+  table tbody td,
+  table tbody th {
+    padding: 0;
+  }
+}
+
+.time-tit {
+  height: 30px;
+  padding: 0 20px;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-secondary-70);
+  background-color: var(--color-secondary-10);
+  border-radius: 5px;
+}
+/*mo*/
+@media (max-width: 1199px) {
+}

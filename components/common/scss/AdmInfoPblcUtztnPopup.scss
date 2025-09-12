@@ -1,0 +1,50 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+//@include counsel-bull-list;
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .consent-box {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    padding: 30px 30px 40px;
+    background-color: #f5f7fa;
+    border-top: 2px solid #003675;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    .info-tit {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .info-txt {
+      line-height: 24px;
+    }
+  }
+
+  .counsel-num-list {
+    margin-top: 10px;
+    padding-top: 30px;
+    border-top: 1px solid #dadce1;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .consent-box {
+      gap: 25px;
+      padding: 13px;
+    }
+
+    .counsel-num-list {
+      padding-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section1 {
+  .example-select-box {
+    margin-top: 32px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.caption-box {
+  .in {
+    width: 1280px;
+    text-align: left;
+    border: transparent;
+    margin-bottom: 25px;
+  }
+}
+
+.section2 {
+  @include statute-info-common;
+}
+/*표 상단 검색필터*/
+@include sub-search-info-box-common;
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include sub-category-list-common-mo;
+}

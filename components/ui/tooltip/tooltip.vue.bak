@@ -1,0 +1,63 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+defineOptions({ inheritAttrs: false }); // $attrs를 수동으로 전달하기 위해 설정
+const props = defineProps({
+  textTitle: {
+    type: String,
+    required: true
+  },
+  id: {
+    type: String,
+    default: () => `tooltip-${Math.random().toString(36).slice(2, 10)}`
+  },
+  placement: {
+    type: String,
+    default: 'top'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  type: {
+    type: String as () => 'button' | 'submit' | 'reset',
+    default: 'button'
+  }
+});
+
+defineEmits(['click', 'enter']);
+
+const tooltipId = computed(() => props.id);
+</script>
+
+<template>
+  <!-- 툴팁 설명 텍스트 (스크린 리더용) -->
+  <span :id="tooltipId" class="sr-only" role="tooltip">
+    {{ textTitle }}
+  </span>
+
+  <!-- 툴팁 + 버튼 -->
+  <div :aria-describedby="tooltipId">
+    <a-tooltip
+      :title="textTitle"
+      :placement="placement"
+      overlay-class-name="common-tooltip"
+      trigger="focus"
+    >
+      <button
+        :id="tooltipId"
+        :disabled="disabled"
+        :type="type"
+        v-bind="$attrs"
+        @click="$emit('click', $event)"
+        @keyup.enter="$emit('enter')"
+      >
+        <span class="text">
+          <slot>버튼</slot>
+        </span>
+      </button>
+    </a-tooltip>
+  </div>
+</template>
+
+<style scoped></style>

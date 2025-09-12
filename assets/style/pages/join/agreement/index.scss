@@ -1,0 +1,347 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.step-box {
+  margin-top: 40px;
+
+  .step-text-box {
+    position: relative;
+    background: #f5f7fa;
+    padding: 25px 20px 25px 40px;
+    font-family: Arial, sans-serif;
+    margin-right: 15px;
+    transition: background 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -15px;
+      width: 0;
+      height: 0;
+      border-top: 35px solid transparent;
+      border-bottom: 35px solid transparent;
+      border-left: 15px solid #f5f7fa;
+      z-index: 1;
+    }
+
+    &.active {
+      background: #0d6efd;
+      color: #fff;
+
+      &::after {
+        border-left-color: #4285f4;
+      }
+
+      strong,
+      span {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    strong {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      margin-right: 15px;
+      color: #222;
+    }
+
+    span {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      color: #222;
+    }
+  }
+
+  .step1 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 0 0);
+    }
+  }
+
+  .step2 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step3 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step4 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step5 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+    }
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.all-agree-box {
+  margin: 30px 20px;
+
+  .form-check {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+
+    input {
+      position: relative;
+      top: -3px;
+      width: 19px;
+      height: 19px;
+      border: solid 1px #222;
+      box-shadow: none !important;
+
+      &:checked {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+    }
+  }
+}
+
+.aggre-radio-box {
+  margin-top: 23px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+
+  input {
+    width: 18px;
+    height: 18px;
+    border: solid 1px #222;
+    position: relative;
+    top: -3px;
+    box-shadow: none !important;
+
+    &:checked {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+    }
+  }
+
+  label {
+    font-size: 15px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}
+
+.aggre-info-box {
+  margin-bottom: 35px;
+
+  .card {
+    border: solid 1px #d3d3d3;
+    border-radius: 15px;
+
+    .card-header {
+      background: #f5f7fa;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      padding: 15px 22px;
+
+      h4 {
+        font-size: 16px;
+        color: #1856ae;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+
+      .aggre-text-box {
+        height: 240px;
+        padding: 24px;
+        overflow-y: scroll;
+
+        h5 {
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: -0.3px;
+          margin: 30px 0;
+        }
+
+        dl {
+          margin-bottom: 30px;
+
+          dt {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 5px;
+            margin-top: 15px;
+          }
+
+          dd {
+            font-size: 15px;
+            letter-spacing: -0.2px;
+            line-height: 20px;
+            font-weight: 500;
+            margin-top: 5px;
+          }
+        }
+
+        p {
+          &.top-p {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: #222;
+          }
+
+          &.end-p {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: #222;
+            margin-top: 15px;
+          }
+        }
+
+        table {
+          width: 100%;
+          margin-top: 20px;
+          border-top: solid 2px #222;
+
+          th {
+            background: #f5f7fa;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+            font-weight: 500;
+            color: #222;
+            border-right: solid 1px #e1e3e1;
+            border-bottom: solid 1px #e1e3e1;
+            width: 25%;
+
+            &:last-child {
+              border-right: 0;
+            }
+          }
+
+          td {
+            border-right: solid 1px #e1e3e1;
+            border-bottom: solid 1px #e1e3e1;
+            padding: 30px 10px;
+            text-align: center;
+            color: #555;
+            font-size: 15px;
+            font-weight: 400;
+
+            &:last-child {
+              border-right: 0;
+            }
+          }
+        }
+
+        .txt-red {
+          color: #e80000;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+
+  button {
+    padding: 0;
+    width: 93px;
+    height: 50px;
+    border: 0 !important;
+    font-size: 15px;
+    font-weight: 700;
+
+    &.confirm-button {
+      background: #0d6efd !important;
+      color: #fff;
+    }
+
+    &.cancle-button {
+      background: #edeff2 !important;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .all-agree-box {
+    margin: 40px 0 20px;
+  }
+
+  .aggre-info-box {
+    .card {
+      .card-header {
+        padding: 11px 16px;
+      }
+
+      .card-body {
+        .aggre-text-box {
+          padding: 16px;
+          line-height: 1.2;
+
+          h5 {
+            margin: 16px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .button-box {
+    .btn {
+      height: 40px;
+    }
+  }
+
+  @include join-common-mo;
+}

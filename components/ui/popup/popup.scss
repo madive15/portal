@@ -1,0 +1,78 @@
+.layer-popup.layer-apply-box {
+  margin-top:23px;
+  display: flex;
+  justify-content: end;
+}
+
+.layer-popup .layer-apply-box input {
+  width:15px;
+  height: 15px;
+  position: relative;
+  top:-4px;
+  box-shadow: none;
+}
+
+.layer-popup .layer-apply-box input:checked {
+  background-color: #3382e9;
+  border-color: #3382e9;
+}
+
+.layer-popup .layer-apply-box label {
+  font-size:16px;
+  color:#555;
+  font-weight: 500;
+}
+
+.layer-popup {
+  position: fixed;
+  background: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 0;
+  border-radius: 10px;
+  top:50%;
+  z-index: 9999;
+  display: block;
+  margin-top: 0;
+}
+
+.layer-popup .layer-content {
+  padding: 15px;
+}
+
+.layer-close {
+  background: url('/assets/image/main/ai-layer-close.png') no-repeat center center;
+  width:40px;
+  height: 40px;
+  background-size: auto;
+  position: absolute;
+  right:16px;
+  top:11px;
+}
+
+.layer-header {
+  position: relative;
+  padding: 12px;
+  background-color: #2d4288;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.layer-header h2 {
+  color:#fff;
+  font-size:26px;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+@media (max-width:1199px) {
+  .layer-popup {
+    width:90% !important;
+  }
+}

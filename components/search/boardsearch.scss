@@ -1,0 +1,104 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.board-search-box {
+  margin-top: 30px;
+  background: #f5f7fa;
+  padding: 15px 0;
+  border: solid 1px #dadce1;
+  border-radius: 15px;
+}
+
+.board-search-box .search-box select {
+  width: 164px;
+  height: 50px;
+  border: solid 1px #dadce1;
+  font-size: 15px;
+  color: #555;
+  box-shadow: none;
+}
+
+.board-search-box .search-box input {
+  font-size: 15px;
+  color: #555;
+  width: 367px;
+  height: 50px;
+  border: solid 1px #dadce1;
+  box-shadow: none;
+}
+
+.board-search-box .search-box button {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  color: #fff;
+  background: #0d6efd;
+  border: 0;
+}
+
+.board-search-box .search-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 7px;
+}
+
+.search-info-inputs {
+  display: flex;
+  column-gap: 7px;
+}
+.search-info-btns {
+  display: flex;
+  column-gap: 7px;
+}
+/*mo*/
+@media (max-width: 1199px) {
+  .board-search-box {
+    position: relative;
+    padding: 16px;
+    .search-info-inputs {
+      flex-flow: column;
+      width: 100%;
+      input {
+        width: calc(100% - 90px);
+        margin-top: 8px;
+        height: 40px;
+      }
+      select {
+        width: 100%;
+        height: 40px;
+      }
+    }
+    .search-info-btns {
+      display: flex;
+      gap: 4px;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+
+      .btn.search-button {
+        font-size: 0 !important;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        &::before {
+          display: block;
+          content: "";
+          width: 24px;
+          height: 24px;
+          background: url("/image/sub/example/re_search.svg") no-repeat center;
+          background-size: 18px;
+        }
+        + .search-button {
+          &::before {
+            background: url("/image/sub/search/refresh_white.svg") no-repeat center;
+            background-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

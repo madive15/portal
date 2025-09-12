@@ -1,0 +1,160 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-button-box;
+
+.section2 {
+  margin-top: 40px;
+}
+
+// 뱃지
+.tag-bedge-box {
+  :deep() {
+    .common-tag-bedge {
+      min-width: 80px;
+      margin: 0 !important;
+      text-align: center;
+    }
+  }
+
+  &.color-mint {
+    :deep() {
+      .common-tag-bedge {
+        background-color: #e2fbfb !important;
+        border-color: #b8d0fc;
+        color: #0647bf;
+      }
+    }
+  }
+
+  &.color-l-pink {
+    :deep() {
+      .common-tag-bedge {
+        background-color: #fdece2 !important;
+        border-color: #fab0b0;
+        color: #333;
+      }
+    }
+  }
+}
+
+.search-info-wrap {
+  margin-bottom: 30px;
+
+  .button-box {
+    margin-top: 0;
+    
+    .btn {
+      min-width: 180px;
+    }
+  }
+}
+
+.select-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .common-select {
+    min-width: 180px;
+  }
+}
+
+// 데이터 없는 경우
+.board-empty-box {
+  margin: 0;
+  padding: 120px 0;
+  border-top: 1px solid #000 !important;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .tag-bedge-box {
+    :deep() {
+      .common-tag-bedge {
+        padding: {
+          top: 2px;
+          bottom: 2px;
+        }
+      }
+    }
+  }
+  
+  .common-category__button {
+    margin-bottom: 20px;
+  }
+
+  .search-info-wrap {
+    flex-flow: column;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .button-box {
+      width: 100%;
+
+      .btn {
+        width: 100%;
+        min-width: auto;
+        height: auto;
+        padding: 9px;
+      }
+    }
+  }
+
+  .select-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+
+    .common-select {
+      min-width: auto;
+
+      .ant-select-selector {
+        width: 100%;
+      }
+    }
+  }
+
+  .table-mo-cont {
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 31%;
+      height: 100%;
+      background-color: #f5f7fa;
+      border-radius: 5px;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      line-height: 1.4;
+      
+      dt {
+        position: relative;
+        z-index: 1;
+        padding: 5px 13px;
+        font: {
+          size: 14px;
+          weight: 600;
+        }
+      }
+      
+      dd {
+        font: {
+          size: 15px;
+          weight: 500;
+        }
+      }
+    }
+  }
+}

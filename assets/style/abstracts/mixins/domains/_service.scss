@@ -1,0 +1,606 @@
+@charset "utf-8";
+
+@use '../common' as *;
+@use './search' as *;
+
+/*서비스 제공기관 box*/
+@mixin card-box-mo {
+  .card-box {
+    min-height: inherit;
+    padding: 20px 16px;
+    .card-bodys {
+      > dl dt {
+        margin-bottom: 4px;
+      }
+    }
+    .card-footers {
+      width: calc(100% - 32px);
+      display: flex;
+      left: 16px;
+      gap: 8px;
+
+      .btn {
+        height: 32px;
+        &.link-button {
+          justify-content: center;
+          padding: 0 !important;
+          gap: 4px;
+        }
+
+        @media (max-width: 375px) {
+          .info-text, &.link-button .text-span {
+            font-size: 3.3vw !important;
+          }
+        }
+      }
+    }
+    .dropdown-box {
+      margin-top: 16px;
+    }
+  }
+}
+
+@mixin statute-info-common {
+  margin-top: 50px;
+
+  table {
+    width: 100%;
+    border-top: solid 1px #000;
+
+    thead {
+      th {
+        padding: 10px 0;
+        text-align: center;
+        background: #f5f7fa;
+        border-right: solid 1px #dadce1;
+        border-bottom: solid 1px #dadce1;
+        font-size: 16px;
+        color: #222;
+        font-weight: 700;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 18px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #222;
+        border-bottom: solid 1px #dadce1;
+        border-right: solid 1px #dadce1;
+        vertical-align: middle;
+        height: 70px;
+        span {
+          line-height: 23px;
+        }
+        a {
+          line-height: 23px;
+        }
+        &.num-td {
+          text-align: center;
+          width: 6%;
+        }
+        &.file-td {
+          text-align: center;
+          width: 6%;
+          img {
+            width: 16px;
+            height: 23px;
+          }
+        }
+        &.category-td {
+          text-align: center;
+          width: 28%;
+        }
+        &.date-td {
+          text-align: center;
+          width: 10%;
+        }
+        &.hit-td {
+          text-align: center;
+          width: 6%;
+        }
+        &.title-td {
+          a {
+            padding: 0 5px;
+            display: block;
+          }
+        }
+        &.content-td {
+          width: 22%;
+        }
+      }
+      tr {
+        td {
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .select-th {
+    text-align: center;
+    select {
+      width: 80%;
+      height: 35px;
+      border: solid 1px #dadce1;
+      box-shadow: none;
+      margin: 0 auto;
+      font-size: 14px;
+      color: #555;
+    }
+  }
+
+  .board-list-box {
+    .board-empty-box {
+      text-align: center;
+      margin: 120px 0;
+      .img-box {
+        img {
+          width: 65px;
+          height: 65px;
+        }
+      }
+      .text-box {
+        margin-top: 30px;
+        p {
+          color: #999;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+/*리스트 박스*/
+@mixin list-box-common {
+  .list-box {
+    margin-top: 15px;
+    .list-row {
+      row-gap: 15px;
+      position: relative;
+      .none-col {
+        position: absolute;
+        z-index: 44;
+        margin-top: 15px;
+        left: 12px;
+      }
+    }
+    .inner-box {
+      padding: 20px;
+      background: #f5f7fa;
+      border: solid 1px #dadce1;
+      border-radius: 15px;
+      .row {
+        row-gap: 15px;
+      }
+      .inner-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 18px;
+        strong {
+          font-size: 18px;
+          font-weight: bold;
+          color: #222;
+          span {
+            font-size: 16px;
+          }
+        }
+        button {
+          width: 150px;
+          height: 40px;
+          border: solid 1px #dadce1 !important;
+          background: #fff !important;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          column-gap: 10px;
+          padding: 10px 0 !important;
+          font-size: 13px !important;
+          color: #222 !important;
+          img {
+            width: 8px;
+            height: 12px;
+            position: relative;
+            top: -1px;
+          }
+        }
+      }
+      .inner-body {
+        margin-top: 10px;
+        .info-box {
+          background: #fff;
+          border: solid 1px #dadce1;
+          border-radius: 10px;
+          padding: 10px;
+          height: 100%;
+          dl {
+            dt {
+              font-size: 15px;
+              font-weight: bold;
+              color: #555;
+            }
+            dd {
+              font-size: 15px;
+              color: #555;
+              font-weight: 500;
+              line-height: 20px;
+            }
+          }
+        }
+        .inner-col {
+          .info-box {
+          }
+        }
+        .template-col {
+          dl {
+            dt {
+              margin-bottom: 10px;
+            }
+          }
+          .info-box {
+            dl {
+              dd {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+        .link-col {
+          dl {
+            dd {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*board-list-box - 목록형*/
+@mixin board-list-common {
+  .board-list-box {
+    table {
+      width: 100%;
+      border-top: solid 1px #000;
+      thead {
+        th {
+          padding: 27px 0;
+          text-align: center;
+          background: #f5f7fa;
+          border-right: solid 1px #dadce1;
+          border-bottom: solid 1px #dadce1;
+          font-size: 16px;
+          color: #222;
+          font-weight: 700;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          padding: 27px;
+          font-size: 15px;
+          font-weight: 500;
+          color: #222;
+          border-bottom: solid 1px #dadce1;
+          border-right: solid 1px #dadce1;
+          &:last-child {
+            border-right: 0;
+          }
+          &.num-td,
+          &.category-td,
+          &.date-td,
+          &.hit-td,
+          &.file-td {
+            text-align: center;
+          }
+
+          &.num-td {
+            width: 8%;
+          }
+
+          &.category-td {
+            width: 8%;
+          }
+
+          &.date-td {
+            width: 12%;
+          }
+
+          &.hit-td {
+            width: 8%;
+          }
+
+          &.file-td {
+            width: 6%;
+
+            img {
+              width: 16px;
+              height: 23px;
+            }
+          }
+
+          &.title-td {
+            padding: 0;
+
+            a {
+              padding: 27px;
+              display: block;
+            }
+          }
+
+          &.active-td {
+            span.active-span {
+              background: #dce8f8;
+              color: #3382e9;
+              width: 40px;
+              height: 27px;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+    .board-empty-box {
+      text-align: center;
+      margin: 120px 0;
+      .img-box {
+        img {
+          width: 65px;
+          height: 65px;
+        }
+      }
+      .text-box {
+        margin-top: 30px;
+        background-color: #ffffff !important;
+        p {
+          color: #999;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+/*board-gallery-box - 갤러리형*/
+@mixin board-gallery-common {
+  .board-gallery-list-box {
+    .row {
+      row-gap: 40px;
+    }
+    .img-box {
+      img {
+        width: 100%;
+        height: 220px;
+        border-radius: 15px;
+      }
+    }
+    .gallery-text-box {
+      margin-top: 14px;
+      strong {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        color: #222;
+        letter-spacing: -0.3px;
+        width: 98%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      span {
+        display: block;
+        width: 98%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 16px;
+        color: #555;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/*모바일 서비스유형,서비스제공기관 리스트*/
+@mixin sub-service-list-common-mo {
+  .service-box {
+    .list-box {
+      margin-top: 40px;
+    }
+
+    @include mobile-card-common;
+  }
+  @include card-box-mo;
+  @include search-info-box-mo;
+  @include mobile-tab-scroll;
+}
+
+@mixin information-box-mo {
+  .information-box {
+    padding: 16px;
+
+    .info-header {
+      flex-flow: column;
+      align-items: flex-start;
+      .title-box {
+        flex-flow: column-reverse;
+        align-items: flex-start;
+        .bedge-span {
+          margin-bottom: 5px;
+        }
+      }
+      .sns-box {
+        margin-top: 12px;
+      }
+    }
+    .info-user-box {
+      align-items: flex-start;
+      column-gap: 0;
+      strong {
+        width: 61px;
+        margin-top: 4px;
+        flex: none;
+      }
+    }
+    .info-footer {
+      margin-top: 12px;
+      column-gap: 0;
+      align-items: flex-start;
+      > .title-box {
+        width: 61px;
+        margin-top: 9px;
+        flex: none;
+      }
+      .left-box {
+        align-items: flex-start;
+        column-gap: 0;
+        width: 100%;
+        strong {
+          width: 61px;
+          margin-top: 1px;
+          flex: none;
+        }
+        span {
+          font-weight: 600;
+        }
+      }
+      .right-box {
+        margin-top: 12px;
+        align-items: flex-start;
+        column-gap: 0;
+        width: 100%;
+        .title-box {
+          width: 61px;
+          margin-top: 9px;
+          flex: none;
+        }
+      }
+      .link-box {
+        .link-button {
+          height: auto;
+          padding-top: 6px !important;
+          padding-bottom: 6px !important;
+        }
+      }
+    }
+    .info-end-box {
+      ul li {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        width: 100%;
+        column-gap: 0;
+
+        &:last-child{
+          margin-top: 12px;
+        }
+      }
+      .goto-li {
+        margin-left: 61px;
+      }
+      strong {
+        width: 61px;
+        flex: none;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+/*모바일 서비스유형,서비스제공기관 상세*/
+@mixin sub-service-detail-common-mo {
+  .sub-content-box:deep() {
+    .section2 .example-list-box table thead th {
+      vertical-align: middle;
+      padding: 16px 0;
+      line-height: 1.2;
+    }
+    .section2 .example-list-box table tbody td {
+      padding: 16px;
+    }
+    .stop-box {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    @include information-box-mo;
+    @include search-info-box-mo;
+    @include mobile-tab-scroll(false);
+    @include board-list-common-mo;
+  }
+}
+
+/*모바일 사례/서식*/
+@mixin sub-category-list-common-mo {
+  .caption-box .in {
+    width: 100%;
+  }
+
+  .category-tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    .category-tab-item {
+      width: 33.333%;
+      button {
+        height: 100%;
+        padding: 10px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  .mo-select-box-root:deep() {
+    .form-select {
+      width: 100%;
+      height: 40px;
+      line-height: 1.2;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.3px;
+    }
+    .select-box {
+      width: 100%;
+      height: 40px;
+      line-height: 1.2;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.3px;
+      margin: 0;
+
+      .dropdown-toggle {
+        &::after {
+          top: 16px;
+        }
+      }
+      .dropdown-menu {
+        width: 100%;
+      }
+    }
+  }
+
+  @include search-info-box-mo;
+  @include mobile-table-scroll;
+  @include board-list-common-mo;
+}

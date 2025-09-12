@@ -1,0 +1,146 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.counsel-main-img-box {
+  margin-top: 17px;
+  display: flex;
+  gap: 24px;
+  .main-box-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 186px;
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    .img-box {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      img {
+        max-height: 100%;
+      }
+      margin-bottom: 25px;
+    }
+
+    > span {
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 400;
+      color: var(--color-grayscale-80);
+      text-align: center;
+    }
+
+    &.bg01 {
+      background-image: url(/image/sub/counsel/counsel_top_ico_bg_01.png);
+    }
+    &.bg02 {
+      background-image: url(/image/sub/counsel/counsel_top_ico_bg_02.png);
+    }
+    &.bg03 {
+      background-image: url(/image/sub/counsel/counsel_top_ico_bg_03.png);
+    }
+    &.bg04 {
+      background-image: url(/image/sub/counsel/counsel_top_ico_bg_04.png);
+    }
+  }
+}
+
+.counsel-sub-img-box {
+  display: flex;
+  gap: 30px;
+  margin-top: 25px;
+  .sub-box-item {
+    position: relative;
+    display: flex;
+    height: 70px;
+    width: 190px;
+    align-items: center;
+    background-color: var(--color-grayscale-0);
+    border: 1px solid var(--color-secondary-50);
+    border-radius: 10px;
+    .img-box {
+      margin: 0 13px 0 25px;
+      img {
+        max-width: 100%;
+      }
+    }
+    > span {
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 400;
+      color: var(--color-grayscale-80);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      right: -19px;
+      width: 7px;
+      height: 12px;
+      background: url(/image/sub/counsel/counsel_sub_ico_arr.png) no-repeat
+        center;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-main-img-box {
+    gap: 20px;
+    flex-wrap: wrap;
+    .main-box-item {
+      height: 140px;
+      width: calc(50% - 10px);
+      flex: none;
+      .img-box {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 20px;
+      }
+      > span {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .counsel-sub-img-box {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    .sub-box-item {
+      width: 100%;
+      justify-content: center;
+      .img-box {
+        margin-left: 0;
+      }
+
+      &::after {
+        right: auto;
+        bottom: -21px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .img-box {
+    width: 70%;
+    margin: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .img-box {
+      width: 100%;
+    }
+  }
+}

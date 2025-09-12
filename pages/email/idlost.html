@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>아이디 찾기 결과</title>
+</head>
+<body>
+
+<!-- 아이디 찾기 안내 메일용 입니다. body 아래로 코드를 복사해주세요. inline-style로 들어갑니다. -->
+<div
+  class="id-form-wrap"
+  style="border:solid 1px #e1e3e1;
+  border-radius: 15px;
+  width:640px;
+  margin:0 auto;
+"
+>
+  <div
+    class="form-header"
+    style="border-bottom:solid 1px #e1e3e1; padding: 18px;"
+  >
+    <img src="{{domain}}/image/main/logo_header.png" alt="법률구조플랫폼 로고 이미지" />
+  </div>
+  <div
+    class="form-body"
+    style="padding: 79px 60px; text-align: center;"
+  >
+    <h4 style="font-size:25px; font-weight: bold; color:#222;">회원님의 아이디 정보입니다.</h4>
+    <p style="margin-top:40px; font-size: 16px; font-weight: 400; color:#555; line-height: 23px; margin-bottom: 42px; letter-spacing: -0.3px;">
+      안녕하세요, <strong style="font-size:21px; font-weight: bold; color:#222;">{{mbrNm}}</strong> 님! <br />
+      법률구조플랫폼에 가입된 아이디 정보는 다음과 같습니다.
+    </p>
+    <div
+      class="id-box"
+      style="background: #f5f7fa; width: 373px; margin: 0 auto; padding: 22px 0; border-radius: 15px;"
+    >
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; column-gap: 20px; align-items: center;">
+      <span style="font-size: 20px; font-weight: bold; color:#222;">아이디</span>
+      <span style="width:3px; height: 19px; display: inline-block; background: #000; position: relative; top:-2px;"></span>
+      <span style="font-size: 20px; font-weight: bold; color:#222;">{{userId}}</span>
+    </div>
+    </div>
+    <p style="margin: 30px 0; font-size: 16px;  letter-spacing: -0.3px; font-weight: 400; color:#555;">유용한 서비스제공을 위해 노력하겠습니다.</p>
+    <a href="{{domain}}/login" style="width:260px; height: 60px; background: #3e80eb; color:#fff; font-size: 19px; font-weight: bold; margin: 0 auto; border-radius: 15px; border:0;">
+      홈페이지 로그인
+    </a>
+    <p style="font-size: 16px;  letter-spacing: -0.3px; font-weight: 400; color:#555; line-height: 23px; margin-top: 42px;">더욱 편리하고, 유익한 서비스를 제공하기 위해 항상 최선을 다하겠습니다. 감사합니다.</p>
+  </div>
+  <div
+    class="form-footer"
+    style="background: #f5f7fa;
+     padding: 29px 20px;
+      border-bottom-left-radius: 15px;
+       border-bottom-right-radius: 15px;"
+  >
+    <p style="font-size: 16px; letter-spacing: -0.3px; font-weight: 400; color:#555; margin-bottom: 30px;">본 메일은 발신 전용이므로 회신이 되지 않습니다.</p>
+    <div class="row-box" style="display: flex; flex-wrap: wrap; align-items: center;">
+      <div class="left-box">
+        <ul style="padding-left: 0;">
+          <li style="font-size: 16px; font-weight: 400; color:#555; line-height: 23px; list-style-type: none;">
+            법률구조플랫폼 | 대표이사 OOO |
+          </li>
+          <li style="font-size: 16px; font-weight: 400; color:#555; line-height: 23px; list-style-type: none;">
+            서울 동작구 보라매로5길 15 전문건설회관
+          </li>
+        </ul>
+        <p style="font-size: 16px; letter-spacing: -0.3px; font-weight: 400; color:#555; margin-top:30px;">
+          COPYRIGHT 법률구조플랫폼, LTD. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+      <div class="right-box">
+        <div class="img-box" style="text-align: right;">
+          <img src="{{domain}}/image/main/logo_header.png" alt="하단 법률구조플랫폼 이미지" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

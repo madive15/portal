@@ -1,0 +1,149 @@
+@charset "utf-8";
+@use "./mixins_global" as *;
+
+.step-box {
+  margin-top: 40px;
+  ol {
+    display: flex;
+    li {
+      flex: 1;
+    }
+  }
+  .step-text-box {
+    position: relative;
+    background: #f5f7fa;
+    padding: 25px 20px 25px 40px;
+    font-family: Arial, sans-serif;
+    margin-right: 15px;
+    transition: background 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -15px;
+      width: 0;
+      height: 0;
+      border-top: 35px solid transparent;
+      border-bottom: 35px solid transparent;
+      border-left: 15px solid #f5f7fa;
+      z-index: 1;
+    }
+
+    &.active {
+      background: #0d6efd;
+      color: #fff;
+
+      &::after {
+        border-left-color: #4285f4;
+      }
+
+      strong,
+      span {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    strong {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      margin-right: 15px;
+      color: #222;
+    }
+
+    span {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      color: #222;
+    }
+  }
+
+  .step1 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 0 0);
+    }
+  }
+
+  .step2 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step3 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step4 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 99%, 10% 50%);
+    }
+  }
+
+  .step5 {
+    padding: 0;
+
+    .step-text-box {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .step-box {
+    ol {
+      display: flex;
+
+      li {
+        flex: 1;
+        width: 20%;
+      }
+    }
+    .step-text-box {
+      align-items: center;
+      display: flex;
+      flex-flow: column;
+      padding: 8px 8px 8px 6px;
+      & > strong {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -.3px;
+        line-height: 1.2;
+        margin: 0;
+        text-align: center
+      }
+      & > span {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: -.3px;
+        line-height: 1.2;
+        margin-top: 3px;
+        text-align: center
+      }
+    }
+
+
+
+  }
+}

@@ -1,0 +1,321 @@
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+import FullCalendar from '@fullcalendar/vue3';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import koLocale from '@fullcalendar/core/locales/ko';
+import {
+  CalendarOptions,
+  DateSelectArg,
+  EventClickArg
+} from '@fullcalendar/core';
+
+// 날짜
+const selectedInfo = ref<DateSelectArg | null>(null);
+const currentDate = ref(new Date());
+const nextMonthDate = ref(
+  new Date(new Date().setMonth(new Date().getMonth() + 1))
+);
+// const endDateStr = computed(() => {
+//   if (!selectedInfo.value) return '';
+//   const end = new Date(selectedInfo.value.end);
+//   if (selectedInfo.value.allDay) {
+//     end.setDate(end.getDate() - 1);
+//   }
+//   return formatDate(end, {
+//     year: 'numeric',
+//     month: '2-digit',
+//     day: '2-digit',
+//     locale: 'ko'
+//   });
+// });
+
+// 이벤트 저장
+// const eventsA = ref<EventApi[]>([]);
+// const eventsB = ref<EventApi[]>([]);
+
+// 이벤트 ID 생성기
+let eventGuid = 0;
+const createEventId = () => String(eventGuid++);
+
+// 고정 스케줄 목록
+const fixedSchedules = [
+  {
+    agency: '대한법률구조공단1',
+    items: [
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      }
+    ]
+  },
+  {
+    agency: '대한법률구조공단2',
+    items: [
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      }
+    ]
+  },
+  {
+    agency: '대한법률구조공단3',
+    items: [
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      }
+    ]
+  },
+  {
+    agency: '대한법률구조공단4',
+    items: [
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      }
+    ]
+  },
+  {
+    agency: '대한법률구조공단5',
+    items: [
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      },
+      {
+        location: '인천지부',
+        date: '2025.04.10'
+      }
+    ]
+  }
+];
+
+function handleDateSelect(selectInfo: DateSelectArg) {
+  // 선택 영역 초기화
+  // const calendarApi = selectInfo.view.calendar;
+  // calendarApi.unselect();
+
+  // 이전 클래스 제거
+  document.querySelectorAll('.fc-start-day, .fc-end-day').forEach((el) => {
+    el.classList.remove('fc-start-day', 'fc-end-day');
+  });
+
+  // 날짜 포맷을 YYYY-MM-DD로 맞춰서 비교
+  const startDateStr = selectInfo.startStr;
+  const endDate = new Date(selectInfo.end);
+  endDate.setDate(endDate.getDate()); // FullCalendar는 end에 +1일 자동 포함
+  const endDateStr = endDate.toISOString().split('T')[0];
+
+  // 달력 셀들에서 해당 날짜에 클래스 추가
+  document.querySelectorAll('.fc-daygrid-day').forEach((el) => {
+    const dateStr = el.getAttribute('data-date');
+    // console.log(dateStr + ',' + startDateStr);
+    if (dateStr === startDateStr) {
+      el.classList.add('fc-start-day');
+    }
+    if (dateStr === endDateStr) {
+      el.classList.add('fc-end-day');
+    }
+  });
+
+  // 선택한 날짜 정보 저장
+  selectedInfo.value = selectInfo;
+}
+
+function clearSelection() {
+  if (selectedInfo.value) {
+    selectedInfo.value.view.calendar.unselect();
+  }
+  selectedInfo.value = null;
+}
+
+// 스케줄 추가
+function addSchedule(title: string) {
+  alert('스케줄 추가 로직');
+  // if (!selectedInfo.value) return;
+  //
+  // const calendarApi = selectedInfo.value.view.calendar;
+  //
+  // // 기존 선택된 일정(type: 'selection') 제거
+  // const existingEvents = calendarApi
+  //   .getEvents()
+  //   .filter((event) => event.extendedProps.type === 'selection');
+  // existingEvents.forEach((event) => event.remove());
+  //
+  // // end 날짜 하루 빼기 (allDay=true일 때 FullCalendar가 자동 +1일 처리함)
+  // const endDate = new Date(selectedInfo.value.end);
+  // endDate.setDate(endDate.getDate() - 1);
+  //
+  // // 새로운 이벤트 추가
+  // calendarApi.addEvent({
+  //   id: createEventId(),
+  //   title,
+  //   start: selectedInfo.value.startStr,
+  //   end: selectedInfo.value.allDay ? endDate : selectedInfo.value.endStr,
+  //   allDay: selectedInfo.value.allDay,
+  //   extendedProps: {
+  //     type: 'selection'
+  //   }
+  // });
+  //
+  // // 선택 영역 제거 (선택 박스 사라지게)
+  // calendarApi.unselect();
+}
+
+function handleEventClick(clickInfo: EventClickArg) {
+  // if (confirm(`'${clickInfo.event.title}' 이벤트를 삭제할까요?`)) {
+  //   clickInfo.event.remove();
+  // }
+}
+
+function handleEventReceive(info: any) {
+  // 다른 캘린더에서 드롭된 이벤트
+  info.event.setProp('title', info.event.title + ' (이동됨)');
+}
+
+function getCalendarOptions(
+  calendarId: 'A' | 'B',
+  initialDate: Date
+): CalendarOptions {
+  // headerToolbar: {
+  //   left: '',
+  //       center: 'title',
+  //       right: ''
+  // },
+  // titleFormat: {
+  //   month: 'numeric',
+  //       year: 'undefined'
+  // },
+  return {
+    plugins: [dayGridPlugin, interactionPlugin],
+    initialView: 'dayGridMonth',
+    initialDate,
+    editable: true,
+    droppable: true, // 외부 캘린더에서 드롭 가능
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true,
+    locale: koLocale,
+    select: handleDateSelect,
+    eventClick: handleEventClick,
+    eventReceive: handleEventReceive,
+    // events: calendarId === 'A' ? eventsA.value : eventsB.value,
+    dayCellContent: function (arg: any) {
+      // arg.date = Date 객체
+      // arg.dayNumberText = '1일', '2일'처럼 표시됨
+
+      // 날짜 숫자만 추출 (예: "1일" → "1")
+      return {
+        html: String(arg.date.getDate())
+      };
+    },
+    // titleFormat: {
+    //   month: 'long',
+    //   year: 'undefined'
+    // },
+    headerToolbar: {
+      left: '',
+      center: 'title',
+      right: ''
+    },
+    events: [
+      {
+        id: 'event',
+        title: '김포지소',
+        start: '2025-06-06',
+        allDay: true
+      }
+    ]
+  };
+}
+
+const calendarRoot = ref<HTMLElement | null>(null);
+const isExpanded = ref(false);
+const toggle = () => {
+  isExpanded.value = !isExpanded.value;
+};
+const clickOutside = (e: MouseEvent) => {
+  if (calendarRoot.value && !calendarRoot.value?.contains(e.target as Node)) {
+    isExpanded.value = false;
+  }
+};
+onMounted(() => {
+  document.addEventListener('click', clickOutside);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener('click', clickOutside);
+});
+</script>
+
+<template>
+  <div class="calendar-schedule__area" ref="calendarRoot">
+    <!-- 날짜 선택 시 표시되는 스케줄 추가 버튼 영역 -->
+
+    <div class="schedule-list">
+      <div class="bx-period" @click="toggle">
+        <div class="date">
+          <span v-if="selectedInfo">{{ selectedInfo.startStr }}</span>
+        </div>
+        <div class="date">
+          <span v-if="selectedInfo"> {{ selectedInfo.endStr }}</span>
+        </div>
+      </div>
+      <div
+        class="schedule-bx__row"
+        v-for="schedule in fixedSchedules"
+        :key="schedule"
+      >
+        <h4>{{ schedule.agency }}</h4>
+        <div class="schedule-btn__area">
+          <button
+            class="btn"
+            @click="addSchedule(schedule)"
+            v-for="reser in schedule.items"
+            :key="reser"
+          >
+            <span>{{ reser.location }}</span>
+            <span class="text-date">{{ reser.date }}</span>
+          </button>
+        </div>
+        <button class="cancel" @click="clearSelection">취소</button>
+      </div>
+    </div>
+    <div class="bx-layer pc-visible" :class="{ active: isExpanded }">
+      <div class="calendar-wrap">
+        <FullCalendar
+          ref="calendarARef"
+          class="calendar"
+          :options="getCalendarOptions('A', currentDate)"
+        />
+        <FullCalendar
+          ref="calendarBRef"
+          class="calendar"
+          :options="getCalendarOptions('B', nextMonthDate)"
+        />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>

@@ -1,0 +1,47 @@
+.pf-modal-wrap {
+  .pf-modal-open-button {
+    font-size: 16px !important;
+    height: 40px;
+    width: 130px;
+    background: #0d6efd;
+    color: #fff;
+  }
+}
+
+/* 공통 모달 */
+.common-modal-footer-btn {
+  height: 50px;
+  width: 90px;
+  border-radius: 6px;
+  font-size: 16px !important;
+}
+
+.common-modal-footer-btn.cancle-button {
+  background: #e7eaf0;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.88) !important;
+  }
+}
+
+.common-modal-footer-btn.confirm-button {
+  background: #0d6efd;
+
+  &:hover {
+    background-color: #0d6efd !important;
+  }
+}
+
+
+
+
+
+
+
+/*mo*/
+@media (max-width: 1199px) {
+  :global(.common-modal-wrap .ant-modal-body) {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}

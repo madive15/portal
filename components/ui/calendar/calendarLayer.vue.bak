@@ -1,0 +1,359 @@
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+import FullCalendar from '@fullcalendar/vue3';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import koLocale from '@fullcalendar/core/locales/ko';
+import {
+  CalendarOptions,
+  DateSelectArg,
+  EventClickArg,
+  formatDate
+} from '@fullcalendar/core';
+import CalendarModal from '~/components/ui/calendar/calendarModal.vue';
+
+// 날짜
+// const selectedInfoLayer = ref<DateSelectArg | null>(null);
+const currentDate = ref(new Date());
+const nextMonthDate = ref(
+  new Date(new Date().setMonth(new Date().getMonth() + 1))
+);
+
+const calendarRef = ref();
+
+const selectedInfo = ref<DateSelectArg | null>(null);
+
+// function handleDateSelectLayer(selectedInfo: DateSelectArg) {
+//   return (selectInfo: DateSelectArg) => {
+//     //선택 정보 저장
+//     selectedInfo.value = selectInfo;
+//
+//     const calendarEls = [
+//       calendarARef.value?.$el,
+//       calendarBRef.value?.$el
+//     ].filter(Boolean); // A, B 둘 다 처리
+//
+//     const calendarRef = calendarId === 'A' ? calendarARef : calendarBRef;
+//     // const calendarEl = calendarRef.value?.$el;
+//     const calendarEdge = document.querySelectorAll('.bx-layer');
+//     // 이전 클래스 제거
+//     document
+//       .querySelectorAll('.fc-start-day, .fc-end-day, .period-highlight')
+//       .forEach((el) => {
+//         el.classList.remove('fc-start-day', 'fc-end-day', 'period-highlight');
+//       });
+//
+//     // 날짜 포맷을 YYYY-MM-DD로 맞춰서 비교
+//     const startDateStr = selectInfo.startStr;
+//     const endDate = new Date(selectInfo.end);
+//     endDate.setDate(endDate.getDate()); // FullCalendar는 end에 +1일 자동 포함
+//     const endDateStr = endDate.toISOString().split('T')[0];
+//     const current = new Date(selectInfo.startStr); //오늘날짜
+//
+//     // if (!calendarEl) return;
+//     // // 달력 셀들에서 해당 날짜에 클래스 추가
+//     // calendarEl.querySelectorAll('.fc-daygrid-day').forEach((el) => {
+//     //   const dateStr = el.getAttribute('data-date');
+//     //   // console.log(dateStr + ',' + startDateStr);
+//     //   if (dateStr === startDateStr) {
+//     //     el.classList.add('fc-start-day');
+//     //   }
+//     //   if (dateStr === endDateStr) {
+//     //     el.classList.add('fc-end-day');
+//     //   }
+//     // });
+//     // //드레그로 선택한 기간에 클래스 추가
+//     // while (current <= endDate) {
+//     //   const dateStr = current.toISOString().split('T')[0];
+//     //   const cell = calendarEl.querySelector(
+//     //     `.fc-daygrid-day[data-date="${dateStr}"]`
+//     //   );
+//     //   if (cell) {
+//     //     cell.classList.add('period-highlight');
+//     //   }
+//     //   current.setDate(current.getDate() + 1);
+//     // }
+//
+//     // fc-daygrid-day에 클래스 삽입
+//     calendarEls.forEach((calendarEl) => {
+//       calendarEl
+//         .querySelectorAll('.fc-daygrid-day')
+//         .forEach((el: HTMLElement) => {
+//           const dateStr = el.getAttribute('data-date');
+//           if (dateStr === startDateStr) el.classList.add('fc-start-day');
+//           if (dateStr === endDateStr) el.classList.add('fc-end-day');
+//         });
+//
+//       // 날짜 범위 하이라이팅
+//       const cursor = new Date(current);
+//       while (cursor <= endDate) {
+//         const dateStr = cursor.toISOString().split('T')[0];
+//         const cell = calendarEl.querySelector(
+//           `.fc-daygrid-day[data-date="${dateStr}"]`
+//         );
+//         if (cell) cell.classList.add('period-highlight');
+//         cursor.setDate(cursor.getDate() + 1);
+//       }
+//     });
+//   };
+// }
+
+function handleDateSelect(selectInfo: DateSelectArg) {
+  selectedInfo.value = selectInfo;
+
+  const calendarEl = calendarRef.value?.$el;
+  if (!calendarEl) return;
+  // 날짜 포맷
+  const startDateStr = selectInfo.startStr;
+  const endDate = new Date(selectInfo.end);
+  endDate.setDate(endDate.getDate()); // 그대로 유지
+  const endDateStr = endDate.toISOString().split('T')[0];
+
+  // 기존 클래스 제거
+  document
+    .querySelectorAll('.fc-start-day, .fc-end-day, .period-highlight')
+    .forEach((el) => {
+      el.classList.remove('fc-start-day', 'fc-end-day', 'period-highlight');
+    });
+
+  const cursor = new Date(selectInfo.startStr);
+  while (cursor <= endDate) {
+    const dateStr = cursor.toISOString().split('T')[0];
+    const cell = calendarEl.querySelector(
+      `.fc-daygrid-day[data-date="${dateStr}"]`
+    );
+    if (cell) {
+      if (dateStr === startDateStr) cell.classList.add('fc-start-day');
+      if (dateStr === endDateStr) cell.classList.add('fc-end-day');
+      cell.classList.add('period-highlight');
+    }
+    cursor.setDate(cursor.getDate() + 1);
+  }
+}
+function getCalendarOptionsLayer(
+  // calendarId: 'A' | 'B',
+  initialDate: Date
+): CalendarOptions {
+  return {
+    plugins: [dayGridPlugin, interactionPlugin],
+    initialView: 'dayGridMonth',
+    initialDate,
+    editable: true,
+    droppable: true, // 외부 캘린더에서 드롭 가능
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true,
+    locale: koLocale,
+    // select: handleDateSelectLayer,
+    select: handleDateSelect,
+    views: {
+      multiMonth: {
+        type: 'dayGrid',
+        duration: { months: 2 } // ← 두 달 보여줌
+      }
+    },
+    initialView: 'multiMonth',
+    dayCellContent: function (arg: any) {
+      // arg.date = Date 객체
+      // arg.dayNumberText = '1일', '2일'처럼 표시됨
+      // 날짜 숫자만 추출 (예: "1일" → "1")
+      return {
+        html: String(arg.date.getDate())
+      };
+    },
+    dayCellDidMount: function (arg) {
+      arg.el.setAttribute('tabindex', 0);
+      arg.el.setAttribute('role', 'button');
+      arg.el.classList.add('day-cell');
+
+      // arg.el.addEventListener('keydown', (e: KeyboardEvent) => {
+      //   if (e.key === 'Enter' || e.key === ' ') {
+      //     e.preventDefault();
+      //     arg.view.calendar.select(arg.date);
+      //   }
+      // });
+    },
+    headerToolbar: {
+      left: '',
+      center: 'title',
+      right: ''
+    },
+    titleFormat: {
+      // 년도 제외 월만 표시
+      month: 'long'
+    },
+    events: [
+      {
+        id: 'event',
+        title: '김포지소',
+        start: '2025-06-06',
+        allDay: true
+      }
+    ]
+  };
+}
+
+function getDateParts(date: Date | null) {
+  if (!date) {
+    return {
+      year: '',
+      month: '',
+      day: '',
+      weekday: ''
+    };
+  }
+
+  // Date 객체 유효성 검증
+  const time = date.getTime();
+  if (isNaN(time)) {
+    return {
+      year: '',
+      month: '',
+      day: '',
+      weekday: ''
+    };
+  }
+
+  // 안전한 상태에서 formatDate 호출
+  const formatted = formatDate(date, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+    locale: 'ko'
+  });
+
+  const yearMatch = formatted.match(/(\d{4})년/);
+  const monthDayMartch = formatted.match(/(\d{1,2})월 (\d{1,2})일/);
+  const weekdayMatch = formatted.match(
+    /(월요일|화요일|수요일|목요일|금요일|토요일|일요일)/
+  );
+
+  return {
+    year: yearMatch?.[1] ?? '',
+    month: monthDayMartch?.[1] ?? '',
+    day: monthDayMartch?.[2] ?? '',
+    weekday: weekdayMatch?.[1] ?? ''
+  };
+}
+function useDateParts() {
+  const startDateParts = computed(() => {
+    const start = selectedInfo.value?.start;
+    if (!start) return null;
+    const date = new Date(start);
+    return isNaN(date.getTime()) ? null : getDateParts(date);
+  });
+
+  const endDateParts = computed(() => {
+    const end = selectedInfo.value?.end;
+    if (!end) return null;
+    const date = new Date(end);
+    if (selectedInfo.value.allDay) {
+      date.setDate(date.getDate() - 1);
+    }
+    return isNaN(date.getTime()) ? null : getDateParts(date);
+  });
+
+  return { startDateParts, endDateParts };
+}
+
+const { startDateParts, endDateParts } = useDateParts();
+
+const calendarRoot = ref<HTMLElement | null>(null);
+const isExpanded = ref(false);
+const toggle = () => {
+  isExpanded.value = !isExpanded.value;
+};
+//Calendar Layer 밖에 클릭 하면 Layer 닫기
+const clickOutside = (e: MouseEvent) => {
+  if (calendarRoot.value && !calendarRoot.value?.contains(e.target as Node)) {
+    isExpanded.value = false;
+  }
+};
+onMounted(() => {
+  document.addEventListener('click', clickOutside);
+  document.addEventListener('keydown', clickOutside);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener('click', clickOutside);
+  document.removeEventListener('keydown', clickOutside);
+});
+
+// mo 달력 modal 창 열기
+const showCalendarRef = ref<InstanceType<typeof ChildModal> | null>(null);
+function openCalendar() {
+  showCalendarRef.value?.openModal();
+}
+
+//mo 선택 날짜 modal에서 받아옴
+const selectedDates = ref<{
+  start: { year: string; month: string; day: string; weekday: string };
+  end: { year: string; month: string; day: string; weekday: string };
+} | null>(null);
+
+function onUpdateDates(payload: { start: any; end: any }) {
+  selectedDates.value = payload;
+}
+</script>
+
+<template>
+  <div class="calendar-schedule__area" ref="calendarRoot">
+    <div class="date-select__area">
+      <!--pc 화면용 ui -->
+      <button type="button" class="bx-period pc-visible" @click="toggle">
+        <span class="date">
+          <span class="bx" v-if="startDateParts && endDateParts">
+            <span>{{ startDateParts?.year }}년</span>
+            <span
+              >{{ startDateParts?.month }}월{{ startDateParts?.day }}일</span
+            >
+            <span class="day">{{ startDateParts?.weekday }}</span>
+          </span>
+        </span>
+        <span class="date">
+          <span class="bx" v-if="startDateParts && endDateParts">
+            <span>{{ endDateParts?.year }}년</span>
+            <span>{{ endDateParts?.month }}월{{ endDateParts?.day }}일</span>
+            <span class="day">{{ endDateParts?.weekday }}</span>
+          </span>
+        </span>
+      </button>
+      <!--//pc 화면용 ui -->
+
+      <!--mo 화면용 ui -->
+      <button type="button" class="bx-period mo-visible" @click="openCalendar">
+        <span class="date">
+          <span class="bx" v-if="selectedDates">
+            <span>{{ selectedDates.start.year }}년</span>
+            <span>
+              {{ selectedDates.start.month }}월{{ selectedDates.start.day }}일
+            </span>
+            <span class="day">{{ selectedDates.start.weekday }}</span>
+          </span>
+        </span>
+        <span class="date">
+          <span class="bx" v-if="selectedDates">
+            <span>{{ selectedDates.end.year }}년</span>
+            <span>
+              {{ selectedDates.end.month }}월{{ selectedDates.end.day }}일
+            </span>
+            <span class="day">{{ selectedDates.end.weekday }}</span>
+          </span>
+        </span>
+      </button>
+      <CalendarModal ref="showCalendarRef" @update-dates="onUpdateDates" />
+      <!--//mo 화면용 ui -->
+    </div>
+    <div class="bx-layer pc-visible" :class="{ active: isExpanded }">
+      <div class="calendar-wrap">
+        <FullCalendar
+          ref="calendarRef"
+          class="calendar"
+          :options="getCalendarOptionsLayer"
+        />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>

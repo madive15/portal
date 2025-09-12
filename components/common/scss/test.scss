@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+.slide-group-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slide-group-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  width: 300px; /* 예시용 폭 */
+  border: 1px solid #ccc;
+}
+
+.slide-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.slide-group-item {
+  display: inline-block;
+  padding: 10px 20px;
+  white-space: nowrap;
+  border-right: 1px solid #eee;
+}
+
+.slide-group-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.slide-group-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* 좌우 버튼 위치 조정 (필요 시) */
+.left-btn {
+  margin-right: 5px;
+}
+.right-btn {
+  margin-left: 5px;
+}

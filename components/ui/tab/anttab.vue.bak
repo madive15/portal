@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import { ref, defineProps } from 'vue';
+const activeKey = ref('1');
+
+
+defineProps<{
+  platformTabShow? : boolean;
+  platformNoneWidthTabShow? : boolean;
+  platformCategoryShow? :boolean;
+}>();
+
+</script>
+
+<template>
+  <div class="common-platform-tab-box" v-if="platformTabShow">
+    <a-tabs v-model:activeKey="activeKey" type="card" class="common-platform-tabs">
+      <slot />
+    </a-tabs>
+  </div>
+
+  <div class="common-platform-none-width-tab-box" v-if="platformNoneWidthTabShow">
+    <a-tabs v-model:activeKey="activeKey" type="card" class="common-platform-none-width-tabs">
+      <slot />
+    </a-tabs>
+  </div>
+</template>
+
+
+
+
+
+
+<style scoped lang="scss">
+  @use '~/components/ui/tab/tab.scss';
+</style>

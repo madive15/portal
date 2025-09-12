@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+//content 영역
+.main-header {
+  & + .content {
+    padding-top: 182px;
+    &:has(#ai-qustion),
+    &:has(.ai-main-wrap),
+    &:has(.chat-bot) {
+      .sub-content-box {
+        margin-top: 0;
+      }
+    }
+  }
+}
+.section2 {
+  .container {
+   & > [class^=title-heading] {
+      margin-top: 55px;
+     & + [class^=title-heading] {
+       margin-top: 40px;
+     }
+    }
+  }
+}
+.service-content-wrap {
+  margin-top: 40px;
+  .sub-content-box {
+    margin-top: 20px;
+  }
+}
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+  //고객센터 버튼정렬 공통
+  .common-btn__area {
+    margin-top: 25px;
+    .btn-basic {
+      width: 100%;
+    }
+  }
+  .info-box {
+    & +.common-btn__area {
+      margin-top: 100px;
+    }
+  }
+}
+
+//법률구조사례
+.search-info__wrap {
+  & + .common-table__box {
+    margin-top: 17px;
+  }
+}
+
+.common-form__area {
+  .info-text {
+    margin-bottom: 20px;
+  }
+  & + .common-btn__area {
+    margin-top: 80px;
+  }
+}
+
+.title-heading-1 {
+  & + .common-table__box {
+    margin-top: 17px;
+  }
+  & +.logos-wrap,
+  & + .info-box {
+    margin-top: 20px;
+  }
+  & + .text-box {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1199px) {
+  //content 영역
+  .main-header {
+    & + .content {
+      padding-top: 96px;
+      &:has(.sub-content-box) {
+        //padding-top: 96px;
+      }
+    }
+  }
+  .section2 {
+    .container {
+     & > [class^=title-heading] {
+        margin-top: 30px;
+      }
+    }
+  }
+  .service-content-wrap {
+    margin-top: 125px;
+    .sub-content-box {
+      margin-top: 0;
+    }
+  }
+  .content  {
+    .sub-content-box {
+      margin-top: 0 !important;
+      .info-box {
+        & + .common-btn__area {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+  .title-heading-1 {
+    & +.logos-wrap,
+    & + .info-box {
+      margin-top: 0;
+    }
+  }
+  .common-form__area {
+    .info-text {
+      margin-bottom: 12px;
+    }
+    & + .common-btn__area {
+      margin-top: 40px;
+    }
+  }
+
+}

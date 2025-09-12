@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .red-span {
+    color: #da0000;
+  }
+
+  [class^=common-form][class*=area] {
+    margin-top: 17px;
+
+    .form-ess_info {
+      position: static;
+      margin-bottom: 8px !important;
+    }
+
+    table {
+      tr {
+        th {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  .common-select {
+    display: inline-flex;
+    width: auto;
+    min-width: 164px;
+  }
+
+  .flex-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+
+    .box {
+      width: 100%;
+      max-width: 345px;
+    }
+  }
+
+  .num-list-box {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+
+    .list {
+      overflow-y: auto;
+      max-height: 220px;
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+    }
+
+    .list-cont {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .del-btn {
+      width: 19px;
+      height: 19px;
+      background: {
+        image: url(/image/sub/mypage/ico_del.png);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+      }
+      border-radius: 100%;
+    }
+  }
+
+  .textarea-box {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 345px;
+    height: 207px;
+
+    .textarea-bx {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 48px;
+    }
+
+    .capacity-box {
+      position: absolute;
+      right: 10px;
+      bottom: 16px;
+      text-align: right;
+      font: {
+        size: 15px;
+        weight: 500;
+      }
+    }
+  }
+
+  .info-list {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin-top: 39px;
+
+    li {
+      font: {
+        size: 15px;
+        weight: 500;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .common-select {
+      width: 100%;
+    }
+
+    .flex-box {
+      gap: 10px;
+
+      &.type2 {
+        flex-flow: column;
+      }
+    }
+
+    [class^=common-form][class*=area] {
+      table {
+        tr {
+          th {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .textarea-box {
+      max-width: none;
+    }
+
+    .info-list {
+      margin-top: 0;
+    }
+  }
+}

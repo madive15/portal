@@ -1,0 +1,64 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+@include counsel-form-table;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.section2 table {
+  margin-top: 17px;
+}
+
+// 인풋
+.ant-input {
+  &:read-only {
+    background-color: #f6f6f7;
+  }
+}
+
+.file-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .a11y-file {
+    width: auto;
+    height: 50px;
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 50px;
+      background-color: #f5f9fe;
+      border: 1px solid #76a5fb;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 3px dashed #0068ea !important;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .file-wrap {
+    .a11y-file {
+      height: 40px;
+
+      label {
+        width: 80px;
+        height: 40px;
+      }
+    }
+  }
+}

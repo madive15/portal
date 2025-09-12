@@ -1,0 +1,76 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+//@include counsel-btn;
+//@include counsel-table;
+@include counsel-top-header;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.section2 table {
+  margin-top: 17px;
+}
+
+.counsel-top-header {
+  .inner {
+    min-height: 246px;
+    background-image: url(/image/sub/counsel/counsel_top_bg_07.png);
+  }
+}
+
+.info-list-box {
+  display: flex;
+  flex-flow: column;
+  padding: 33px;
+  background-color: var(--color-secondary-10);
+  border-radius: 15px;
+  margin-top: 17px;
+  gap: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  .txt {
+    color: var(--color-grayscale-80);
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    > strong {
+      border-bottom: 2px solid var(--color-grayscale-80);
+    }
+  }
+
+  &.type01 {
+    background-image: url(/image/sub/counsel/counsel_top_txt_07_bg01.png);
+  }
+
+  &.type02 {
+    background-image: url(/image/sub/counsel/counsel_top_txt_07_bg02.png);
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-top-header {
+    .inner {
+      background-image: url(/image/sub/counsel/counsel_top_bg_07.png);
+    }
+  }
+
+  .info-list-box {
+    align-items: center;
+
+    &.type01 {
+      background-image: none;
+    }
+
+    &.type02 {
+      background-image: none;
+    }
+  }
+}

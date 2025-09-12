@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .red-span {
+    color: #da0000;
+  }
+
+  .title-heading-1 {
+    & + .title-heading-2 {
+      margin-top: 10px;
+    }
+  }
+
+  .title-heading-2 {
+    & + .title-heading-1 {
+      margin-top: 24px;
+    }
+  }
+
+  [class^=common-form][class*=area] {
+    margin-top: 17px;
+
+    table {
+      tr {
+        th {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .info-list {
+    margin-top: 40px;
+
+    .form-ess_info {
+      margin-bottom: 4px;
+      color: #555;
+      font: {
+        size: 14px;
+        weight: 500;
+      }
+    }
+  }
+
+  [class^=common-table][class*=box] {
+    table {
+      thead {
+        th {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  .flex-box {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  .info-txt-box {
+    margin-top: 30px;
+    font: {
+      size: 14px;
+      weight: 500;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .flex-box {
+      gap: 10px;
+    }
+
+    [class^=common-table][class*=list] {
+      margin-top: 40px;
+
+      li {
+        padding-left: 0;
+      }
+
+      .form-ess_info {
+        margin-bottom: 10px;
+      }
+    }
+
+    .table-mo-cont {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      gap: 4px;
+      width: 100%;
+
+      dl {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        line-height: 1.4;
+        
+        dt {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          height: 100%;
+          padding: 4px 13px;
+          background-color: #f5f7fa;
+          border-radius: 5px;
+          text-align: center;
+          font: {
+            size: 14px;
+            weight: 600;
+          }
+        }
+        
+        dd {
+          font: {
+            size: 15px;
+            weight: 500;
+          }
+        }
+      }
+
+      .link-txt {
+        height: auto;
+        color: #0647bf;
+        text-decoration: underline !important;
+      }
+    }
+  }
+}

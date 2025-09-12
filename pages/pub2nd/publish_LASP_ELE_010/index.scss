@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .info-txt-arrow {
+    position: relative;
+    margin-top: 30px;
+    padding-left: 24px;
+    color: #222;
+    font: {
+      size: 21px;
+      weight: 700;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 9px;
+      left: 0;
+      width: 17px;
+      height: 14px;
+      background: {
+        image: url(/image/sub/receipt/receipt_form_arr.png);
+        repeat: no-repeat;
+        position: center center;
+      }
+    }
+
+    .price {
+      color: #0d6efd;
+      font-size: 28px;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .common-table__box {
+      &.type-left {
+        table {
+          tbody {
+            th,
+            td {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    .info-txt-arrow {
+      font-size: 18px;
+
+      &::before {
+        top: 6px;
+        bottom: auto;
+      }
+    }
+
+    .img-box-wrap {
+      .common-table__box {
+        min-width: 600px;
+      }
+    }
+  }
+}

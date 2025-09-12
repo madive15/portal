@@ -1,0 +1,1 @@
+export function pluginHook() { return { pluginReturn: null, vueQueryPluginOptions: null}}

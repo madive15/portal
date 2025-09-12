@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+//만족도
+.satisfaction-bx__wrap {
+  border: 1px solid var(--color-secondary-50);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  padding-top: 32px;
+  font-size: 18px;
+  .tit-text {
+    color: #222;
+    strong {
+      font-weight: 600;
+    }
+  }
+  .sf-header {
+    display: flex;
+    padding: 0 32px;
+    flex-direction: row;
+    column-gap: 27px;
+    margin-bottom: 20px;
+    align-items: center;
+    .point-select {
+      column-gap: 30px;
+      display: flex;
+    }
+  }
+  .sf-body {
+    display: flex;
+    padding: 0 32px 32px;
+    column-gap: 8px;
+    margin-top: 20px;
+    align-items: center;
+    .tit-text {
+      width: 54px;
+    }
+    .form-text {
+      display: flex;
+      column-gap: 20px;
+      flex: 1;
+      .text-bx {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  //만족도
+  .satisfaction-bx__wrap {
+    font-size: 15px;
+    .sf-header {
+      flex-direction: column;
+      align-items: initial;
+      row-gap: 14px;
+      padding: 0 16px;
+    }
+    .sf-body {
+      flex-direction: row;
+      column-gap: 8px;
+      align-items: center;
+      padding: 0 16px 16px;
+      .tit-text {
+        width: initial;
+      }
+      .form-text {
+        column-gap: 8px;
+        flex: 1;
+        .btn-basic {
+          height: 40px!important;
+        }
+      }
+    }
+  }
+}

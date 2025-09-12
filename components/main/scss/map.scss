@@ -1,0 +1,1916 @@
+@charset "utf-8";
+
+/* 메인 Dropdown Menu */
+.search-form-box {
+  .dropdown:deep() {
+    position: relative;
+
+    .dropdown-toggle {
+      position: relative;
+      display: inline-flex;
+      width: max-content;
+      min-width: 122px;
+      height: auto;
+      padding: 4px 30px 4px 0 !important;
+      border-bottom: 1px solid #000 !important;
+      font-size: 17px !important;
+      border-radius: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 6px;
+        width: 16px;
+        height: 12px;
+        background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
+          no-repeat center center / 16px 12px;
+        border: 0;
+      }
+
+      &.show {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    & + .dropdown {
+      margin-left: 20px;
+      .dropdown-menu {
+        min-width: 100%;
+      }
+    }
+
+    .dropdown-menu {
+      overflow-y: auto;
+      height: 228px;
+      padding: 8px;
+      min-width: max-content;
+      inset: -3px auto auto 0 !important;
+
+      .btn-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 42px;
+        padding: 0 16px !important;
+        border-radius: 6px !important;
+        text-align: left;
+
+        .text-span {
+          color: #373f57;
+          font-size: 17px !important;
+          font-weight: 400 !important;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background-color: #edf1f5;
+
+          .text-span {
+            color: #003675;
+          }
+        }
+        &.active {
+          background-color: #edf1f5;
+
+          .text-span {
+            color: #003675;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-law-search-box {
+  position: relative;
+
+  .title-box {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-bottom: 30px;
+
+    h3,
+    h4 {
+      font-size: 32px;
+      color: #373f57;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+  }
+
+  .map-search-container {
+    max-width: none;
+    width: calc(100% / 2);
+    margin-bottom: 30px;
+  }
+
+  .inst-search-container {
+    width: calc(100% / 2);
+
+    .lawmap-select-box {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+
+      .search-button {
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .search-form-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .search-drop-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .option-box {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+
+      .icon-span {
+        align-content: center;
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+  .lawmap-select-box {
+    font-size: 14px;
+    color: #555;
+    font-weight: 700;
+    letter-spacing: 0px;
+
+    .select-box {
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+
+      .form-select {
+        box-shadow: -1px 2px 5px #dddddd;
+        height: 50px;
+        color: #373f57;
+        font-weight: bold;
+        font-size: 17px;
+      }
+
+      .form-control {
+        box-shadow: -1px 2px 5px #dddddd;
+        height: 50px;
+        color: #373f57;
+        font-weight: bold;
+        font-size: 17px;
+      }
+    }
+
+    .search-button {
+      background-color: #355797;
+      width: 60px;
+
+      img {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  }
+
+  .search-result-box {
+    max-width: 600px;
+    height: 120px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: -1px 2px 15px #ddd;
+    background-color: linear-gradient(to right, #f0f5fc 0%, #f9fafc 100%);
+    margin-top: 30px;
+
+    .row {
+      align-items: center;
+    }
+
+    .text-box {
+      padding: 20px;
+
+      dl {
+        dt {
+          font-size: 18px;
+          color: #373f57;
+          font-weight: 700;
+          letter-spacing: 0;
+          margin-bottom: 20px;
+        }
+
+        dd {
+          margin-top: 10px;
+        }
+
+        &::first-child {
+          .icon-span {
+            margin-right: 5px;
+
+            img {
+              width: 12px;
+              height: 13px;
+            }
+          }
+        }
+
+        &:last-child {
+          .icon-span {
+            img {
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+      }
+
+      .text-span {
+        font-size: 15px;
+        color: #373f57;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+    }
+
+    .col-xl-8 {
+      &.col-12 {
+        width: 63%;
+      }
+    }
+
+    .col-xl-4 {
+      &.col-12 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    .search-result-button-box {
+      display: flex;
+      column-gap: 15px;
+      margin-right: 10px;
+
+      .information-button {
+        background-color: #a9cdeb;
+        color: #fff;
+        font-weight: 500;
+        width: 85px;
+        height: 80px;
+        line-height: 18px;
+        border: 1px solid #4fb3ff !important;
+      }
+
+      .homepage-move-button {
+        background-color: #fff;
+        border: 1px solid #e1e3e1 !important;
+        color: #373f57;
+        font-weight: 500;
+        width: 85px;
+        height: 80px;
+        line-height: 16px;
+        box-shadow: -1px 2px 5px #eee;
+
+        .icon-span {
+          display: block;
+          margin-bottom: 10px;
+
+          img {
+            margin-bottom: 6px;
+          }
+        }
+
+        &.text-span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .map-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .map-img-box {
+      position: relative;
+    }
+
+    .select-map-blue {
+      position: absolute;
+    }
+  }
+
+  // 25-04-08 접근성 작업에서 삭제된 내용 백업
+  .map-box {
+    position: relative;
+
+    .img-box {
+      display: flex;
+      justify-content: end;
+      padding-right: 70px;
+    }
+
+    .location-title {
+      position: absolute;
+      top: -5px;
+      left: 70px;
+      width: 32px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #373f57;
+      text-align: center;
+      padding-top: 10px;
+      border-top: 2px solid #373f57;
+    }
+
+    .location-icon {
+      position: absolute;
+      bottom: 120px;
+      left: 150px;
+    }
+
+    .slide-btns {
+      .map-prev {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        top: 43%;
+        left: 40px;
+        text-align: center;
+        align-content: center;
+        cursor: pointer;
+      }
+
+      .map-next {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        top: 43%;
+        right: 55px;
+        text-align: center;
+        align-content: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .search-form-box {
+    .dropdown:deep() {
+      .dropdown-toggle {
+        font-size: 4.17vw !important;
+      }
+    }
+  }
+  .main-wrap {
+    .lawmap-select-box {
+      input,
+      .form-select {
+        font-size: 4.17vw !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .main-law-map-section {
+    .map-wrap {
+      width: 90% !important;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .search-form-box {
+    .dropdown:deep() {
+      width: 100%;
+      + .dropdown {
+        margin-left: 0;
+      }
+      .dropdown-toggle {
+        min-width: 100%;
+      }
+    }
+
+    .search-drop-box {
+      width: 100%;
+    }
+  }
+
+  .main-law-map-section {
+    .search-form-box {
+      .option-box {
+        display: none;
+      }
+    }
+    .map-wrap {
+      position: static;
+      width: 50%;
+      margin-top: 24px;
+      .map-title-box {
+        display: none;
+      }
+      .map-img-box {
+        width: 100%;
+        margin: 0 auto;
+        img:not(.select-map-blue) {
+          width: 100%;
+        }
+      }
+    }
+
+    .map-search-container {
+      width: 100%;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .main-law-search-box {
+    .title-box {
+      column-gap: 3px;
+      h3 {
+        font-size: 23px;
+        line-height: 1;
+      }
+      img {
+        width: 23px;
+      }
+    }
+    .inst-search-container {
+      width: 100%;
+      .lawmap-select-box {
+        gap: 8px;
+        .select-box {
+          width: 100%;
+          gap: 0;
+
+          .form-select,
+          input {
+            font-size: 15px;
+            height: 40px;
+          }
+        }
+
+        .search-button {
+          width: 40px;
+          height: 40px;
+          box-shadow: 0px 4px 10px rgba(49, 54, 86, 0.05);
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  /* 지도 위치 */
+  .seoul-gangnam {
+    width: 28% !important;
+    top: 60% !important;
+    right: 13% !important;
+  }
+
+  .seoul-gangdong {
+    width: 17% !important;
+    top: 44.3% !important;
+    right: -1% !important;
+  }
+
+  .seoul-gangbuk {
+    width: 18.5% !important;
+    top: 6.5% !important;
+    right: 30.1% !important;
+  }
+
+  .seoul-gangseo {
+    width: 28.5% !important;
+    top: 35.5% !important;
+    left: 0 !important;
+  }
+
+  .seoul-gwanak {
+    width: 23% !important;
+    top: 75% !important;
+    left: 32% !important;
+  }
+
+  .seoul-gwangjin {
+    width: 15% !important;
+    top: 47% !important;
+    right: 15.5% !important;
+  }
+
+  .seoul-guro {
+    width: 22.6% !important;
+    top: 67.7% !important;
+    left: 11.6% !important;
+  }
+
+  .seoul-geumcheon {
+    width: 15.6% !important;
+    top: 77.5% !important;
+    left: 25% !important;
+  }
+
+  .seoul-nowon {
+    width: 18% !important;
+    top: 2% !important;
+    right: 16% !important;
+  }
+
+  .seoul-dobong {
+    width: 12% !important;
+    top: 0% !important;
+    right: 30% !important;
+  }
+
+  .seoul-dongdaemun {
+    width: 14.5% !important;
+    top: 34.5% !important;
+    right: 24% !important;
+  }
+
+  .seoul-dongjak {
+    width: 20.5% !important;
+    top: 67.5% !important;
+    right: 46.5% !important;
+  }
+
+  .seoul-mapo {
+    width: 25% !important;
+    top: 40.5% !important;
+    right: 51.5% !important;
+  }
+
+  .seoul-seodaemun {
+    width: 17.5% !important;
+    top: 33.5% !important;
+    right: 50% !important;
+  }
+
+  .seoul-seocho {
+    width: 29.6% !important;
+    top: 64.9% !important;
+    right: 20.2% !important;
+  }
+
+  .seoul-sungdong {
+    width: 16% !important;
+    top: 48% !important;
+    right: 26% !important;
+  }
+
+  .seoul-sungbuk {
+    width: 23.8% !important;
+    top: 24.1% !important;
+    right: 26.1% !important;
+  }
+
+  .seoul-songpa {
+    width: 23.8% !important;
+    top: 58.7% !important;
+    right: 4.3% !important;
+  }
+
+  .seoul-yangcheon {
+    width: 18% !important;
+    top: 55% !important;
+    right: 68.6% !important;
+  }
+
+  .seoul-yeongdeungpo {
+    width: 17% !important;
+    top: 54.5% !important;
+    right: 55.9% !important;
+  }
+
+  .seoul-yongsan {
+    width: 18% !important;
+    top: 54.2% !important;
+    right: 39.2% !important;
+  }
+
+  .seoul-eunpyeong {
+    width: 22% !important;
+    top: 16% !important;
+    right: 50% !important;
+  }
+
+  .seoul-jongro {
+    width: 19% !important;
+    top: 25% !important;
+    right: 37% !important;
+  }
+
+  .seoul-junggu {
+    width: 16.5% !important;
+    top: 47.8% !important;
+    right: 36.5% !important;
+  }
+
+  .seoul-jungrang {
+    width: 12.9% !important;
+    top: 29.3% !important;
+    right: 15% !important;
+  }
+
+  .busan-gangseo {
+    width: 39% !important;
+    top: 40% !important;
+    right: 60.5% !important;
+  }
+
+  .busan-geumjeong {
+    width: 22.5% !important;
+    top: 20.4% !important;
+    right: 31.6% !important;
+  }
+
+  .busan-gijang {
+    width: 41% !important;
+    top: 0.7% !important;
+    right: -1% !important;
+  }
+
+  .busan-namgu {
+    width: 15% !important;
+    top: 56.8% !important;
+    right: 33.8% !important;
+  }
+
+  .busan-donggu {
+    width: 9% !important;
+    top: 60.6% !important;
+    right: 47.5% !important;
+  }
+
+  .busan-dongrae {
+    width: 16.7% !important;
+    top: 40.5% !important;
+    right: 36.3% !important;
+  }
+
+  .busan-busanji {
+    width: 15.8% !important;
+    top: 47.2% !important;
+    right: 43.9% !important;
+  }
+
+  .busan-bukku {
+    width: 15.8% !important;
+    top: 28.2% !important;
+    right: 48.6% !important;
+  }
+
+  .busan-saha {
+    width: 14.6% !important;
+    top: 66.2% !important;
+    right: 57.8% !important;
+  }
+
+  .busan-sasang {
+    width: 13.8% !important;
+    top: 47.8% !important;
+    right: 56.3% !important;
+  }
+
+  .busan-seogu {
+    width: 7.8% !important;
+    top: 62.2% !important;
+    right: 54.5% !important;
+  }
+
+  .busan-suyeong {
+    width: 14.8% !important;
+    top: 51.4% !important;
+    right: 28.6% !important;
+  }
+
+  .busan-yeonje {
+    width: 15% !important;
+    top: 47.4% !important;
+    right: 37% !important;
+  }
+
+  .busan-yeongdo {
+    width: 15% !important;
+    top: 72.4% !important;
+    right: 40.2% !important;
+  }
+
+  .busan-junggu {
+    width: 10.7% !important;
+    top: 68.2% !important;
+    right: 47.1% !important;
+  }
+
+  .busan-haeundae {
+    width: 22% !important;
+    top: 34.2% !important;
+    right: 17.5% !important;
+  }
+
+  .daegu-gunwi {
+    width: 69.1% !important;
+    top: 0.7% !important;
+    right: -1.2% !important;
+  }
+
+  .daegu-namgu {
+    width: 14% !important;
+    top: 60.2% !important;
+    right: 45.5% !important;
+  }
+
+  .daegu-dalseo {
+    width: 28% !important;
+    top: 60% !important;
+    right: 50.6% !important;
+  }
+
+  .daegu-dalsung {
+    width: 68% !important;
+    top: 48% !important;
+    right: 30.6% !important;
+  }
+
+  .daegu-donggu {
+    width: 33.2% !important;
+    top: 37% !important;
+    right: 19% !important;
+  }
+
+  .daegu-bukku {
+    width: 28.3% !important;
+    top: 39% !important;
+    right: 43% !important;
+  }
+
+  .daegu-seogu {
+    width: 16.5% !important;
+    top: 54.5% !important;
+    right: 54% !important;
+  }
+
+  .daegu-suseong {
+    width: 28.7% !important;
+    top: 57.5% !important;
+    right: 24.6% !important;
+  }
+
+  .daegu-junggu {
+    width: 11.7% !important;
+    top: 56.2% !important;
+    right: 47.2% !important;
+  }
+
+  .incheon-ganghwa {
+    width: 46% !important;
+    top: 0 !important;
+    right: 41.6% !important;
+  }
+
+  .incheon-gyeyang {
+    width: 21.8% !important;
+    top: 42.4% !important;
+    right: -1.4% !important;
+  }
+
+  .incheon-namgu {
+    width: 13.5% !important;
+    top: 72% !important;
+    right: 16.3% !important;
+  }
+
+  .incheon-namdong {
+    width: 21% !important;
+    top: 75.2% !important;
+    right: 1% !important;
+  }
+
+  .incheon-donggu {
+    width: 9% !important;
+    top: 69.2% !important;
+    right: 24% !important;
+  }
+
+  .incheon-bupyeong {
+    width: 17.4% !important;
+    top: 60.6% !important;
+    right: 3.4% !important;
+  }
+
+  .incheon-seogu {
+    width: 28.2% !important;
+    top: 30.6% !important;
+    right: 11.4% !important;
+  }
+
+  .incheon-yeongsu {
+    width: 15.2% !important;
+    top: 82.6% !important;
+    right: 14.4% !important;
+  }
+
+  .incheon-ongjin {
+    width: 19.6% !important;
+    top: 52.8% !important;
+    right: 80% !important;
+  }
+
+  .incheon-junggu {
+    width: 47% !important;
+    top: 49.8% !important;
+    right: 24.5% !important;
+  }
+
+  .gwangju-gwangsan {
+    width: 60% !important;
+    top: 2.8% !important;
+    right: 40% !important;
+  }
+
+  .gwangju-namgu {
+    width: 47% !important;
+    top: 52% !important;
+    right: 22.8% !important;
+  }
+
+  .gwangju-donggu {
+    width: 29% !important;
+    top: 47% !important;
+    right: 0.5% !important;
+  }
+
+  .gwangju-bukku {
+    width: 49.8% !important;
+    top: 1% !important;
+    right: -0.8% !important;
+  }
+
+  .gwangju-seogu {
+    width: 29.8% !important;
+    top: 39.4% !important;
+    right: 27.8% !important;
+  }
+
+  .daejeon-daedeok {
+    width: 43.5% !important;
+    top: 5.8% !important;
+    right: 14% !important;
+  }
+
+  .daejeon-donggu {
+    width: 50% !important;
+    top: 19.4% !important;
+    right: -1% !important;
+  }
+
+  .daejeon-seogu {
+    width: 44% !important;
+    top: 38.4% !important;
+    right: 47.5% !important;
+  }
+
+  .daejeon-yuseong {
+    width: 50.5% !important;
+    top: 0.5% !important;
+    right: 48.5% !important;
+  }
+
+  .daejeon-junggu {
+    width: 32.5% !important;
+    top: 46.5% !important;
+    right: 29.5% !important;
+  }
+
+  .ulsan-namgu {
+    width: 32.5% !important;
+    top: 46.5% !important;
+    right: 29.5% !important;
+  }
+
+  .ulsan-donggu {
+    width: 17.1% !important;
+    top: 38.5% !important;
+    right: 0 !important;
+  }
+
+  .ulsan-bukku {
+    width: 37.4% !important;
+    top: 14.5% !important;
+    right: -0.9% !important;
+  }
+
+  .ulsan-ulju {
+    width: 82.5% !important;
+    top: 0.8% !important;
+    right: 16.8% !important;
+  }
+
+  .ulsan-junggu {
+    width: 24% !important;
+    top: 33.2% !important;
+    right: 22.2% !important;
+  }
+
+  .gyeonggi-gapyeong {
+    width: 23.5% !important;
+    top: 17.8% !important;
+    right: 12.8% !important;
+  }
+
+  .gyeonggi-goyang {
+    width: 23% !important;
+    top: 38% !important;
+    right: 50.8% !important;
+  }
+
+  .gyeonggi-gwacheon {
+    width: 10.5% !important;
+    top: 57% !important;
+    right: 47.8% !important;
+  }
+
+  .gyeonggi-gwangmyeong {
+    width: 25.5% !important;
+    top: 55.6% !important;
+    right: 57.8% !important;
+  }
+
+  .gyeonggi-gwangju {
+    width: 21.4% !important;
+    top: 53.5% !important;
+    right: 23.8% !important;
+  }
+
+  .gyeonggi-guri {
+    width: 16% !important;
+    top: 46% !important;
+    right: 40.8% !important;
+  }
+
+  .gyeonggi-gunpo {
+    width: 46% !important;
+    top: 64.8% !important;
+    right: 53.8% !important;
+  }
+
+  .gyeonggi-gimpo {
+    width: 19.7% !important;
+    top: 36% !important;
+    right: 63.7% !important;
+  }
+
+  .gyeonggi-namyangju {
+    width: 20% !important;
+    top: 36.3% !important;
+    right: 27.8% !important;
+  }
+
+  .gyeonggi-dongjucheon {
+    width: 14% !important;
+    top: 17.3% !important;
+    right: 41.8% !important;
+  }
+
+  .gyeonggi-bucheon {
+    width: 26.3% !important;
+    top: 50.7% !important;
+    right: 62.7% !important;
+  }
+
+  .gyeonggi-sungnam {
+    width: 12.6% !important;
+    top: 58% !important;
+    right: 39% !important;
+  }
+
+  .gyeonggi-suwon {
+    width: 12.6% !important;
+    top: 67% !important;
+    right: 46% !important;
+  }
+
+  .gyeonggi-siheung {
+    width: 40.8% !important;
+    top: 59.1% !important;
+    right: 59.3% !important;
+  }
+
+  .gyeonggi-ansan {
+    width: 41% !important;
+    top: 65.2% !important;
+    right: 56% !important;
+  }
+
+  .gyeonggi-ansung {
+    width: 27% !important;
+    top: 81.5% !important;
+    right: 19.3% !important;
+  }
+
+  .gyeonggi-anyang {
+    width: 42% !important;
+    top: 58.6% !important;
+    right: 52.5% !important;
+  }
+
+  .gyeonggi-yangju {
+    width: 15% !important;
+    top: 25% !important;
+    right: 44% !important;
+  }
+
+  .gyeonggi-yeoncheon {
+    width: 25.5% !important;
+    top: 0.3% !important;
+    right: 39.8% !important;
+  }
+
+  .gyeonggi-yangpyeong {
+    width: 36% !important;
+    top: 44% !important;
+    right: -2% !important;
+  }
+
+  .gyeonggi-yeoju {
+    width: 24.8% !important;
+    top: 60.8% !important;
+    right: 3.5% !important;
+  }
+
+  .gyeonggi-osan {
+    width: 16% !important;
+    top: 77% !important;
+    right: 38.1% !important;
+  }
+
+  .gyeonggi-yongin {
+    width: 29% !important;
+    top: 65% !important;
+    right: 24% !important;
+  }
+
+  .gyeonggi-uijeongbu {
+    width: 13.5% !important;
+    top: 32.5% !important;
+    right: 39.5% !important;
+  }
+
+  .gyeonggi-uiwang {
+    width: 38.5% !important;
+    top: 62.5% !important;
+    right: 49% !important;
+  }
+
+  .gyeonggi-icheon {
+    width: 21.5% !important;
+    top: 66% !important;
+    right: 11.5% !important;
+  }
+
+  .gyeonggi-paju {
+    width: 24.5% !important;
+    top: 19.5% !important;
+    right: 50.2% !important;
+  }
+
+  .gyeonggi-pocheon {
+    width: 23.5% !important;
+    top: 6.7% !important;
+    right: 23.8% !important;
+  }
+
+  .gyeonggi-pyeongtaek {
+    width: 24.5% !important;
+    top: 81.7% !important;
+    right: 42.6% !important;
+  }
+
+  .gyeonggi-hanam {
+    width: 19.5% !important;
+    top: 49.9% !important;
+    right: 32.8% !important;
+  }
+
+  .gyeonggi-hwasung {
+    width: 34% !important;
+    top: 71% !important;
+    right: 41.5% !important;
+  }
+
+  .kangwon-goseong {
+    width: 17% !important;
+    top: 0.5% !important;
+    right: 32.2% !important;
+  }
+
+  .kangwon-donghae {
+    width: 10.5% !important;
+    top: 64% !important;
+    right: 8.2% !important;
+  }
+
+  .kangwon-samcheok {
+    width: 22.5% !important;
+    top: 71.3% !important;
+    right: -1.2% !important;
+  }
+
+  .kangwon-sokcho {
+    width: 10.6% !important;
+    top: 23.7% !important;
+    right: 31% !important;
+  }
+
+  .kangwon-yangyang {
+    width: 18% !important;
+    top: 27.8% !important;
+    right: 23.2% !important;
+  }
+
+  .kangwon-yeongwol {
+    width: 34% !important;
+    top: 76.2% !important;
+    right: 19% !important;
+  }
+
+  .kangwon-wonju {
+    width: 23% !important;
+    top: 70.2% !important;
+    right: 46% !important;
+  }
+
+  .kangwon-injae {
+    width: 23% !important;
+    top: 16% !important;
+    right: 35.4% !important;
+  }
+
+  .kangwon-yanggu {
+    width: 14.8% !important;
+    top: 19.8% !important;
+    right: 50.5% !important;
+  }
+
+  .kangwon-jeongseon {
+    width: 20.7% !important;
+    top: 66% !important;
+    right: 16% !important;
+  }
+
+  .kangwon-jaecheon {
+    width: 22.5% !important;
+    top: 43.8% !important;
+    right: 11% !important;
+  }
+
+  .kangwon-cheolwon {
+    width: 26.9% !important;
+    top: 18.8% !important;
+    right: 72.3% !important;
+  }
+
+  .kangwon-chuncheon {
+    width: 23.5% !important;
+    top: 34.4% !important;
+    right: 54.8% !important;
+  }
+
+  .kangwon-pyeongchang {
+    width: 22% !important;
+    top: 50.6% !important;
+    right: 25.3% !important;
+  }
+
+  .kangwon-hwacheon {
+    width: 21% !important;
+    top: 18.6% !important;
+    right: 60.8% !important;
+  }
+
+  .kangwon-hongcheon {
+    width: 45% !important;
+    top: 43.6% !important;
+    right: 31.9% !important;
+  }
+
+  .kangwon-hoengseong {
+    width: 24.5% !important;
+    top: 59.2% !important;
+    right: 43.9% !important;
+  }
+
+  .chungbuk-goesan {
+    width: 32.5% !important;
+    top: 26.5% !important;
+    right: 38% !important;
+  }
+
+  .chungbuk-danyang {
+    width: 31.5% !important;
+    top: 8% !important;
+    right: -1.5% !important;
+  }
+
+  .chungbuk-boeun {
+    width: 30.5% !important;
+    top: 52.8% !important;
+    right: 49.5% !important;
+  }
+
+  .chungbuk-yeongdong {
+    width: 34% !important;
+    top: 76% !important;
+    right: 40.5% !important;
+  }
+
+  .chungbuk-okcheon {
+    width: 28.5% !important;
+    top: 66.5% !important;
+    right: 51.8% !important;
+  }
+
+  .chungbuk-eumseong {
+    width: 25% !important;
+    top: 9.5% !important;
+    right: 58.8% !important;
+  }
+
+  .chungbuk-jaecheon {
+    width: 31.9% !important;
+    top: 0.4% !important;
+    right: 18.6% !important;
+  }
+
+  .chungbuk-jincheon {
+    width: 23.5% !important;
+    top: 17.9% !important;
+    right: 73.4% !important;
+  }
+
+  .chungbuk-jeungpyeong {
+    width: 14.4% !important;
+    top: 32% !important;
+    right: 65% !important;
+  }
+
+  .chungbuk-cheongju {
+    width: 40.5% !important;
+    top: 39% !important;
+    right: 59% !important;
+  }
+
+  .chungbuk-chungju {
+    width: 35.7% !important;
+    top: 3.5% !important;
+    right: 33.9% !important;
+  }
+
+  .chungnam-gyeryong {
+    width: 12.5% !important;
+    top: 67.7% !important;
+    right: 16% !important;
+  }
+
+  .chungnam-gongju {
+    width: 27% !important;
+    top: 36% !important;
+    right: 22.5% !important;
+  }
+
+  .chungnam-geumsan {
+    width: 23% !important;
+    top: 73.5% !important;
+    right: -1% !important;
+  }
+  .chungnam-nonsan {
+    width: 22.5% !important;
+    top: 66.7% !important;
+    right: 19% !important;
+  }
+
+  .chungnam-dangjin {
+    width: 26.5% !important;
+    top: 0.3% !important;
+    right: 50% !important;
+  }
+
+  .chungnam-boryeong {
+    width: 18.5% !important;
+    top: 51% !important;
+    right: 58% !important;
+  }
+
+  .chungnam-buyeo {
+    width: 26.2% !important;
+    top: 63.3% !important;
+    right: 36% !important;
+  }
+
+  .chungnam-seosan {
+    width: 22% !important;
+    top: 4% !important;
+    right: 62.8% !important;
+  }
+
+  .chungnam-seocheon {
+    width: 26.2% !important;
+    top: 80% !important;
+    right: 50.7% !important;
+  }
+
+  .chungnam-asan {
+    width: 20.5% !important;
+    top: 10% !important;
+    right: 33% !important;
+  }
+
+  .chungnam-yaesan {
+    width: 25% !important;
+    top: 24.3% !important;
+    right: 43.5% !important;
+  }
+
+  .chungnam-cheonan {
+    width: 26.2% !important;
+    top: 9.7% !important;
+    right: 14.6% !important;
+  }
+
+  .chungnam-cheongyang {
+    width: 23.3% !important;
+    top: 44.8% !important;
+    right: 38.8% !important;
+  }
+
+  .chungnam-taean {
+    width: 20% !important;
+    top: 12.6% !important;
+    right: 79.5% !important;
+  }
+
+  .chungnam-hongseong {
+    width: 24% !important;
+    top: 35% !important;
+    right: 55% !important;
+  }
+
+  .jeonbuk-gochang {
+    width: 28% !important;
+    top: 64.5% !important;
+    right: 71.5% !important;
+  }
+
+  .jeonbuk-gunsan {
+    width: 24% !important;
+    top: 12.5% !important;
+    right: 65% !important;
+  }
+
+  .jeonbuk-gimje {
+    width: 25.5% !important;
+    top: 27.4% !important;
+    right: 54.3% !important;
+  }
+
+  .jeonbuk-namwon {
+    width: 32.5% !important;
+    top: 69.3% !important;
+    right: 16.5% !important;
+  }
+
+  .jeonbuk-muju {
+    width: 25.8% !important;
+    top: 12.4% !important;
+    right: -0.7% !important;
+  }
+
+  .jeonbuk-buan {
+    width: 25.5% !important;
+    top: 42.4% !important;
+    right: 71% !important;
+  }
+
+  .jeonbuk-sunchang {
+    width: 33% !important;
+    top: 68.4% !important;
+    right: 39.3% !important;
+  }
+
+  .jeonbuk-wanju {
+    width: 23.3% !important;
+    top: 3.8% !important;
+    right: 34.3% !important;
+  }
+
+  .jeonbuk-iksan {
+    width: 20% !important;
+    top: 0.5% !important;
+    right: 50% !important;
+  }
+
+  .jeonbuk-imsil {
+    width: 26.5% !important;
+    top: 44.2% !important;
+    right: 28.7% !important;
+  }
+
+  .jeonbuk-jangsu {
+    width: 23.8% !important;
+    top: 35% !important;
+    right: 12% !important;
+  }
+
+  .jeonbuk-jeonju {
+    width: 15.5% !important;
+    top: 27.8% !important;
+    right: 45.3% !important;
+  }
+
+  .jeonbuk-jeongeup {
+    width: 27.6% !important;
+    top: 46.3% !important;
+    right: 51.2% !important;
+  }
+
+  .jeonbuk-jinan {
+    width: 24.5% !important;
+    top: 15.5% !important;
+    right: 18.4% !important;
+  }
+
+  .jeonnam-gangjin {
+    width: 12.3% !important;
+    top: 55.5% !important;
+    right: 47.2% !important;
+  }
+
+  .jeonnam-gwangyang {
+    width: 16.3% !important;
+    top: 21.5% !important;
+    right: 0.2% !important;
+  }
+
+  .jeonnam-gokseong {
+    width: 17.6% !important;
+    top: 11.8% !important;
+    right: 20% !important;
+  }
+
+  .jeonnam-gurye {
+    width: 12.3% !important;
+    top: 10.5% !important;
+    right: 10.2% !important;
+  }
+
+  .jeonnam-naju {
+    width: 20.3% !important;
+    top: 29% !important;
+    right: 46.2% !important;
+  }
+
+  .jeonnam-damyang {
+    width: 14% !important;
+    top: 0.5% !important;
+    right: 35.2% !important;
+  }
+  .jeonnam-boseong {
+    width: 25.5% !important;
+    top: 38.2% !important;
+    right: 18.2% !important;
+  }
+
+  .jeonnam-suncheon {
+    width: 22% !important;
+    top: 23% !important;
+    right: 11.2% !important;
+  }
+
+  .jeonnam-yeonggwang {
+    width: 19% !important;
+    top: 2% !important;
+    right: 59.2% !important;
+  }
+
+  .jeonnam-jangseong {
+    width: 20% !important;
+    top: -0.5% !important;
+    right: 44.2% !important;
+  }
+
+  .jeonnam-yeosu {
+    width: 18% !important;
+    top: 45.8% !important;
+    right: -1.8% !important;
+  }
+
+  .jeonnam-goheung {
+    width: 20.3% !important;
+    top: 53% !important;
+    right: 13.2% !important;
+  }
+
+  .jeonnam-muan {
+    width: 20% !important;
+    top: 25.5% !important;
+    right: 63.5% !important;
+  }
+
+  .jeonnam-mokpo {
+    width: 14% !important;
+    top: 40.5% !important;
+    right: 67.3% !important;
+  }
+
+  .jeonnam-shinan {
+    width: 17.5% !important;
+    top: 39.5% !important;
+    right: 82.3% !important;
+  }
+
+  .jeonnam-yeongam {
+    width: 26% !important;
+    top: 44% !important;
+    right: 48.5% !important;
+  }
+
+  .jeonnam-wando {
+    width: 15.5% !important;
+    top: 88.7% !important;
+    right: 44.3% !important;
+  }
+
+  .jeonnam-jangheung {
+    width: 14.5% !important;
+    top: 47% !important;
+    right: 38.2% !important;
+  }
+
+  .jeonnam-jindo {
+    width: 16% !important;
+    top: 69% !important;
+    right: 72% !important;
+  }
+
+  .jeonnam-hampyeong {
+    width: 17% !important;
+    top: 16.5% !important;
+    right: 58.5% !important;
+  }
+
+  .jeonnam-hwasun {
+    width: 21.3% !important;
+    top: 21.5% !important;
+    right: 30.2% !important;
+  }
+
+  .jeonnam-haenam {
+    width: 23.5% !important;
+    top: 59.5% !important;
+    right: 54.5% !important;
+  }
+
+  .gyeongbuk-gyeongsan {
+    width: 15.4% !important;
+    top: 71.8% !important;
+    right: 45.5% !important;
+  }
+
+  .gyeongbuk-gyeongju {
+    width: 27.2% !important;
+    top: 68.8% !important;
+    right: 18.5% !important;
+  }
+
+  .gyeongbuk-goryeong {
+    width: 17% !important;
+    top: 80.2% !important;
+    right: 69.6% !important;
+  }
+
+  .gyeongbuk-gumi {
+    width: 21% !important;
+    top: 46% !important;
+    right: 63.2% !important;
+  }
+
+  .gyeongbuk-gimcheon {
+    width: 21% !important;
+    top: 50.5% !important;
+    right: 76.5% !important;
+  }
+
+  .gyeongbuk-mungyeong {
+    width: 23.5% !important;
+    top: 14% !important;
+    right: 70.1% !important;
+  }
+
+  .gyeongbuk-bonghwa {
+    width: 27.2% !important;
+    top: 2.5% !important;
+    right: 30.3% !important;
+  }
+
+  .gyeongbuk-sangju {
+    width: 26.5% !important;
+    top: 27% !important;
+    right: 73.1% !important;
+  }
+
+  .gyeongbuk-seongju {
+    width: 16% !important;
+    top: 64% !important;
+    right: 72.1% !important;
+  }
+
+  .gyeongbuk-andong {
+    width: 28.7% !important;
+    top: 20% !important;
+    right: 40.8% !important;
+  }
+
+  .gyeongbuk-yecheon {
+    width: 19.2% !important;
+    top: 17.2% !important;
+    right: 57.6% !important;
+  }
+
+  .gyeongbuk-yeongdeok {
+    width: 16.2% !important;
+    top: 30.4% !important;
+    right: 20% !important;
+  }
+
+  .gyeongbuk-yeongyang {
+    width: 15% !important;
+    top: 16.6% !important;
+    right: 27.2% !important;
+  }
+
+  .gyeongbuk-yeongju {
+    width: 17% !important;
+    top: 4% !important;
+    right: 52% !important;
+  }
+
+  .gyeongbuk-yeongcheon {
+    width: 23% !important;
+    top: 60.6% !important;
+    right: 36% !important;
+  }
+
+  .gyeongbuk-ulleung {
+    width: 14% !important;
+    top: 38.5% !important;
+    right: -1.5% !important;
+  }
+
+  .gyeongbuk-uljin {
+    width: 17.5% !important;
+    top: 0.3% !important;
+    right: 18.5% !important;
+  }
+
+  .gyeongbuk-uiseong {
+    width: 29% !important;
+    top: 36% !important;
+    right: 47% !important;
+  }
+
+  .gyeongbuk-cheongdo {
+    width: 28% !important;
+    top: 82.3% !important;
+    right: 40.6% !important;
+  }
+
+  .gyeongbuk-cheongsong {
+    width: 21% !important;
+    top: 34.3% !important;
+    right: 29.6% !important;
+  }
+
+  .gyeongbuk-chilgok {
+    width: 17% !important;
+    top: 63.2% !important;
+    right: 61% !important;
+  }
+
+  .gyeongbuk-pohang {
+    width: 28% !important;
+    top: 52% !important;
+    right: 15.6% !important;
+  }
+
+  .gyeonnam-geoje {
+    width: 17% !important;
+    top: 77% !important;
+    right: 27.6% !important;
+  }
+
+  .gyeonnam-geochang {
+    width: 26.5% !important;
+    top: 0.5% !important;
+    right: 67.3% !important;
+  }
+
+  .gyeonnam-goseong {
+    width: 27.8% !important;
+    top: 64% !important;
+    right: 39.8% !important;
+  }
+
+  .gyeonnam-gimhae {
+    width: 20.8% !important;
+    top: 43.2% !important;
+    right: 11.2% !important;
+  }
+
+  .gyeonnam-namhae {
+    width: 17% !important;
+    top: 81.2% !important;
+    right: 68.2% !important;
+  }
+
+  .gyeonnam-milyang {
+    width: 26.4% !important;
+    top: 23.4% !important;
+    right: 12.4% !important;
+  }
+
+  .gyeonnam-sacheon {
+    width: 20% !important;
+    top: 62.4% !important;
+    right: 61.6% !important;
+  }
+
+  .gyeonnam-sancheong {
+    width: 26.5% !important;
+    top: 26.7% !important;
+    right: 66.8% !important;
+  }
+
+  .gyeonnam-yangsan {
+    width: 22% !important;
+    top: 30.8% !important;
+    right: -0.7% !important;
+  }
+
+  .gyeonnam-uiryeong {
+    width: 22% !important;
+    top: 32.4% !important;
+    right: 46.5% !important;
+  }
+
+  .gyeonnam-jinju {
+    width: 30% !important;
+    top: 48% !important;
+    right: 50.2% !important;
+  }
+
+  .gyeonnam-changnyeong {
+    width: 19.3% !important;
+    top: 20.2% !important;
+    right: 33.8% !important;
+  }
+
+  .gyeonnam-hangwon {
+    width: 30% !important;
+    top: 44% !important;
+    right: 22% !important;
+  }
+
+  .gyeonnam-tongyeong {
+    width: 13% !important;
+    top: 78.2% !important;
+    right: 43% !important;
+  }
+
+  .gyeonnam-hadong {
+    width: 23.5% !important;
+    top: 50.6% !important;
+    right: 76.2% !important;
+  }
+
+  .gyeonnam-haman {
+    width: 19% !important;
+    top: 43.2% !important;
+    right: 38% !important;
+  }
+
+  .gyeonnam-hamyang {
+    width: 18.2% !important;
+    top: 11.6% !important;
+    right: 81% !important;
+  }
+
+  .gyeonnam-hapcheon {
+    width: 26.6% !important;
+    top: 6.7% !important;
+    right: 50.5% !important;
+  }
+
+  .jeju-kujwa {
+    width: 27.6% !important;
+    top: 0.7% !important;
+    right: 4.2% !important;
+  }
+
+  .jeju-namwon {
+    width: 29.3% !important;
+    top: 45.2% !important;
+    right: 22% !important;
+  }
+
+  .jeju-daejeong {
+    width: 19% !important;
+    top: 70% !important;
+    right: 80.5% !important;
+  }
+
+  .jeju-seongsan {
+    width: 19% !important;
+    top: 22% !important;
+    right: 1% !important;
+  }
+
+  .jeju-seogwipo {
+    width: 33% !important;
+    top: 52% !important;
+    right: 41% !important;
+  }
+
+  .jeju-andeok {
+    width: 18.4% !important;
+    top: 59.4% !important;
+    right: 65.7% !important;
+  }
+
+  .jeju-aewol {
+    width: 30% !important;
+    top: 20% !important;
+    right: 52.2% !important;
+  }
+
+  .jeju-udo {
+    width: 8.5% !important;
+    top: 0.4% !important;
+    right: -0.3% !important;
+  }
+
+  .jeju-jocheon {
+    width: 20.5% !important;
+    top: 2.4% !important;
+    right: 26.4% !important;
+  }
+
+  .jeju-jeju {
+    width: 29% !important;
+    top: 7.6% !important;
+    right: 38% !important;
+  }
+
+  .jeju-pyoseon {
+    width: 25% !important;
+    top: 32.8% !important;
+    right: 12.7% !important;
+  }
+
+  .jeju-hankyung {
+    width: 18% !important;
+    top: 52.5% !important;
+    right: 81.5% !important;
+  }
+
+  .jeju-hanrim {
+    width: 20% !important;
+    top: 33.2% !important;
+    right: 72.5% !important;
+  }
+}

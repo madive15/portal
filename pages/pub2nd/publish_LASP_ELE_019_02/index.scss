@@ -1,0 +1,162 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+@include receipt-form;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.section2 table {
+  margin-top: 17px;
+}
+
+.table-box-wrap {
+  position: relative;
+
+  .table-box {
+    position: relative;
+    .ant-form-item {
+      margin: 0;
+    }
+  }
+  .form-info-bt {
+    position: absolute;
+    height: auto !important;
+    color: #0d6efd !important;
+    font-size: 16px !important;
+    top: -40px;
+    right: 0;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    span {
+      border-bottom: 1px solid #0d6efd !important;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url(/image/sub/receipt/receipt_form_info_blue_icon.png)
+        no-repeat center;
+    }
+  }
+}
+
+.radio-group-wrap {
+  .step-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    + .step-group {
+      margin-top: 8px;
+    }
+  }
+  .radio-input-group {
+    display: flex;
+    gap: 8px;
+  }
+  .radio-group-box:deep() {
+    display: flex;
+    align-items: center;
+
+    .ant-radio-wrapper {
+      flex: none;
+    }
+    .ant-form-item-label {
+      display: inline-flex;
+      align-items: center;
+      flex: none;
+    }
+    .ant-form-item-row {
+      flex-flow: inherit;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .table-box-wrap {
+    position: static;
+    table {
+      border: none;
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      tbody {
+        tr {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding-top: 20px;
+          border-top: solid 1px #dadce1;
+          td {
+            width: calc(50% - 5px);
+            padding: 0 !important;
+            border: none;
+          }
+          + tr {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+    .form-info-bt {
+      top: -20px;
+    }
+  }
+
+  .radio-group-wrap {
+    width: 100%;
+    .ant-radio-group {
+      width: 100%;
+    }
+    .step-group {
+      gap: 14px;
+      width: 100%;
+      + .step-group {
+        margin-top: 14px;
+      }
+      .radio-group-box {
+        width: auto;
+        &.wide {
+          width: 100%;
+
+          .radio-input-group {
+            width: 100%;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+
+    .radio-group-box:deep() {
+      flex-flow: column;
+      align-items: flex-start;
+      gap: 4px;
+      width: 100%;
+
+      .ant-form-item-label {
+        padding: 0;
+      }
+      .ant-form-item-row {
+        gap: 8px;
+      }
+    }
+  }
+}

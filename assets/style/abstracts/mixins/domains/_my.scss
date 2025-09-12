@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+@use '../common' as *;
+@use './search' as *;
+
+/*마이페이지 공통*/
+@mixin my-common-mo {
+  .sub-content-box:deep() {
+    .navigation-box {
+      margin: 20px 0 40px;
+      .container {
+        padding: 0;
+      }
+    }
+
+    .custom-tab {
+      white-space: nowrap;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      display: flex;
+      column-gap: 0px;
+      justify-content: flex-start;
+      > div {
+        display: inline-flex;
+        width: auto !important;
+        > a {
+          padding: 13px 23px;
+        }
+      }
+    }
+
+    .reset-box {
+      padding: 40px 20px;
+      .form-box {
+        width: 100%;
+        .img-box {
+          img {
+            width: 58px;
+            height: auto;
+          }
+        }
+        > p {
+          margin-top: 20px;
+        }
+        .password-box {
+          margin-top: 20px;
+          padding: 16px;
+          .group-box {
+            flex-flow: column;
+            align-items: flex-start;
+            > strong {
+              margin-bottom: 12px;
+            }
+            > span {
+              display: block;
+            }
+            > label {
+              margin-bottom: 12px;
+            }
+            > input {
+              width: 100%;
+              height: 40px;
+            }
+            + .group-box {
+              margin-top: 16px;
+            }
+          }
+        }
+        .submit-box {
+          margin-top: 20px;
+          .btn {
+            @include btn-common-style-mo;
+          }
+        }
+      }
+    }
+    .mo-select-box-root {
+      .form-select {
+        width: 100%;
+        height: 40px;
+        line-height: 1.2;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+      }
+      .select-box {
+        width: 100%;
+        height: 40px;
+        line-height: 1.2;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+        margin: 0;
+        .dropdown-toggle {
+          &::after {
+            top: 16px;
+          }
+        }
+        .dropdown-menu {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @include mobile-tab-scroll;
+  @include mobile-table-scroll;
+  @include board-list-common-mo;
+}

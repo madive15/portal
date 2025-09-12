@@ -1,0 +1,225 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+  .section2 {
+    margin-top: 55px;
+  }
+}
+.search-info-wrap {
+  margin-bottom: 20px;
+}
+.tab-box {
+  .text-box {
+    background: #f5f7fa;
+    border-radius: 15px;
+    padding: 35px;
+  }
+
+  .intro-box {
+    .content-box {
+      padding: 58px 0;
+      text-align: center;
+      border: dashed 1px #d7e0ec;
+      border-radius: 25px;
+      margin-top: 40px;
+    }
+    .table-box {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+    table {
+      width: 100%;
+      border-top: solid 1px #000;
+      tbody {
+        th {
+          text-align: center;
+          padding: 25px 0;
+          vertical-align: middle;
+          font-size: 16px;
+          color: #222;
+          font-weight: 500;
+          width: 14%;
+          background: #f5f7fa;
+          border-bottom: solid 1px #dadce1;
+        }
+        td {
+          text-align: center;
+          padding: 25px 0;
+          vertical-align: middle;
+          font-size: 16px;
+          color: #555;
+          font-weight: 400;
+          border-bottom: solid 1px #dadce1;
+        }
+      }
+    }
+  }
+}
+
+.section2 {
+  .list-box {
+    .card-list-box {
+      position: relative;
+      .card-list-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        width: calc(100% - 40px);
+        margin-top: 50px;
+      }
+    }
+    .inner-col {
+      .info-box {
+        dl {
+          dd {
+            margin-top: 10px;
+            + dd {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include statute-info-common;
+  .example-list-box {
+    table {
+      thead {
+        th {
+          padding: 19px 0;
+        }
+      }
+      tbody {
+        td {
+          padding: 21px;
+          &.num-td, &.file-td, &.category-td, &.date-td, &.hit-td {
+            text-align: center;
+          }
+          &.num-td {
+            width: 6%;
+          }
+          &.file-td {
+            width: 6%;
+            img {
+              width: 16px;
+              height: 23px;
+            }
+          }
+          &.date-td {
+            width: 12%;
+          }
+          &.hit-td {
+            width: 9%;
+          }
+          &.title-td {
+            width: 45%;
+            a {
+              padding: 0 5px;
+              display: block;
+            }
+          }
+          &.content-td {
+            width: 31%;
+          }
+          &.download-td {
+            text-align: center;
+            width: 16%;
+            button {
+              font-size: 14px !important;
+              font-weight: 500 !important;
+            }
+            .download-button {
+              height: auto !important;
+              img {
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: -1px;
+              }
+              span {
+                color: #222;
+              }
+            }
+            .preview-button {
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              background: #0d6efd;
+              padding: 0 10px !important;
+              height: 35px !important;
+              img {
+                width: 16px;
+                height: 16px;
+                position: relative;
+              }
+              span {
+                color: #fff;
+              }
+            }
+            .download-box {
+              display: flex;
+              align-items: center;
+              column-gap: 5px;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .select-th {
+    select {
+      width: 128px;
+      height: 30px;
+    }
+  }
+
+  @include board-list-common;
+  @include board-gallery-common;
+
+  table {
+    tbody {
+      td {
+        &.dwn-td {
+          text-align: center;
+          width: 9%;
+        }
+      }
+    }
+  }
+
+  .organization-content-box {
+    margin-top: 20px;
+  }
+}
+@include sub-search-info-box-common;
+
+/*mo*/
+@media (max-width: 1199px) {
+  // @include sub-service-detail-common-mo;
+  .sub-content-box {
+    .section2 .example-list-box table thead th {
+      vertical-align: middle;
+      padding: 16px 0;
+      line-height: 1.2;
+    }
+
+    .section2 .example-list-box table tbody td {
+      padding: 16px;
+    }
+
+    .stop-box {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  @include mobile-tab-scroll(false);
+  @include search-info-box-mo;
+  @include board-list-common-mo;
+}

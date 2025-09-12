@@ -1,0 +1,132 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+//@include counsel-bull-list;
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  .ex-mark-tit {
+    position: relative;
+    padding-left: 21px;
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background: {
+        image: url(/image/sub/receipt/receipt_form_info_icon.png);
+        repeat: no-repeat;
+        position: center;
+      }
+    }
+
+    & ~ .ex-mark-tit {
+      margin-top: 40px;
+    }
+  }
+
+  .bull-list-box {
+    background-color: #f3f3f4;
+  }
+
+  .counsel-num-list {
+    .info-ex-list {
+      > li {
+        display: flex;
+
+        strong {
+          margin-right: 4px;
+        }
+
+        & + li {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  [class^='common-table'][class*='box'] {
+    margin-top: 10px;
+
+    thead {
+      th {
+        height: 50px;
+      }
+    }
+
+    tbody {
+      td {
+        height: 50px;
+        padding: 14px 18px;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .bul-dot {
+    position: relative;
+    padding-left: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background-color: #3e80eb;
+      border-radius: 100%;
+    }
+  }
+
+  .border-top-box {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d8dad8;
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 26px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+      background-color: #ddd;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      font-size: 15px;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .counsel-num-list {
+      > li {
+        font-size: 15px;
+      }
+
+      .info-ex-list {
+        > li {
+          display: block;
+        }
+      }
+    }
+
+    .img-box-wrap {
+      .common-table__box {
+        min-width: 600px;
+      }
+    }
+  }
+}

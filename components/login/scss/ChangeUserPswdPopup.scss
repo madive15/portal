@@ -1,0 +1,291 @@
+@charset "utf-8";
+
+.red-span {
+  color: #e80000;
+  font-size: 16px;
+}
+
+.red-span {
+  color: #e80000;
+  font-size: 16px;
+}
+
+table tbody td input {
+  box-shadow: none !important;
+  height: 50px;
+  font-size: 14px;
+}
+
+.lost-box input {
+  width: 330px;
+}
+
+.cellphone-box select {
+  width: 97px;
+  font-size: 14px;
+  height: 50px;
+}
+
+.cellphone-box input {
+  width: 97px;
+}
+
+.button-box button {
+  width: 315px;
+  height: 60px;
+  font-size: 19px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  background: #3e80eb !important;
+  border-radius: 15px;
+}
+
+.content-header button img {
+  width: 14px;
+  height: 14px;
+}
+
+.content-header button {
+  width: auto;
+  height: auto;
+  background: transparent !important;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #f5f7fa;
+  position: absolute;
+  top: -20px;
+  width: 440px;
+  left: -20px;
+  padding: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.content-header h5 {
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.content-body {
+  width: 400px;
+  padding-top: 80px;
+}
+
+.content-body p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.content-body p {
+  font-weight: 500 !important;
+  color: #555 !important;
+}
+
+.group-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+strong {
+  font-size: 16px;
+  font-weight: bold;
+  flex: 0 0 30%;
+}
+
+input {
+  height: 50px;
+  width: 65%;
+  box-shadow: none !important;
+}
+
+.error-span {
+  display: block;
+  text-align: right;
+  margin-top: 15px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.password-reset-box.email-reset .content-header {
+  width: 320px;
+}
+
+.modal-button-box button {
+  width: 93px !important;
+  height: 37px !important;
+  border-radius: 10px !important;
+}
+
+.modal-button-box button.cancle-button {
+  background: #edeff2 !important;
+  color: #222 !important;
+  margin-right: 5px;
+}
+
+.info-p {
+  text-align: left !important;
+}
+
+.modal-button-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.id-result-box {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 27px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+}
+
+.id-result-box span.vr {
+  opacity: 1;
+  background: #000 !important;
+}
+
+.id-result-box span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.email-confirm-box {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+
+.email-confirm-box input {
+  width: 134px;
+  height: 50px;
+}
+
+.email-confirm-box select {
+  width: 134px;
+  height: 50px;
+}
+
+.head-group-box {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+
+.head-group-box button span img {
+  width: 21px;
+  height: 21px;
+}
+
+.head-group-box button span {
+  color: #222;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.head-group-box button {
+  width: 110px;
+  height: 50px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: center;
+}
+
+.head-group-box input {
+  width: 329px;
+  height: 50px;
+}
+
+.number-confirm-input {
+  margin-top: 10px;
+  width: 329px;
+  height: 50px;
+}
+
+.auth-box {
+  margin-top: 22px;
+}
+
+.auth-box .info-box {
+  text-align: center;
+  background: #f5f7fa;
+  border-radius: 15px;
+  padding: 40px 0;
+}
+
+.auth-box .info-box .img-box img {
+  width: 75px;
+  height: 75px;
+}
+
+.auth-box .info-box .img-box {
+  margin-bottom: 23px;
+}
+
+.auth-box .info-box .text-box strong {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.auth-box .info-box .text-box p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3px;
+  font-weight: 500;
+}
+
+.auth-box .info-box .button-box {
+  margin-top: 27px;
+}
+
+.auth-box .info-box .button-box span img {
+  width: 19px;
+  height: 19px;
+  position: relative;
+  top: -2px;
+}
+
+.auth-box .info-box .button-box span {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.auth-box .info-box .button-box button {
+  padding: 0;
+  width: 315px;
+  height: 60px;
+  background: #3382e9;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 7px;
+}
+
+.normal-button {
+  width: 93px;
+  height: 37px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+  background: #edeff2;
+  margin-right: 20px;
+}

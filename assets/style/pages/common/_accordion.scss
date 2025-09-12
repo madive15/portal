@@ -1,0 +1,196 @@
+.common-accordion-wrap {
+  border-radius: 0;
+  border-color: #EBEBEB;
+ .common-accordion-item {
+   background: #fff;
+   border-color: #EBEBEB;
+   &:last-child {
+     border-radius: 0;
+     .ant-collapse-content {
+       border-radius: 0;
+     }
+   }
+  }
+  .ant-collapse-header {
+    .ant-collapse-header-text {
+      color: #373f57;
+      font-size: 17px;
+      font-weight: bold;
+    }
+    .ant-collapse-arrow {
+      transform: rotate(90deg);
+    }
+  }
+  .ant-collapse-item-active {
+    background: #1e3561;
+    .ant-collapse-header {
+      .ant-collapse-header-text {
+        color: #fff;
+      }
+      .ant-collapse-arrow {
+        color: #fff;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+.common-accordion-box {
+  &.gray {
+    margin-top: 20px;
+    .common-accordion-wrap {
+      border: none;
+      background-color: #fff;
+      .ant-collapse-item {
+        background-color: #fff !important;
+        border: none;
+
+        + .ant-collapse-item {
+          margin-top: 20px;
+        }
+      }
+
+      .ant-collapse-header {
+        background-color: #f5f7fd !important;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+
+        &::after {
+          display: block;
+          content: '';
+          height: 5px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0px;
+          background-color: #eaeffc;
+          border-bottom: solid 1px #e1e3e1;
+        }
+      }
+      .ant-collapse-content {
+        border: none;
+        .ant-collapse-content-box {
+          padding: 0;
+          margin: 0 0 40px;
+        }
+      }
+
+      .form-ess_info {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #555;
+        margin-left: auto;
+        .red-span {
+          color: var(--color-point-error-0);
+        }
+      }
+
+      .common-form__area {
+        table {
+          margin-top: 0;
+          border-top: 1px solid var(--color-secondary-50);
+        }
+      }
+    }
+  }
+}
+.accordion-head {
+  display: flex;
+  align-items: center;
+
+  .title-heading {
+    position: relative;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-grayscale-80);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    &::before {
+      display: block;
+      content: '';
+      width: 4px;
+      height: 16px;
+      position: absolute;
+      background: #3e80eb;
+      border-radius: 0px;
+      left: 0;
+      top: 4px;
+    }
+  }
+}
+.accordion-arrow {
+  font-size: 0;
+  background: url(/image/sub/counsel/accordion_arrow.png) no-repeat center;
+  width: 17px;
+  height: 17px;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .common-accordion-box {
+    &.gray {
+      .common-accordion-wrap {
+        .ant-collapse-content {
+          .ant-collapse-content-box {
+            padding: 20px 0;
+            margin: 0;
+            position: relative;
+
+            &::after {
+              display: block;
+              content: '';
+              height: 8px;
+              width: calc(100% + 40px);
+              position: absolute;
+              bottom: 0;
+              left: -20px;
+              background-color: #f5f7fa;
+              border-bottom: solid 1px #e1e3e1;
+            }
+            &:has(.common-table__box) {
+              padding-top: 0;
+            }
+          }
+        }
+
+        .form-ess_info {
+          position: static;
+          padding-bottom: 16px;
+        }
+
+        .common-form__area {
+          > table {
+            border-top: none;
+            margin-top: 0;
+            > tbody {
+              > tr {
+                &:last-child {
+                  > td {
+                    &:last-child {
+                      border: none;
+                    }
+                  }
+                }
+                &:first-child {
+                  th {
+                    &:first-child {
+                      padding-top: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .common-table__box {
+        overflow-x: auto;
+        table {
+          min-width: 650px;
+        }
+      }
+    }
+  }
+}

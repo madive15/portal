@@ -1,0 +1,81 @@
+export type CaseType = {
+  caseNo: string;
+  useYn: '' | true | false;
+  caseQstnCn: string;
+  frstRegDt: string;
+  caseTtl: string;
+  comCdNm: string;
+  path: string;
+  srvcNo: string;
+  inqCnt: number;
+  upCtgryNo: string;
+  ctgryNo: string;
+  caseCn: string;
+  sortSeq: number;
+  regInstNo: string;
+  atchFileId: string;
+  caseSe: string;
+  caseClsf: string;
+  fileList: [];
+  lwaCtgryNm: string;
+  pdfId: string;
+};
+
+export type CaseTypeQuery = {
+  startDate: string;
+  endDate: string;
+  keyword: string;
+  keywordType: '' | 'CASE_TTL' | 'CASE_QSTN_CN';
+  defautText: string;
+  caseSe: string[];
+  useYn: '' | true | false;
+  page: number;
+  size: number;
+  inqCnt: number;
+  instNo: string;
+  desc: string;
+  ctgryNo: string;
+  tmpCtgryNo: string;
+  pdfId: string;
+  srvcNo: string;
+  upCtgryNo: string;
+};
+
+export type LwaCtgryType = {
+  caseNo: string;
+  ctgryNo: string;
+  caseTtl: string;
+  caseCn: string;
+  sortSeq: number;
+  regInstNo: string;
+  atchFileId: string;
+  caseQstnCn: string;
+  caseSe: string;
+  caseClsf: string;
+  srvcNo: string;
+  useYn: '' | true | false;
+  frstRegDt: string;
+  fileList: [];
+  inqCnt: number;
+  lwaCtgryNm: string;
+  pdfId: string;
+};
+
+export type LwaCtgryMenu = {
+  caseNo: string;
+  ctgryNo: string;
+  caseTtl: string;
+  caseCn: string;
+  sortSeq: number;
+  regInstNo: string;
+  atchFileId: string;
+  caseQstnCn: string;
+  caseSe: string;
+  caseClsf: string;
+  srvcNo: string;
+  useYn: '' | true | false;
+  frstRegDt: string;
+  fileList: [];
+  inqCnt: number;
+  lwaCtgryNm1: string;
+};

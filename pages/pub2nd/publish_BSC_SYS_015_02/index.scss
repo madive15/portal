@@ -1,0 +1,112 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-button-box;
+
+.section2 {
+  margin-top: 40px;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.common-select {
+  flex-shrink: 0;
+  width: 164px;
+}
+
+.common-btn__area {
+  & + .search-info__wrap {
+    margin-top: 40px;
+  }
+}
+
+.common-table__box {
+  table {
+    thead {
+      th {
+        width: auto;
+      }
+    }
+  }
+}
+
+.search-info__wrap {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.filter-mapping__area {
+  display: flex;
+  align-items: center;
+  padding: 30px 0 10px 0;
+  .ml-auto {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+
+  .flex-box {
+    flex-flow: column;
+  }
+
+  .common-select {
+    width: 100%;
+  }
+
+  .search-info__wrap {
+    flex-flow: row;
+    align-items: center;
+    .common-select {
+      width: auto;
+    }
+  }
+
+  [class^=common-table][class*=list] {
+    li {
+      padding-left: 0;
+    }
+  }
+
+  .table-mo-cont {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    width: 100%;
+
+    dl {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      line-height: 1.4;
+      
+      dt {
+        padding: 4px 13px;
+        background-color: #f5f7fa;
+        border-radius: 5px;
+        text-align: center;
+        font: {
+          size: 14px;
+          weight: 600;
+        }
+      }
+      
+      dd {
+        font: {
+          size: 15px;
+          weight: 500;
+        }
+      }
+    }
+  }
+}

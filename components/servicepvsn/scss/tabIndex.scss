@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+/*============================*/
+
+.sub-content-box {
+  .section2 {
+    margin-top: 55px;
+  }
+}
+
+.section2 {
+  h4 {
+    font-size: 21px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 10px;
+    &::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      position: absolute;
+      background: #3e80eb;
+      border-radius: 5px;
+      left: 0;
+      top: 2px;
+    }
+  }
+  .tab-box {
+    .text-box {
+      background: #f5f7fa;
+      border-radius: 15px;
+      padding: 35px;
+      p {
+        font-size: 16px;
+        color: #555;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: -0.3px;
+      }
+    }
+    .intro-box {
+      table {
+        width: 100%;
+        border-top: solid 1px #000;
+      }
+      .table-box {
+        margin-top: 40px;
+        margin-bottom: 50px;
+        table {
+          tbody {
+            th {
+              text-align: center;
+              padding: 25px 0;
+              vertical-align: middle;
+              font-size: 16px;
+              color: #222;
+              font-weight: 500;
+              width: 14%;
+              background: #f5f7fa;
+              border-bottom: solid 1px #dadce1;
+            }
+            td {
+              text-align: center;
+              padding: 25px 0;
+              vertical-align: middle;
+              font-size: 16px;
+              color: #555;
+              font-weight: 400;
+              border-bottom: solid 1px #dadce1;
+            }
+          }
+        }
+      }
+      .content-box {
+        padding: 77px 0;
+        text-align: center;
+        border: dashed 1px #d7e0ec;
+        border-radius: 25px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.section2 {
+  @include list-box-common;
+  .list-box {
+    .list-row {
+      .none-col {
+        left: 12px;
+      }
+    }
+    .inner-box {
+      .inner-body {
+        .info-box {
+          padding: 19px;
+          min-height: 97px;
+        }
+        .inner-col {
+          .info-box {
+            dl {
+              dd {
+                margin-top: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section2 {
+  .list-box {
+     .card-list-box {
+      padding: 19px;
+      .card-list-footer {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        margin-top: 50px;
+        button {
+          width: 127px;
+        }
+      }
+    }
+  }
+
+  .example-list-box {
+    @include statute-info-common;
+    margin-top: 0;
+    table {
+      thead {
+        th {
+          padding: 27px 0;
+        }
+      }
+      tbody {
+        td {
+          padding: 27px;
+          height: auto;
+          &.date-td {
+            width: 12%;
+          }
+        }
+        &.category-td {
+          width: auto;
+        }
+        &.date-td {
+          width: 12%;
+        }
+        &.hit-td {
+          width: 9%;
+        }
+        &.title-td {
+          padding: 0;
+          a {
+            padding: 27px;
+          }
+        }
+        &.content-td {
+          width: 25%;
+        }
+        &.download-td {
+          text-align: center;
+          button {
+            height: 28px !important;
+            width: 100px;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            &.download-button {
+              background: #f5f7fa;
+              border: solid 1px #dadce1 !important;
+              img {
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: -1px;
+              }
+              span {
+                color: #222;
+              }
+            }
+            &.preview-button {
+              background: #3382e9;
+              img {
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: -1px;
+              }
+              span {
+                color: #fff;
+              }
+            }
+          }
+          .download-box {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .select-th {
+      select {
+        width: 128px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.section2 {
+  /*자료실 목록형*/
+  @include board-list-common;
+  .board-list-box {
+    tbody {
+      tr {
+        td:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+
+  /*자료실 갤러리형*/
+  @include board-gallery-common;
+
+  .organization-content-box {
+    margin-top: 20px;
+  }
+}

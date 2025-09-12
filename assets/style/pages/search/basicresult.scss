@@ -1,0 +1,238 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top:30px;
+
+  b {
+    color:#e80000;
+  }
+}
+
+::v-deep(.section2 b) {
+  color:#e80000;
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  #basic-result:deep() {
+    @include mobile-tab-scroll(false);
+    @include all-search-common-mo;
+    @include mobile-card-common;
+    @include search-info-box-mo;
+
+    .all-result-box {
+      .service-box {
+        .list-box {
+          .list-row {
+            margin: 0;
+            > div {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+    .all-search-wrap {
+      .search-box {
+        //padding-bottom: 20px;
+        z-index: 1;
+        .search-container {
+          padding: 0;
+        }
+        .search-body {
+          max-height: inherit;
+          overflow: hidden;
+        }
+      }
+    }
+    .linked-chinge-box {
+      padding: 16px;
+      flex-flow: column;
+      align-items: flex-start;
+
+      .title-box {
+        flex: none;
+        width: 100%;
+        border-bottom: 1px solid #DADCE1;
+        padding-bottom: 12px;
+        &:after {
+          display: none;
+        }
+      }
+
+      .keyword-linked-box {
+        padding: 16px 0 4px;
+
+        .linked-list-box {
+          margin-bottom: 0;
+          > span {
+            margin-bottom: 70px;
+            color: #555;
+            font-size: 14px;
+          }
+          > a,button {
+            margin-bottom: 12px;
+          }
+        }
+      }
+      .title-box-research {
+        flex: none;
+        width: 100%;
+        border-bottom: 1px solid #DADCE1;
+        padding-bottom: 12px;
+        strong {
+         br {
+           display: none;
+         }
+        }
+        &:after {
+          display: none;
+        }
+      }
+
+      .check-result-box {
+        padding: 16px 0;
+
+        .check-tag-box {
+          > ul {
+            gap: 4px;
+            .category-li {
+              border-radius: 20px;
+              padding: 8px 12px;
+            }
+          }
+        }
+      }
+      .research-box {
+        max-width: initial;
+      }
+    }
+    .tab-content {
+      .container {
+        padding: 0;
+      }
+    }
+    .detail-table-wrap {
+      .result-table-box {
+        > table {
+         > colgroup {
+            display: none;
+          }
+          > tbody > tr {
+            display: flex;
+            flex-flow: column;
+            > th {
+              display: flex;
+              width: 100%;
+              border: none;
+              background-color: #fff;
+              padding: 16px 16px 0;
+            }
+            > td {
+              padding: 16px;
+            }
+
+          }
+        }
+        .pubilc-td .public-box {
+          .form-check {
+            display: flex;
+            min-height: inherit;
+            line-height: 1.2;
+            column-gap: 8px;
+            input {
+              top: -3px;
+            }
+          }
+        }
+        .day-td {
+          .day-box {
+          }
+        }
+        .check-td {
+          .row {
+            row-gap: 8px;
+          }
+          .check-box {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 8px;
+            .form-check {
+              margin-bottom: 0;
+            }
+          }
+          .form-check {
+            margin-bottom: 12px;
+            display: flex;
+            min-height: inherit;
+            line-height: 1.2;
+            column-gap: 8px;
+            input {
+              top: -3px;
+            }
+          }
+        }
+        .research-td {
+          .research-box {
+            max-width: inherit;
+          }
+        }
+        .search-result-td {
+          .check-result-box {
+            flex-flow: column;
+            .check-tag-box {
+              width: 100%;
+              > ul {
+                gap: 4px;
+                .category-li {
+                  border-radius: 20px;
+                  padding: 8px 12px;
+                }
+              }
+            }
+            .result-button-box {
+              width: 100%;
+              margin-top: 8px;
+              .btn{
+                width: calc(50% - 8px);
+              }
+              .tooltip-wrapper {
+                width: calc(50% - 8px);
+                .btn {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .board-empty-box {
+      .text-box p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+    }
+    .example-list-boxs {
+      .a-col,
+      .download-col {
+        padding: 0;
+        + .cate-col {
+          text-align: left;
+          padding: 0 0 16px;
+          border-top: 0;
+        }
+      }
+    }
+  }
+}
+
+

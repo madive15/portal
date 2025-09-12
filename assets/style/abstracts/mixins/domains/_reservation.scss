@@ -1,0 +1,510 @@
+@charset "utf-8";
+
+@use '../common' as *;
+
+@mixin counsel-reservation {
+  .counsel-reservation-box {
+    margin-top: 17px;
+    .inner {
+      background-color: #f5f6fa;
+      padding: 17px;
+      display: flex;
+      gap: 14px;
+      border-radius: 10px;
+
+      .box-left {
+        width: 285px;
+        flex: none;
+      }
+      .box-right {
+        width: 100%;
+      }
+    }
+
+    .select-period-wrap {
+      margin-bottom: 12px;
+      .period-result-group {
+        box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background-color: var(--color-secondary-0);
+      }
+    }
+
+    .select-event-wrap {
+      margin-bottom: 40px;
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-secondary-80);
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &::before {
+          content: '';
+          display: block;
+          width: 15px;
+          height: 21px;
+          margin-right: 12px;
+          background: url(/image/sub/counsel/reserve_num_1.png) no-repeat center;
+        }
+      }
+      .select-event-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .select-event-item {
+        width: 140px;
+        height: 140px;
+        border-radius: 10px;
+        padding: 15px 0 15px 15px !important;
+        display: flex;
+        position: relative;
+        opacity: 1;
+
+        .tit {
+          margin-top: auto;
+          text-align: left;
+          font-size: 18px;
+          color: var(--color-primary-0);
+          font-weight: 500;
+          letter-spacing: -1px;
+          line-height: 1.4;
+        }
+        &::before {
+          display: block;
+          content: '';
+          width: 26px;
+          height: 26px;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+        }
+        &.is-active,
+        &:hover {
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          opacity: 1;
+
+          .tit {
+            text-decoration: underline;
+          }
+        }
+        &.type01 {
+          background-color: #0f71f0 !important;
+          &::before {
+            background-image: url(/image/sub/counsel/reserve_event_icon_01.png);
+          }
+        }
+        &.type02 {
+          background-color: #0d61ce !important;
+          &::before {
+            background-image: url(/image/sub/counsel/reserve_event_icon_02.png);
+          }
+        }
+        &.type03 {
+          background-color: #0263c5 !important;
+          &::before {
+            background-image: url(/image/sub/counsel/reserve_event_icon_03.png);
+          }
+        }
+        &.type04 {
+          background-color: #073e91 !important;
+          &::before {
+            background-image: url(/image/sub/counsel/reserve_event_icon_04.png);
+          }
+        }
+      }
+    }
+
+    .select-area-wrap {
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-secondary-80);
+        display: flex;
+        align-items: center;
+        padding-bottom: 9px;
+        border-bottom: 1px solid #dbdbdb;
+        &::before {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 21px;
+          margin-right: 4px;
+          background: url(/image/sub/counsel/reserve_num_2.png) no-repeat center;
+        }
+      }
+      .select-area-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        > li {
+          position: relative;
+
+          &:nth-child(even) {
+            .sub-area-items {
+              left: -160px;
+            }
+          }
+        }
+
+        .select-area-item {
+          width: 125px;
+          text-align: left;
+          .tit {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--color-grayscale-60);
+            display: flex;
+            align-items: center;
+
+            &::before {
+              content: '';
+              display: block;
+              width: 4px;
+              height: 4px;
+              border-radius: 100%;
+              background-color: var(--color-grayscale-60);
+              margin-right: 10px;
+            }
+          }
+
+          &.is-active {
+            display: flex;
+            align-items: center;
+            .tit {
+              color: var(--color-grayscale-80);
+              &::before {
+                background-color: var(--color-grayscale-80);
+              }
+            }
+            &:after {
+              content: '';
+              display: block;
+              background-repeat: no-repeat;
+              background-image: url('~/assets/image/sub/service/view.svg');
+              width: 12px;
+              height: 12px;
+              transform: rotate(270deg);
+              margin-left: 5px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .sub-area-items {
+          background-color: var(--color-grayscale-0);
+          position: absolute;
+          width: 278px;
+          z-index: 1;
+          padding: 20px 20px 5px;
+          display: flex;
+          flex-wrap: wrap;
+          border-radius: 5px;
+          > li {
+            width: 33.333%;
+          }
+          .sub-area-item {
+            height: 25px !important;
+            margin-bottom: 15px;
+            padding: 2px 7px !important;
+            color: #8e8e8e;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+
+            &.is-active,
+            &:hover {
+              background-color: #0d48a1;
+              border-radius: 5px;
+              color: var(--color-grayscale-0) !important;
+              font-weight: 600 !important;
+            }
+            &.is-emphasis {
+              font-weight: 600 !important;
+              color: var(--color-grayscale-60);
+            }
+          }
+        }
+      }
+    }
+
+    .select-result-wrap {
+      display: flex;
+      gap: 14px;
+      flex-flow: column;
+
+      h5 {
+        font-size: 21px;
+        font-weight: 600;
+        color: var(--color-grayscale-80);
+        display: flex;
+        align-items: center;
+
+        &::before {
+          display: block;
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: #448cea;
+          margin-right: 10px;
+        }
+
+        ~ h5 {
+          margin-top: 30px;
+        }
+      }
+
+      .result-group-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 15px;
+        .result-group-btn {
+          width: 220px;
+          height: 60px;
+          display: flex;
+          flex-flow: column;
+          border: 1px solid var(--color-secondary-50) !important;
+          border-radius: 5px;
+          justify-content: center;
+          .main-txt {
+            color: var(--color-grayscale-80);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+          }
+          .sub-txt {
+            color: #3382e9;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1.4;
+
+            &.is-bold {
+              color: var(--color-secondary-80);
+            }
+          }
+
+          &.is-active {
+            border-color: #3382e9 !important;
+            background-color: #e6effc;
+          }
+        }
+
+        + .result-group-btns {
+          margin-top: 7px;
+        }
+      }
+    }
+
+    .select-result-date {
+      box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 25px 17px;
+      background-color: var(--color-secondary-0);
+    }
+
+    .select-result-group {
+      box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 25px 17px;
+      background-color: var(--color-secondary-0);
+      .time-tit {
+        height: 30px;
+        padding: 0 20px;
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--color-secondary-70);
+        background-color: var(--color-secondary-10);
+        border-radius: 5px;
+      }
+    }
+
+    .select-result-time {
+      box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 25px 17px;
+      min-height: 270px;
+      background-color: var(--color-secondary-0);
+      .result-time-box {
+        .select-txt {
+          margin-top: 24px;
+          color: var(--color-secondary-70);
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .guide-txt {
+          margin-top: 24px;
+          color: var(--color-grayscale-60);
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        .result-time-btns {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 7px;
+          margin-top: 15px;
+          .result-time-btn {
+            width: 120px;
+            height: 50px;
+            display: flex;
+            flex-flow: column;
+            border: 1px solid var(--color-secondary-50) !important;
+            border-radius: 5px;
+            justify-content: center;
+            .main-txt {
+              color: var(--color-grayscale-80);
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 1.4;
+            }
+            &.is-active {
+              border-color: #3382e9 !important;
+              background-color: #e6effc;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .counsel-reservation-box {
+      margin: 0 -20px;
+      .inner {
+        flex-wrap: wrap;
+        border-radius: 0;
+        width: 100%;
+        gap: 20px;
+
+        .box-left {
+          width: 100%;
+        }
+      }
+
+      .select-period-wrap {
+        margin-bottom: 20px;
+        .select-period-result {
+          padding-top: 20px;
+          border-top: 1px dashed var(--color-secondary-50);
+        }
+      }
+
+      .select-event-wrap {
+        &:deep() {
+          .ant-select {
+            width: 100%;
+
+            .ant-select-selector {
+              height: 55px;
+              background-color: #246beb;
+
+              .ant-select-selection-placeholder {
+                line-height: 55px;
+                font-size: 18px;
+                color: var(--color-secondary-0);
+              }
+
+              .ant-select-selection-item {
+                line-height: 55px;
+                font-size: 18px;
+                color: var(--color-secondary-0);
+              }
+            }
+
+            .ant-select-arrow {
+              .anticon {
+                color: var(--color-secondary-0);
+              }
+            }
+          }
+        }
+      }
+
+      .select-area-wrap {
+        h4 {
+          border: none;
+        }
+        &:deep() {
+          .ant-select {
+            width: 100%;
+
+            .ant-select-selector {
+              height: 50px;
+
+              .ant-select-selection-placeholder {
+                line-height: 50px;
+                font-size: 15px;
+              }
+
+              .ant-select-selection-item {
+                line-height: 50px;
+                font-size: 15px;
+              }
+            }
+
+            + .ant-select {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .select-result-wrap {
+        gap: 20px;
+        h5 {
+          font-size: 16px;
+        }
+        .result-group-btns {
+          gap: 10px;
+          > li {
+            width: calc(50% - 5px);
+          }
+          .result-group-btn {
+            width: 100%;
+            height: 80px;
+            .main-txt {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .select-result-group {
+        .time-tit {
+          font-size: 15px;
+        }
+      }
+
+      .select-result-time {
+        .result-time-box {
+          .select-txt {
+            font-size: 15px;
+            margin-top: 15px;
+          }
+          .guide-txt {
+            font-size: 15px;
+            margin-top: 15px;
+          }
+
+          .result-time-btns {
+            gap: 10px;
+            > li {
+              width: calc(50% - 5px);
+            }
+            .result-time-btn {
+              width: 100%;
+
+              .main-txt {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+
+  // 불릿
+  .bul-refer {
+    position: relative;
+    padding-left: 17px;
+
+    &::before {
+      content: '※';
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  // 인풋
+  .text-bx {
+    height: 40px;
+  }
+
+  .form-area {
+    display: flex;
+    flex-flow: column;
+    margin-top: 17px;
+
+    .form-box {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #dadce1;
+
+      .label-txt {
+        font-weight: 600;
+      }
+
+      .form-item {
+        display: flex;
+        flex-flow: column;
+        gap: 12px;
+      }
+
+      .inner {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+    }
+
+    .form-info-txt {
+      margin-top: 26px;
+      font-weight: 500;
+
+      .txt {
+        color: #dd0202;
+        font: {
+          size: 20px;
+          weight: 700;
+        }
+      }
+
+      &.bul-refer {
+        &::before {
+          bottom: 0;
+        }
+      }
+
+      & + .form-footer {
+        margin-top: 20px;
+      }
+    }
+
+    .form-footer {
+      margin-top: 34px;
+      font: {
+        size: 21px;
+        weight: 700;
+      }
+
+      .price {
+        color: #0d6efd;
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .body-cont-wrap {
+    .form-area {
+      .form-box {
+        flex-wrap: nowrap;
+        gap: 10px;
+
+        .label-txt {
+          font-size: 15px;
+        }
+
+        .inner {
+          gap: 10px;
+        }
+      }
+
+      .form-info-txt {
+        .txt {
+          font-size: 17px;
+        }
+
+        &.bul-refer {
+          &::before {
+            top: 1px;
+            bottom: auto;
+          }
+        }
+      }
+
+      .form-footer {
+        font: {
+          size: 18px;
+        }
+      }
+    }
+  }
+}

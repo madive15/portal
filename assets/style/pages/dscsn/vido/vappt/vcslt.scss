@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use '/assets/style/mixins' as *;
+
+//@include counsel-bull-list;
+//@include counsel-button-box;
+@include counsel-reservation;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+.section2:deep() {
+  table tbody td,
+  table tbody th {
+    padding: 0;
+  }
+}
+
+.result-group-btns-li.hide {
+    display: none;
+}
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-reservation-box {
+    .select-event-wrap {
+      margin-bottom: 0;
+    }
+  }
+}

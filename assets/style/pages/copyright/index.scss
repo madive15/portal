@@ -1,0 +1,174 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 53px;
+}
+
+.section2 h4 {
+  font-size: 21px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+.section2 h4:before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  position: absolute;
+  background: #3e80eb;
+  border-radius: 5px;
+  left: 0;
+  top: 2px;
+}
+
+.section2 ul li {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 25px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.section2 ul li:last-child {
+  margin-bottom: 0;
+}
+
+.section2 ul li:before {
+  width: 4px;
+  height: 4px;
+  background: #3e80eb;
+  border-radius: 30px;
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 10px;
+}
+
+.section2 ul {
+  padding-left: 10px;
+}
+
+.section2 table {
+  border-top: solid 2px #222;
+  border-collapse: separate;
+  width: 100%;
+  margin: 20px 0 25px 0;
+}
+
+.section2 table th {
+  text-align: center;
+  background: #f5f7fa;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  padding: 20px 0;
+  width: 25%;
+  border-right: solid 1px #dadce1;
+  border-bottom: solid 1px #dadce1;
+}
+
+.section2 table th:last-child {
+  border-right: 0;
+}
+
+.section2 table td {
+  padding: 45px 0;
+  text-align: center;
+  border-right: solid 1px #dadce1;
+  border-bottom: solid 1px #dadce1;
+}
+
+.section2 table td span {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  margin-top: 30px;
+}
+
+.section2 table td:last-child {
+  border-right: 0;
+}
+
+.section2 .button-box {
+  margin-top: 55px;
+  text-align: center;
+}
+
+.section2 .button-box button img {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: -3px;
+}
+
+.section2 .button-box button span {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+.section2 .button-box button,
+.section2 .button-box .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 155px;
+  margin-right: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+.section2 .button-box .view-detail-copyright {
+  background: #0d6efd;
+  color: #fff;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    transform: translateY(-1px);
+    width: 14px;
+    height: 14px;
+    background-image: url('/assets/image/sub/etc/shortcut_wh.svg');
+    background-repeat: no-repeat;
+    margin-left: 10px;
+  }
+
+  &:active {
+    border: 1px solid #0d6efd;
+  }
+}
+
+.section2 .button-box .gonggong-button {
+  background: #f5f7fa;
+  color: #222;
+  border: solid 1px #dadce1;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    transform: translateY(-1px);
+    width: 14px;
+    height: 14px;
+    background-image: url('/assets/image/sub/etc/shortcut.svg');
+    background-repeat: no-repeat;
+    margin-left: 10px;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include etc-common-mo;
+}

@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+.all-search-wrap .search-box {
+  //padding: 80px 0;
+  //border-bottom: solid 1px #e2e5eb;
+  //background: #fff;
+  //position: relative;
+  //z-index: 999;
+  //border-bottom: 0;
+}
+
+.all-search-wrap .search-box .input-box input {
+  max-width: 640px;
+  height: 40px;
+  border: solid 2px #3e80eb;
+  box-shadow: none;
+  font-size: 15px;
+  font-weight: 400;
+  color: #222;
+}
+.all-search-wrap .search-box .input-box button.search-button {
+  background: #3e80eb;
+  height: 40px !important;
+}
+
+.all-search-wrap .search-box .input-box button.search-button img {
+  width: 17px;
+  height: 17px;
+}
+
+.all-search-wrap .search-box .input-box button.search-button {
+  width: 40px;
+  height: 40px !important;
+}
+
+.all-search-wrap .search-box .close-button-box button img {
+  width: 18px;
+  height: 18px;
+}
+
+.all-search-wrap .search-box .search-header {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.all-search-wrap .search-box .search-body strong {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+.all-search-wrap .search-box .search-body .search-hit-box .hit-body ul li {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555;
+  letter-spacing: -0.3px;
+  line-height: 25px;
+}
+
+.all-search-wrap .search-box .search-hit-box .hit-body span img {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: -3px;
+}
+
+.all-search-wrap .search-box .search-keyword-box .keyword-body span img {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: -3px;
+}
+
+.sub-content-box {
+  margin-top: 0;
+  margin-bottom: 140px;
+}
+
+.section1 {
+  position: relative;
+}
+
+.sub-content-box {
+  position: relative;
+}
+
+.section1 h4 {
+  font-size: 21px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.section1 h4:before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  position: absolute;
+  background: #3e80eb;
+  border-radius: 5px;
+  left: 0;
+  top: 2px;
+}
+
+.section1 b {
+  color: #e80000;
+}

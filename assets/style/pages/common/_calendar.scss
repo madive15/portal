@@ -1,0 +1,590 @@
+@charset "utf-8";
+@use "./mixins_global" as *;
+
+.calendar-wrap {
+  column-gap: 20px;
+  border-radius: 10px;
+  background-color: var(--color-primary-0);
+  filter: drop-shadow(4.405px 5.44px 5px rgba(0,0,0,0.05));
+  &.intv {
+    //padding: 20px 0;
+    height: 400px;
+    filter: none;
+    .dp__outer_menu_wrap {
+      .dp__menu {
+        border: none;
+        .dp__instance_calendar {
+          .dp__menu_inner {
+            //padding:0;
+            .dp__month_year_wrap {
+              .dp__month_year_wrap {
+                flex-direction: row-reverse;
+                width: 110px;
+                height: 40px;
+                border-radius: 5px;
+                background-color: #e7efff;
+                .dp__month_year_select {
+                  font-size: 16px !important;
+                  //line-height: 24px;
+                  color: #2c519d;
+                  text-align: center;
+                  flex: none ;
+                  width: 44px;
+                  justify-content: flex-start;
+                  margin-left: 3px;
+                  height: 100%;
+                  &:last-child {
+                    display: flex !important;
+                    flex: 1;
+                    justify-content: flex-end;
+                  }
+                }
+              }
+
+            }
+          }
+          .dp__menu_inner {
+            .dp__instance_calendar {
+              &:last-child {
+                .dp__month_year_wrap {
+                  .dp__month_year_wrap {
+                    margin-left: 20px;
+                  }
+                }
+              }
+              .dp__month_year_wrap {
+                button[data-dp-element="overlay-year"] {
+
+                  &:after {
+                    display: block;
+                    content: '년';
+                  }
+                }
+              }
+
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+
+.calendar-schedule__area {
+  .bx-layer {
+    display: none;
+    margin-top: 20px;
+    &.active {
+      display: block;
+      .dp__flex_display {
+        z-index: 100;
+      }
+    }
+  }
+  .dp__input_wrap {
+    display: none;
+  }
+  .bx-period {
+    font-size: 18px !important;
+    display: flex;
+    border: 1px solid #3381e9 !important;
+    border-radius: 10px;
+    height: 80px;
+    padding: 0 18px !important;
+    background-color: var(--color-primary-0);
+    filter: drop-shadow(0px 7px 5px rgba(0,0,0,0.05));
+    width: 100%;
+    text-align: left;
+    gap: 40px;
+    .date {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex:1;
+      margin: 14px 0;
+      &:before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url("~/assets/image/public/sub/ico-calendar-period.png");
+        background-size: 100% 100%;
+        flex: none;
+      }
+      &:last-child {
+        border-left: 1px solid #dadce1;
+        padding-left: 20px;
+      }
+
+      .bx {
+        display: flex;
+        line-height: 22px;
+        color: #222;
+        font-weight: bold;
+        column-gap: 5px;
+        align-items: center;
+        .day {
+          font-size: 16px;
+          color: #555;
+          line-height: 27px;
+          font-weight: initial;
+        }
+      }
+    }
+  }
+
+
+  .dp__arrow_top,
+  .dp__arrow_bottom {
+    display: none;
+  }
+  .dp__instance_calendar {
+    .dp__menu_inner {
+      padding: 20px;
+      width: 100%;
+      gap: 20px;
+      .dp__instance_calendar {
+        width: 50%;
+        &:has(.dp__calendar_next) {
+          border-left: 1px solid #dadce1;;
+        }
+        .dp--header-wrap {
+          .dp__month_year_select {
+            flex:1;
+            font-size: 21px !important;
+            color: #222222;
+            font-weight: bold;
+            text-align: center;
+            pointer-events: none;
+            &:last-child {
+              display: none !important;
+            }
+          }
+          .dp--arrow-btn-nav {
+            display: none !important;
+          }
+
+        }
+        .dp__calendar_header {
+          height: 50px;
+          .dp__calendar_header_item {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .dp__calendar_next {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .dp__outer_menu_wrap  {
+    left: inherit !important;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    &.dp--menu-wrapper {
+      .dp__menu {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+      }
+    }
+    .dp__menu {
+      border: 1px solid #3381e9;
+      border-radius: 10px;
+      z-index: 1;
+    }
+    .dp__calendar_row {
+      margin: 4.5px 0;
+    }
+    .dp__calendar_item {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .dp__cell_inner {
+        width: 100%;
+        height: 50px;
+        line-height: 27px;
+        color: #222222;
+        font-weight: 500;
+        z-index: 1;
+        &.dp__cell_highlight {
+          color: #ffffff !important;
+          font-weight: bold;
+          background-color: #fff;
+          &:after {
+            content: '';
+            display:block;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #17519d;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: -1;
+          }
+        }
+        &.dp__cell_offset{
+          color: #8e8e8e ;
+        }
+        &.dp__today {
+          border: none;
+        }
+      }
+      .dp__range_end,
+      .dp__range_start,
+      .dp__active_date {
+        color: #ffffff !important;
+        font-weight: bold;
+        background-color: transparent;
+        &:after {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 10px;
+          background-color: #3382e9;
+          box-sizing: border-box;
+          position: absolute;
+          z-index: -1;
+        }
+      }
+      &:last-child {
+        .dp__cell_inner {
+          color: #e80000;
+        }
+      }
+    }
+    .dp__range_between {
+      background-color: #f5f7fa !important;
+      border-color: #f5f7fa !important;
+    }
+  }
+}
+
+//모달안 달력
+.ant-modal {
+  .ant-modal-content {
+    &:has(.modal-btn__prev) {
+      .ant-modal-close {
+        left: 10px;
+        top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:before {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          border-top: 1px solid var(--color-primary-100);
+          border-right: 1px solid var(--color-primary-100);
+          transform: rotate(225deg);
+        }
+        & + .ant-modal-header {
+          background-color: #fff;
+          .ant-modal-title {
+            text-align: center;
+            font-size: 16px;
+            color: #565656;
+          }
+        }
+        &:hover {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .ant-modal-body {
+    &:has(.calendar-schedule__area) {
+      padding: 13px 4px 0;
+      max-height: initial;
+      height: 600px;
+    }
+  }
+
+  .calendar-schedule__area {
+    width: 100%;
+    .date-select__area {
+      .bx-period {
+        height: 150px;
+        border: none !important;
+        border-radius: 5px;
+        padding: 15px 14px !important;
+        gap: 28px;
+        min-width: initial;
+        .date {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 10px;
+          margin: 0;
+          &:before {
+            width: 35px;
+            height: 35px;
+          }
+          .bx {
+            flex-direction: column;
+            align-items: initial;
+          }
+        }
+      }
+    }
+    .calendar-wrap {
+      margin-top: 20px;
+      padding-top: 0;
+      filter: none;
+    }
+    .dp__outer_menu_wrap {
+      position: absolute;
+      .dp__menu {
+        --dp-menu-width: auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+        margin: initial;
+        border: none;
+        border-radius: initial;
+        &> div {
+          width: 100% !important;
+        }
+      }
+      .dp__calendar_item {
+        width: 35px;
+        height: 32px;
+        .dp__range_end,
+        .dp__range_start,
+        .dp__active_date {
+          font-size: 12px;
+          &:after {
+            width: 33px;
+            height: 32px;
+          }
+        }
+        .dp__cell_inner {
+          height: 32px;
+          &.dp__cell_highlight {
+            font-size: 12px;
+            &:after {
+              width: 26px;
+              height: 26px;
+            }
+          }
+        }
+      }
+    }
+    .dp__instance_calendar {
+      .dp__menu_inner {
+        flex-direction: column;
+        padding: 0;
+        .dp__instance_calendar {
+          width: 100%;
+          touch-action: none;
+          overscroll-behavior: none;
+          .dp__calendar_next {
+            margin-left: initial;
+          }
+          &:has(.dp__calendar_next) {
+            margin-left: initial;
+            border-left: none;
+          }
+          .dp--header-wrap {
+            .dp__month_year_select {
+              font-size: 15px !important;
+            }
+          }
+          .dp__calendar {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//날짜 입력 필드
+.date-picker__group {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  .dp__main {
+    display: inline-flex;
+    width: auto;
+    .dp__input_wrap {
+      &::after {
+        display: block;
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('/image/sub/search/calendar.svg') no-repeat center;
+        background-size: 16px;
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        pointer-events: none;
+        margin-top: -10px;
+      }
+      input {
+        width: 230px;
+        letter-spacing: -0.3px;
+        height: 50px;
+      }
+      .dp__input_readonly {
+        &::placeholder {
+          color:var(--color-grayscale-60);
+          opacity: 1;
+        }
+      }
+    }
+
+    .dp__instance_calendar {
+      .dp__month_year_wrap {
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .calendar-wrap {
+    flex-direction: column;
+    min-width: initial;
+    &.intv {
+      height: 610px;
+      padding: 20px;
+      .dp__menu_inner {
+        .dp__instance_calendar {
+          &:last-child {
+            .dp__month_year_wrap {
+              .dp__month_year_wrap {
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .calendar-schedule__area {
+    width: 100%;
+    min-width: 320px;
+   .date-select__area {
+     .bx-period {
+       height: 150px;
+       border: none !important;
+       border-radius: 5px;
+       padding: 15px 14px !important;
+       gap: 28px;
+       min-width: initial;
+       .date {
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         gap: 10px;
+         margin: 0;
+         &:before {
+           width: 35px;
+           height: 35px;
+         }
+         .bx {
+           flex-direction: column;
+           align-items: initial;
+         }
+       }
+     }
+   }
+    .dp__outer_menu_wrap {
+      .dp__menu {
+        --dp-menu-width: auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+        margin: initial;
+        border: none;
+        border-radius: initial;
+        &> div {
+          width: 100% !important;
+        }
+      }
+      .dp__calendar_item {
+        width: 35px;
+        height: 32px;
+        .dp__range_end,
+        .dp__range_start,
+        .dp__active_date {
+          font-size: 12px;
+          &:after {
+            width: 33px;
+            height: 32px;
+          }
+        }
+        .dp__cell_inner {
+          height: 32px;
+          &.dp__cell_highlight {
+            font-size: 12px;
+            &:after {
+              width: 26px;
+              height: 26px;
+            }
+          }
+        }
+      }
+    }
+    .dp__instance_calendar {
+      .dp__menu_inner {
+        flex-direction: column;
+        padding: 0;
+        .dp__instance_calendar {
+          width: 100%;
+          .dp__calendar_next {
+            margin-left: initial;
+          }
+          &:has(.dp__calendar_next) {
+            margin-left: initial;
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+
+  //날짜입력필드
+  .date-picker__group {
+    &:has(.more-span) {
+      .dp__main{
+        .dp__input_wrap {
+          input {
+            //width: 130px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.2;
+            height: 40px;
+          }
+        }
+      }
+    }
+    .dp__main {
+      width: 100%;
+      display: block;
+      .dp__input_wrap {
+        input {
+          width: 100%;
+          height: 40px;
+        }
+      }
+    }
+
+  }
+
+
+
+
+}

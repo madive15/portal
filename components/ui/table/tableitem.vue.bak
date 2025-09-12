@@ -1,0 +1,16 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <tbody>
+    <tr>
+    </tr>
+  </tbody>
+</template>
+
+<style scoped lang="scss">
+
+@use '~/components/ui/table/tables.scss';
+
+</style>

@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+.img-box-wrap {
+  position: relative;
+
+  &.is-scroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    .img-dim-box {
+      display: none;
+    }
+
+    &.is-active {
+      overflow-x: hidden;
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .img-box-wrap {
+    position: relative;
+    display: flex;
+
+    &.is-scroll {
+      overflow-x: hidden;
+      overflow-y: hidden;
+      :deep() {
+        .table-box,
+        .table-list-box,
+        .common-table__box {
+          min-width: 1000px;
+          table {
+            margin: 0;
+          }
+        }
+      }
+
+      .img-dim-box {
+        display: block;
+        .guide-txt {
+          width: 100%;
+          position: absolute;
+          top: 119px;
+          left: 0;
+          z-index: 1;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.3%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+
+          &::before {
+            width: 80px;
+            height: 80px;
+            display: block;
+            content: '';
+            background: url('/image/sub/intro/hand_motion.svg') no-repeat center;
+            margin-bottom: 16px;
+          }
+        }
+        &::after {
+          display: block;
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #000;
+          opacity: 0.6;
+        }
+      }
+
+      &.is-active {
+        overflow-x: auto;
+      }
+    }
+  }
+}

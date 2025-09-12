@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.content-header {
+  margin-top: 55px;
+  text-align: center;
+
+  h4 {
+    color: #222;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+  }
+
+  .notice-p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: -0.3px;
+    margin-bottom: 40px;
+  }
+
+  .information-box {
+    background: #f5f7fa;
+    width: 720px;
+    padding: 40px 0;
+    margin: 0 auto;
+    border-radius: 15px;
+
+    p {
+      font-size: 17px;
+      color: #555;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      line-height: 25px;
+      margin-bottom: 40px;
+    }
+
+    strong {
+      font-size: 16px;
+      color: #222;
+      font-weight: bold;
+      letter-spacing: -0.3px;
+    }
+  }
+}
+
+.content-body {
+  margin-top: 50px;
+
+  .table-information-box {
+    width: 720px;
+    margin: 0 auto;
+
+    table {
+      width: 100%;
+      border-top: solid 1px #000;
+
+      thead {
+        th {
+          text-align: center;
+          padding: 15px;
+          background: #f5f7fa;
+          vertical-align: middle;
+          font-weight: bold;
+          font-size: 15px;
+          border-bottom: solid 1px #e1e3e1;
+        }
+      }
+
+      tbody {
+        th {
+          padding: 15px;
+          vertical-align: middle;
+          font-weight: bold;
+          font-size: 15px;
+        }
+
+        td {
+          padding: 20px 30px;
+          vertical-align: middle;
+          border-bottom: solid 1px #e1e3e1;
+        }
+      }
+
+      th {
+        &.first-th {
+          width: 30%;
+          border-right: solid 1px #e1e3e1;
+          border-bottom: solid 1px #e1e3e1;
+        }
+      }
+
+      dl {
+        dt {
+          font-size: 15px;
+          color: #222;
+          font-weight: 400;
+        }
+
+        dd {
+          font-size: 15px;
+          color: #555;
+          line-height: 21px;
+
+          &.dt-bottom {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      p {
+        font-size: 15px;
+        color: #222;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .dormancy-submit-box {
+    margin-top: 80px;
+    text-align: center;
+
+    button {
+      width: 315px;
+      height: 60px;
+      padding: 0;
+      border: 0;
+      background: #0d6efd;
+      color: #fff;
+      font-size: 19px !important;
+      font-weight: bold !important;
+      letter-spacing: -0.5px;
+      border-radius: 15px;
+    }
+  }
+}

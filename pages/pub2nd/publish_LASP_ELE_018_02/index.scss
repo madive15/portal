@@ -1,0 +1,66 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+
+.section2 h4,
+.section2 h5 {
+  margin-top: 40px;
+}
+
+.counsel-comp-header {
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    min-height: 240px;
+    background: {
+      image: url(/image/sub/receipt/receipt_comp_bg.png);
+      repeat: no-repeat;
+      position: center;
+    }
+    .top-logo {
+      margin-bottom: 15px;
+    }
+    .top-desc {
+      font-size: 25px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: var(--color-grayscale-80);
+    }
+  }
+}
+
+.form-table-box {
+  .logo-img {
+    width: 194px;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-comp-header {
+    .inner {
+      background-image: url(/image/sub/receipt/receipt_comp_bg_mo.png);
+      background-size: cover;
+      .top-logo {
+        width: 80px;
+        img {
+          max-width: 100%;
+        }
+      }
+      .top-desc {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .counsel-bull-list {
+    row-gap: 10px;
+  }
+}

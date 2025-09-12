@@ -1,0 +1,126 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section1 {
+  .example-select-box {
+    margin-top: 32px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.caption-box {
+  .in {
+    width: 1280px;
+    text-align: left;
+    border: transparent;
+    margin-bottom: 25px;
+  }
+}
+
+.section2 {
+  @include statute-info-common;
+  table {
+    thead {
+      th {
+        padding: 19px 0;
+      }
+    }
+    tbody {
+      td {
+        padding: 21px;
+        height: auto;
+
+        &.category-td {
+          width: 18%;
+        }
+        &.date-td {
+          width: 12%;
+        }
+        &.hit-td {
+          width: 9%;
+        }
+        &.dwn-td {
+          text-align: center;
+          width: 9%;
+        }
+        &.content-td {
+          width: 25%;
+        }
+        &.download-td {
+          text-align: center;
+          width: 16%;
+        }
+        &.download-td {
+          button {
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .download-button {
+            height: auto !important;
+            img {
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: -1px;
+            }
+            span {
+              color: #222;
+            }
+          }
+          .preview-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #0d6efd;
+            padding: 0 10px !important;
+            height: 35px !important;
+            img {
+              width: 16px;
+              height: 16px;
+              position: relative;
+              top: -1px;
+            }
+            span {
+              color: #fff;
+            }
+          }
+          .download-box {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+            justify-content: center;
+            flex: 0 0 100%;
+          }
+          .download-wrap {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .select-th {
+    text-align: center;
+    select {
+      width: 128px;
+      height: 30px;
+    }
+  }
+}
+@include sub-search-info-box-common;
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include sub-category-list-common-mo;
+}

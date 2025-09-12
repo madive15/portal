@@ -1,0 +1,157 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 55px;
+
+  table {
+    width: 100%;
+    border-top: solid 1px #000;
+
+    thead {
+      th {
+        padding: 27px 0;
+        text-align: center;
+        background: #f5f7fa;
+        border-right: solid 1px #dadce1;
+        border-bottom: solid 1px #dadce1;
+        font-size: 16px;
+        color: #222;
+        font-weight: 700;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 27px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #222;
+        border-bottom: solid 1px #dadce1;
+        border-right: solid 1px #dadce1;
+
+        &:last-child {
+          border-right: 0;
+        }
+
+        &.num-td {
+          text-align: center;
+          width: 8%;
+        }
+
+        &.file-td {
+          text-align: center;
+          width: 6%;
+
+          img {
+            width: 16px;
+            height: 23px;
+          }
+        }
+
+        &.category-td {
+          text-align: center;
+          width: 10%;
+        }
+
+        &.date-td {
+          text-align: center;
+          width: 12%;
+        }
+
+        &.hit-td {
+          text-align: center;
+          width: 9%;
+        }
+
+        &.title-td {
+          padding: 0;
+
+          a {
+            padding: 27px;
+            display: block;
+          }
+        }
+
+        &.active-td {
+          span {
+            &.active-span {
+              background: #dce8f8;
+              color: #3382e9;
+              width: 40px;
+              height: 27px;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.board-list-box {
+  .top-list-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    text-align: left;
+    margin-bottom: 20px;
+
+    strong {
+      font-size: 16px;
+      color: #222;
+      font-weight: bold;
+    }
+
+    button {
+      width: 110px;
+      height: 50px;
+      background: #0d6efd;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+  }
+
+  .board-empty-box {
+    text-align: center;
+    margin: 120px 0;
+
+    .img-box {
+      img {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    .text-box {
+      margin-top: 30px;
+
+      p {
+        color: #999;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include my-common-mo;
+}

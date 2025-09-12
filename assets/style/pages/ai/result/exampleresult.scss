@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.sub-content-box {
+  padding-bottom: 140px;
+}
+
+.section2 b {
+  color: #e80000;
+}
+
+::v-deep(.section2 b) {
+  color: #e80000;
+}

@@ -1,0 +1,75 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  //margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 30px;
+}
+
+.result-box {
+  text-align: center;
+  background: #f5f7fa;
+  padding: 60px 0;
+  border-radius: 15px;
+
+  .img-box {
+    img {
+      width: 86px;
+      height: 63px;
+    }
+  }
+
+  .text-box {
+    margin-top: 35px;
+
+    h4 {
+      font-size: 25px;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+      letter-spacing: -0.3px;
+      margin-top: 20px;
+    }
+  }
+
+  .button-box {
+    margin-top: 30px;
+
+    button {
+      width: 110px;
+      height: 50px !important;
+      font-size: 15px !important;
+      font-weight: 500 !important;
+      letter-spacing: -0.3px !important;
+
+      &.main-button {
+        background: #0d6efd !important;
+        margin-right: 10px;
+        color: #fff;
+      }
+
+      &.my-inquiry-button {
+        border: solid 1px #1856ae !important;
+        color: #1856ae !important;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .text-box {
+    line-height: 1.5;
+  }
+  @include center-common-mo;
+}

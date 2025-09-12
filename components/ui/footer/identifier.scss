@@ -1,0 +1,35 @@
+@charset "utf-8";
+.f-ident {
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffffff;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1D1D1D;
+  .bx {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    .f-logo {
+      img {
+        height: 14px;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .f-ident {
+    height: 40px;
+    font-size: 15px;
+    .bx {
+      gap: 8px;
+      .f-logo {
+        img {
+          height: 24px;
+        }
+      }
+    }
+  }
+}

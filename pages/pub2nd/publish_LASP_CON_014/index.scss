@@ -1,0 +1,88 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+@include counsel-top-header;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.counsel-top-header {
+  .inner {
+    background-image: url(/image/sub/counsel/counsel_top_bg_08.png);
+  }
+}
+
+.form-table-box table {
+  .form-group-box {
+    width: 50%;
+  }
+}
+
+.bull-list-boxs {
+  .bull-list-box {
+    + .bull-list-box {
+      margin-top: 10px;
+    }
+  }
+}
+
+.bull-list-box {
+  .bull-list-box-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    .icon {
+      flex: none;
+      width: 86px;
+      height: 86px;
+      background-color: #b4d8fb;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+      }
+    }
+    .txt {
+      display: flex;
+      gap: 20px;
+      flex-flow: column;
+      > strong {
+        color: #02409c;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .counsel-top-header {
+    .inner {
+      background-image: url(/image/sub/counsel/counsel_top_bg_08.png);
+    }
+  }
+
+  .form-table-box table {
+    .form-group-box {
+      width: 100%;
+    }
+  }
+
+  .bull-list-box {
+    .bull-list-box-item {
+      flex-flow: column;
+      .txt {
+        > strong {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

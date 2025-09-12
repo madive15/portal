@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+@use '../common' as *;
+
+@mixin counsel-spacing {
+  .sub-content-box {
+    margin-top: 60px;
+    padding-bottom: 140px;
+  }
+
+  .section2 {
+    margin-top: 55px;
+  }
+  .section2 p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3px;
+    font-weight: 400;
+  }
+
+  @media (max-width: 1199px) {
+    .section2 {
+      margin-top: 30px;
+    }
+    .sub-content-box {
+      letter-spacing: -0.3px;
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@mixin counsel-top-header {
+  .counsel-top-header {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    .inner {
+      background: url(/image/sub/counsel/counsel_top_bg.png) no-repeat center;
+      min-height: 185px;
+      display: flex;
+      align-items: center;
+      padding: 0 70px;
+    }
+    .top-logo {
+      display: flex;
+      min-height: 107px;
+      align-items: center;
+      padding-right: 35px;
+      margin-right: 35px;
+      border-right: 1px solid var(--color-secondary-50);
+      flex-wrap: wrap;
+      align-items: center;
+
+      img {
+        + img {
+          margin-top: 60px;
+        }
+      }
+    }
+    .top-infos {
+      .top-desc {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--color-grayscale-80);
+        > p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.5;
+          color: var(--color-grayscale-80);
+          margin: 0;
+          strong {
+            font-weight: bold;
+          }
+          + p {
+            margin-top: 20px;
+          }
+        }
+      }
+      .top-links {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        > strong {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.4;
+          color: var(--color-grayscale-80);
+          display: inline-flex;
+
+          &::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background-color: #3e80eb;
+            margin-right: 10px;
+            flex: none;
+            margin-top: 7px;
+          }
+        }
+        .btns {
+          display: flex;
+          gap: 6px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .counsel-top-header {
+      margin-bottom: 30px;
+      .inner {
+        padding: 20px 17px;
+        flex-wrap: wrap;
+        background-image: url(/image/sub/counsel/counsel_top_mo_bg.png);
+        background-size: cover;
+      }
+      .top-logo {
+        height: auto;
+        border: none;
+        padding: 0;
+        margin: 0 0 25px;
+        width: 80%;
+        img {
+          max-width: 100%;
+          + img {
+            margin-top: 0px;
+          }
+        }
+      }
+      .top-infos {
+        .top-desc {
+        }
+        .top-links {
+          flex-wrap: wrap;
+          margin-top: 30px !important;
+          > strong {
+          }
+          .btns {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin counsel-form-table {
+  .form-bottom-box {
+    display: flex;
+    flex-flow: column;
+    margin-top: 20px;
+
+    .counsel-bull-sub-list:first-child {
+      margin-top: 0;
+    }
+    .ant-checkbox-group {
+      align-self: auto;
+    }
+  }
+}
+
+@mixin counsel-agree-box {
+  .list-box {
+    padding: 33px;
+    border: 1px solid #e1e3e1;
+    border-radius: 15px;
+    margin-top: 20px;
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-grayscale-80);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .txt {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--color-grayscale-60);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .counsel-bull-list {
+      + .txt {
+        margin-top: 15px;
+      }
+    }
+
+    .box-item {
+      + .box-item {
+        margin-top: 60px;
+      }
+    }
+
+    .list-scrolled {
+      max-height: 240px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+
+  .input-box {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-secondary-10);
+    border-radius: 15px;
+    margin-top: 40px;
+    .form-check {
+      line-height: 1.4;
+    }
+  }
+
+  /*mo*/
+  @media (max-width: 1199px) {
+    .list-box {
+      padding: 20px 17px;
+
+      .box-item {
+        + .box-item {
+          margin-top: 35px;
+        }
+      }
+    }
+    .input-box {
+      padding: 20px 17px;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  //margin-top: 21px;
+  //padding-bottom: 140px;
+}
+
+.section2 {
+  .content-header {
+    margin-top: 30px;
+  }
+
+  .content-body {
+    margin-top: 15px;
+  }
+
+  .board-list-box {
+    .board-empty-box {
+      text-align: center;
+      margin: 120px 0;
+
+      .text-box {
+        margin-top: 30px;
+
+        p {
+          color: #555;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+
+      .img-box {
+        img {
+          width: 65px;
+          height: 65px;
+        }
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include sub-service-list-common-mo;
+}

@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+//@include counsel-button-box;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.counsel-num-list {
+  &.num-type1 {
+    li {
+      position: relative;
+      display: block;
+      padding-left: 17px;
+      &::before {
+        position: absolute;
+        left: 0;
+      }
+      &:nth-child(1) {
+        &::before {
+          content: "1.";
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          content: "2.";
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          content: "3.";
+        }
+      }
+      &:nth-child(4) {
+        &::before {
+          content: "4.";
+        }
+      }
+    }
+  }
+}
+
+.img-box {
+  margin-top: 17px;
+  padding: 66px;
+  border: 1px solid #dadce1;
+  border-radius: 15px;
+
+  picture {
+    display: block;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .title-heading-1 {
+    &.circle {
+      &::before {
+        top: 3px;
+      }
+    }
+  }
+  .img-box {
+    padding: 10px;
+
+    img {
+      width: auto;
+    }
+  }
+}

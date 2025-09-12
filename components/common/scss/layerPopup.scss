@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+.bg-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 888;
+  overflow: hidden;
+}
+
+.ai-layer-popup {
+  position: fixed;
+  background: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 40px 20px;
+  border-radius: 10px;
+  top: 35%;
+  z-index: 999;
+  overflow: hidden;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    background: #f5f7fa;
+    padding: 35px;
+    border-radius: 5px;
+
+    ul {
+      li {
+        font-size: 16px;
+        color: #555;
+        font-weight: 400;
+        line-height: 23px;
+        margin-bottom: 20px;
+        letter-spacing: -0.3px;
+
+        strong {
+          color: #222;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .layer-apply-box {
+    margin-top: 23px;
+    display: flex;
+    justify-content: end;
+
+    .form-check {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    input {
+      width: 15px;
+      height: 15px;
+      box-shadow: none;
+      // border-color: #bbb;
+
+      &:checked {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .ai-layer-popup {
+    top: 50%;
+    width: 100%;
+    max-width: 80%;
+    padding: 30px 20px;
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .box {
+      padding: 20px;
+      ul li {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+
+    .layer-apply-box {
+      margin-top: 12px;
+    }
+
+    .layer-apply-box label {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .ai-layer-popup {
+    max-width: calc(100% - 40px);
+  }
+}

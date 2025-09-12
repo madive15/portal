@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+@include counsel-spacing;
+//@include counsel-bull-list;
+//@include counsel-img-box;
+
+.section2 h4 {
+  ~ h4,
+  ~ h5 {
+    margin-top: 40px;
+  }
+}
+
+.box-infos {
+  strong {
+    width: 94px !important;
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+}

@@ -1,0 +1,179 @@
+@charset "utf-8";
+@use '~/assets/style/_mixins.scss' as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 55px;
+}
+
+.anyid-top {
+  .tit {
+    color: var(--color-grayscale-80);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .sub {
+    color: var(--color-grayscale-80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 15px;
+  }
+}
+
+.anyid-main {
+  margin-top: 30px;
+  .certify-sel-wrap {
+    padding: 30px 0 20px;
+    border-top: 1px solid #e1e3e1;
+
+    .tit-wrap {
+      h3 {
+        color: var(--color-grayscale-80);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+    }
+    .certify-type {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 20px;
+      column-gap: 24px;
+      row-gap: 14px;
+
+      > li {
+        max-width: unset;
+        width: 100%;
+      }
+      .login-link {
+        display: flex;
+        flex-flow: column;
+        border: 1px solid #e1e3e1 !important;
+        background-color: #f7f7f7;
+        text-align: left;
+        border-radius: 10px;
+        padding: 20px 30px !important;
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        .type-tit {
+          color: var(--color-grayscale-80);
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.4;
+          position: relative;
+          padding-left: 32px;
+          padding-right: 24px;
+        }
+        .type-desc {
+          color: var(--color-grayscale-80);
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 1.4;
+          margin-top: 20px;
+        }
+
+        &::before {
+          position: absolute;
+          top: 22px;
+          left: 30px;
+          content: '';
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          left: auto;
+          right: 20px;
+          width: 24px;
+          height: 24px;
+          background-image: url(/image/sub/counsel/counsel_login_arr.png);
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        &.normal {
+          &::before {
+            background-image: url(/image/sub/counsel/counsel_login_icon01.png);
+          }
+        }
+        &.cellphone {
+          &::before {
+            background-image: url(/image/sub/counsel/counsel_login_icon02.png);
+          }
+        }
+        &.ipin {
+          &::before {
+            background-image: url(/image/sub/counsel/counsel_login_icon03.png);
+          }
+        }
+        &.non-login {
+          &::before {
+            top: 25px;
+            left: 34px;
+            width: 18px;
+            height: 19px;
+            background-image: url(/image/sub/counsel/counsel_login_icon04.png);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+  .section2 {
+    margin-top: 30px;
+  }
+
+  .anyid-main {
+    .certify-sel-wrap {
+      .certify-type {
+        gap: 16px;
+        .login-link {
+          min-height: 100px;
+          padding: 10px !important;
+          align-items: center;
+          justify-content: center;
+          .type-tit {
+            padding: 0;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+          }
+
+          &::before {
+            position: static;
+            width: 28px;
+            height: 28px;
+          }
+
+          &::after {
+            display: none;
+          }
+
+          &.non-login {
+            &::before {
+              width: 24px;
+              height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

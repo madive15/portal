@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@use '../common' as *;
+
+
+/*회원가입 모바일 공통*/
+@mixin join-common-mo {
+  .step-box {
+    .row {
+      flex-wrap: nowrap;
+      > li {
+        width: 20%;
+      }
+    }
+    .step-text-box {
+      padding: 8px 8px 8px 6px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      > strong {
+        margin: 0;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+        text-align: center;
+      }
+      > span {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+        text-align: center;
+        margin-top: 3px;
+      }
+    }
+  }
+}

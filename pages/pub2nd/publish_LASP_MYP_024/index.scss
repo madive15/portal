@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.body-cont-wrap {
+  line-height: 1.4;
+  color: #222;
+  
+  [class^=common-table][class*=box] {    
+    table {
+      thead {
+        th {
+          &.date-th {
+            width: 26%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*mo*/
+@media (max-width: 1199px) {
+}

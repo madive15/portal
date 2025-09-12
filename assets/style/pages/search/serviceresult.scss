@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+.sub-content-box {
+  padding-bottom: 140px;
+}
+
+.section2 {
+  margin-top: 30px;
+
+  h4 {
+    font-size: 21px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      position: absolute;
+      background: #3e80eb;
+      border-radius: 5px;
+      left: 0;
+      top: 2px;
+    }
+  }
+
+  b {
+    color: #e80000;
+  }
+}
+
+//::v-deep(.section2 b) {
+//  color: #e80000;
+//}
+
+.service-box {
+  margin-top: 60px;
+
+  .card-list-header {
+    span {
+      display: none;
+    }
+  }
+
+  .inner-box {
+    .inner-body {
+      .info-box {
+        padding: 19px;
+        min-height: 97px;
+
+        dl {
+          dd {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.result-table-box {
+  margin-top: 20px;
+
+  table {
+    border-top: solid 1px #222;
+    border-collapse: separate;
+    width: 100%;
+
+    th {
+      padding: 27px 20px;
+      border-bottom: solid 1px #dadce1;
+      border-right: solid 1px #dadce1;
+      background: #f5f7fa;
+      vertical-align: middle;
+      font-size: 15px;
+      font-weight: 700;
+      color: #222;
+      text-align: left;
+      width: 12%;
+    }
+
+    td {
+      border-bottom: solid 1px #dadce1;
+      padding: 28px;
+    }
+  }
+
+  .check-td {
+    .check-box {
+      border: solid 1px #dadce1;
+      border-radius: 10px;
+      padding: 20px;
+      height: 173px;
+      overflow-y: scroll;
+
+      label {
+        font-size: 16px;
+        color: #555;
+        font-weight: 400;
+      }
+
+      input {
+        width: 15px;
+        height: 15px;
+        // border: solid 1px #d3d3d3;
+        position: relative;
+        top: -4px;
+        box-shadow: none;
+
+        &:checked {
+          background-color: #0d6efd;
+          border-color: #0d6efd;
+        }
+      }
+    }
+  }
+
+  .pubilc-td {
+    .public-box {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      flex-wrap: wrap;
+      row-gap: 10px;
+
+      .form-check {
+        margin-bottom: 0;
+        min-height: auto;
+      }
+
+      label {
+        font-size: 16px;
+        color: #555;
+        font-weight: 400;
+      }
+
+      input {
+        width: 15px;
+        height: 15px;
+        // border: solid 1px #d3d3d3;
+        position: relative;
+        top: -4px;
+        box-shadow: none;
+
+        &:checked {
+          background-color: #0d6efd;
+          border-color: #0d6efd;
+        }
+      }
+    }
+  }
+}
+
+.detail-button-box {
+  text-align: center;
+
+  button {
+    width: 160px;
+    height: 35px !important;
+    border-left: solid 1px #dadce1 !important;
+    border-bottom: solid 1px #dadce1 !important;
+    border-right: solid 1px #dadce1 !important;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+
+    span {
+      font-size: 15px;
+      font-weight: 500;
+      color: #222;
+      letter-spacing: -0.3px;
+
+      img {
+        width: 12px;
+        height: 8px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+}
+
+.form-check {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 사용 여부 확인 안됨
+//.fade-enter-active,
+//.fade-leave-active {
+//  transition: opacity 0.1s;
+//}
+//.fade-enter-from,
+//.fade-leave-to {
+//  opacity: 0;
+//}
+//.fade-enter-to,
+//.fade-leave-from {
+//  opacity: 1;
+//}

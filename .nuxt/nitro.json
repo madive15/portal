@@ -1,0 +1,17 @@
+{
+  "date": "2025-09-12T04:33:20.113Z",
+  "preset": "nitro-dev",
+  "framework": {
+    "name": "nuxt",
+    "version": "3.15.2"
+  },
+  "versions": {
+    "nitro": "2.10.4"
+  },
+  "dev": {
+    "pid": 15648,
+    "workerAddress": {
+      "socketPath": "\\\\.\\pipe\\nitro\\worker-15648-3.sock"
+    }
+  }
+}

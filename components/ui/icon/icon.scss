@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+[class^=icon] {
+  display: block;
+  &:after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+  }
+  &[class*=arrow-right] {
+    width: 8px;
+    height: 13px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/view.svg");
+    }
+  }
+  &[class*=shortcut] {
+    width: 16px;
+    height: 16px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/shortcut_black.svg");
+    }
+  }
+  &[class*=shortcut-blue] {
+    width: 16px;
+    height: 16px;
+    &:after {
+      background-image: url("~/assets/image/sub/myservice/shortcut_blue.svg");
+    }
+  }
+  &[class*=shortcut-white] {
+    width: 16px;
+    height: 16px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/shortcut_white.svg");
+    }
+  }
+  &[class*=plus] {
+    width: 10px;
+    height: 10px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/plus.svg");
+    }
+  }
+  &[class*=download-att] {
+    width: 16px;
+    height: 16px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/download.svg");
+    }
+  }
+  &[class*=download-area] {
+    width: 20px;
+    height: 20px;
+    &:after {
+      background-image: url("~/assets/image/sub/file/hwp.svg");
+    }
+  }
+  &[class*=notice] {
+    width: 20px;
+    height: 20px;
+    &:after {
+      background-image:url('~/assets/image/sub/center/center_notice.svg');
+    }
+  }
+  &[class*=home] {
+    width: 11px;
+    height: 11px;
+    &:after {
+      background-image: url('~/public/image/main/route_home.svg');
+    }
+  }
+  &[class*=print] {
+    width: 13px;
+    height: 13px;
+    &:after {
+      background-image: url('~/public/image/main/route_print.svg');
+    }
+  }
+  &[class*=refresh-blue] {
+    width: 18px;
+    height: 16px;
+    &:after {
+      background-image: url("~/assets/image/sub/service/refresh_blue.svg");
+    }
+  }
+  &[class*=refresh-dark] {
+    width: 21px;
+    height: 21px;
+    &:after {
+      background-image: url("~/public/image/sub/login/btn_refresh.svg");
+    }
+  }
+  &[class*=voice] {
+    width: 21px;
+    height: 21px;
+    &:after {
+      background-image: url("~/public/image/sub/login/btn_voice.svg");
+    }
+  }
+  &[class*=login] {
+    width: 20px;
+    height: 20px;
+    &:after {
+      background-image: url("~/assets/image/public/main/icon_login.svg");
+    }
+  }
+  &[class*=logout] {
+    width: 20px;
+    height: 20px;
+    &:after {
+      background-image: url("~/assets/image/public/main/icon_logout.svg");
+    }
+  }
+
+  &[class*=join] {
+    width: 21px;
+    height: 20px;
+    &:after {
+      background-image: url("~/assets/image/public/main/icon_join.svg");
+    }
+  }
+  &[class*=mypage] {
+    width: 21px;
+    height: 20px;
+    &:after {
+      background-image: url("~/assets/image/public/main/icon_mypage.svg");
+    }
+  }
+  &[class*=customer-service] {
+    width: 14px;
+    height: 15px;
+    &:after {
+      background-image: url("~/assets/image/public/main/icon_cs.svg");
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  [class^=icon] {
+    &[class*=view] {
+      &:after {
+        height: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,479 @@
+@charset "utf-8";
+
+//입력 form
+.common-form__area {
+  position: relative;
+  .form-ess_info {
+    margin-bottom: 20px;
+  }
+  p.form-ess_info {
+    font-size: 14px;
+    position: absolute;
+    top: -40px;
+    margin: 0 !important;
+    right: 0;
+  }
+  .form-text {
+    font-size: 15px;
+  }
+  .red-span {
+    color: var(--color-point-error-0);
+  }
+  .ant-form-item {
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+  .form-item__addr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .ant-form-item {
+      &:has(.text-bx.full) {
+        width: 100%;
+        margin-top: 8px;
+      }
+    }
+  }
+  .form-item__number {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    width: 352px;
+    .ant-form-item {
+      flex: 1;
+      &:has(.common-select) {
+        width: 100px;
+        flex: none;
+      }
+    }
+    &:has(.btn-basic) {
+      width: initial;
+      .ant-form-item {
+        &:has(.text-bx) {
+          width: 107px;
+          flex: none;
+        }
+      }
+    }
+  }
+  .form-item__email {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    .ant-form-item {
+      width: 120px;
+    }
+    .text-bx {
+      //width: calc(50% - 16px);
+      margin-bottom: 0;
+    }
+    .common-select {
+      width: 100%;
+    }
+  }
+  .input-group__bx {
+    position: relative;
+    .ins-text {
+      color: var(--color-point-error-0);
+      font-weight: 500;
+      margin-top: 6px;
+      display: block;
+    }
+  }
+  .input-info {
+    font-size: 15px;
+    margin-top: 8px;
+    line-height: 1.5;
+    color: var(--color-grayscale-60);
+  }
+
+  .dp-flex-item {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    &:first-child {
+      margin-top: 0;
+    }
+    dt {
+      color: #222;
+      font-weight: 600;
+      padding-bottom: 7px;
+      width: 100px;
+      flex: none;
+    }
+    dd {
+      width: 100%;
+      height: 74px;
+      .input-group__bx {
+        .ins-text {
+          font-weight: 400;
+          font-size: 13px;
+        }
+      }
+      .form-text {
+        color: #222;
+        font-weight: 400;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-top: 1px solid var(--color-grayscale-80);
+    colgroup {
+      display: none;
+    }
+    tr {
+      th {
+        width: 14%;
+        background-color: #f5f7fa;
+        color: #222;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        vertical-align: middle;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--color-secondary-50);
+        line-height: 1.4;
+      }
+      td {
+        padding: 18px 20px;
+        vertical-align: middle;
+        border-bottom: 1px solid var(--color-secondary-50);
+        .ant-form-item {
+          //width: 31%;
+        }
+        .ant-form-item {
+          width: 100%;
+        }
+        .item-column {
+          display: flex;
+          gap: 8px;
+          .btn-basic {
+            width: 90px;
+          }
+        }
+        .radio-bx {
+          font-size: 15px;
+        }
+        .is-emphasis {
+          color: var(--color-secondary-80);
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        .normal-input {
+          width: 190px;
+          height: 50px;
+        }
+
+        .input-group-box {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+        }
+      }
+    }
+    .form-group-box {
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+      .counsel-bull-sub-list {
+        margin: 0;
+      }
+      &.flow-row {
+        flex-flow: row;
+        align-items: center;
+      }
+    }
+    .inline-form-box {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      align-items: center;
+      .inline-form-item {
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+    .txt-form-box {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      .txt-line {
+        display: inline-flex;
+        align-items: center;
+        font-size: 15px;
+        color: var(--color-grayscale-60);
+        font-weight: 400;
+      }
+    }
+    .txt-form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .ant-form-item {
+        width: 95px;
+      }
+      .txt {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--color-grayscale-80);
+      }
+      .pre-txt {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--color-grayscale-80);
+      }
+    }
+
+    .selct-form-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      .ant-select {
+        width: 130px;
+      }
+    }
+    .form-item__addr {
+      .ant-form-item {
+        width: inherit;
+      }
+    }
+    .logo-img {
+      width: 194px;
+    }
+  }
+
+  .dash {
+    margin-top: 12px;
+    display: block;
+    line-height: 25px;
+    font-size: 16px;
+  }
+
+  & + .btn-area {
+    margin-top: 40px;
+    justify-content: center;
+    button {
+      flex: none;
+      width: 90px;
+    }
+  }
+
+  &.colgroup {
+    table {
+      tbody {
+        th {
+          width: auto;
+        }
+      }
+    }
+  }
+  &.survey-type {
+    margin-top: 3rem;
+    table {
+      td {
+        font-size: 15px;
+        color: var(--color-grayscale-80);
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  //입력 form
+  .common-form__area {
+    padding-bottom: 8px;
+    .red-span {
+      order: 2;
+      margin-left: 3px;
+    }
+    > .info-text {
+      font-size: 13px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    colgroup {
+      display: none;
+    }
+    .input-info {
+      font-size: 14px;
+    }
+    .dp-flex-item {
+      flex-direction: column;
+      margin-top: 22px;
+      dt {
+        width: 100px;
+        flex: none;
+      }
+      dd {
+        height: initial;
+        .input-group__bx {
+          .ins-text {
+            position: absolute;
+            right: 0;
+            top: -26px;
+          }
+        }
+      }
+    }
+    .btn-basic {
+      height: 40px !important;
+      line-height: 40px !important;
+    }
+    & > table {
+      & > tbody {
+        & > tr {
+          & > th,
+          & > td {
+            width: 100%;
+          }
+          & > th {
+            display: flex;
+          }
+        }
+      }
+    }
+    > table {
+      > tbody > tr {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        th {
+          font-weight: 600;
+          background-color: #fff;
+
+          padding: 16px 0 0 0;
+          border-bottom: none;
+        }
+        td {
+          padding: 12px 0 16px 0;
+          .ant-form-item {
+            width: 100%;
+            //flex: 1;
+          }
+          .item-column {
+            .btn-basic {
+              height: 40px !important;
+            }
+          }
+          .form-item__number {
+            width: initial;
+            .ant-form-item {
+              &:has(.common-select) {
+                width: 92px;
+              }
+            }
+            &:has(.btn-basic) {
+              gap: 5px;
+              width: initial;
+              .btn-basic {
+                height: 40px !important;
+              }
+              .ant-form-item {
+                &:has(.text-bx) {
+                  width: 92px;
+                  flex: none;
+                }
+              }
+            }
+          }
+          .form-item__email {
+            flex-wrap: wrap;
+            width: 100%;
+            .ant-form-item {
+              width: 100%;
+              &:has(.text-bx) {
+                width: calc(50% - 16px);
+              }
+            }
+          }
+          .form-item__addr {
+            width: 100%;
+            > .item-column {
+              .ant-form-item {
+                width: 100%;
+              }
+              button {
+                flex: none;
+                height: 40px !important;
+                line-height: 40px !important;
+              }
+            }
+          }
+          .ant-form-item-control-input {
+            & + div {
+              position: absolute;
+              right: 0;
+              top: -26px;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .txt-form-box {
+        &.lines {
+          gap: 15px;
+          .ant-form-item {
+            width: 60px;
+          }
+        }
+      }
+      .table-box {
+        table {
+          tr {
+            display: table-row;
+            td {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+    & + .btn-area {
+      button {
+        width: 80px;
+      }
+    }
+    .dash {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}
+//휴대푠 번호 입력 폼 인증발송 모바일 대응
+@media (max-width: 440px) {
+  .common-form__area {
+    > table {
+      > tbody > tr {
+        td {
+          .form-item__number {
+            width: initial;
+            .ant-form-item {
+              &:has(.common-select) {
+                width: 21%;
+              }
+            }
+            &:has(.btn-basic) {
+              gap: 5px;
+              width: initial;
+              .ant-form-item {
+                &:has(.text-bx) {
+                  width: 21%;
+                  flex: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

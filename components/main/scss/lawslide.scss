@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+.main-latest-board-box {
+  //max-height: 336px;
+  height: 100%;
+
+  .latest-list-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .truncate-span {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      line-height: 26px;
+      color: #373f57;
+    }
+
+    .text-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      row-gap: 7px;
+      padding: 12px 0;
+
+      .category-span {
+        padding: 4px 6px;
+        font-size: 13px;
+        border-radius: 5px;
+        width: fit-content;
+        color: #373f57;
+      }
+    }
+
+    &:first-child {
+      .text-box {
+        .category-span {
+          background-color: #e8f7fe;
+        }
+      }
+    }
+  }
+}
+
+.list-link {
+  width: 100%;
+  cursor: pointer;
+  padding: 12px 8px 12px 2px !important;
+
+  .list-btn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    padding-right: 46px !important;
+    height: auto;
+
+    .text {
+      display: inline-flex;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #355797;
+    border-radius: 50%;
+    background-image: url('/assets/image/main/go_wh.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.slide-board-list {
+  .item:not(:first-of-type) {
+    border-top: 1px solid #e1e3e1;
+  }
+}
+
+.main-latest-board-box {
+  .slide-board-list {
+    .item {
+      &:first-of-type {
+        .text-box .category-span {
+          background-color: #e8f7fe;
+        }
+      }
+
+      &:nth-child(2) {
+        .text-box .category-span {
+          background-color: #fef6e8;
+        }
+      }
+
+      &:last-child {
+        .text-box .category-span {
+          background-color: #e8fef3;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white !important;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #ccc !important;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.swiper-button-prev-law {
+    left: -18px;
+
+    &::after {
+      background-image: url('/assets/image/main/map_left.svg');
+    }
+  }
+
+  &.swiper-button-next-law {
+    right: -18px;
+
+    &::after {
+      background-image: url('/assets/image/main/map_right.svg');
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .btn {
+    width: 32px !important;
+    height: 32px !important;
+    &::after {
+      background-size: 12px auto;
+    }
+  }
+  .swiper-button-next-law {
+    right: -50%;
+    z-index: 1;
+  }
+
+  .swiper-button-prev-law {
+    left: -50%;
+    z-index: 1;
+  }
+
+  .main-latest-board-box {
+    .latest-list-wrap {
+      .latest-button-box {
+        .btn.more-button {
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
+        }
+
+        img {
+          width: 8px;
+          margin-left: 2px;
+        }
+      }
+      .list-link {
+        &::after {
+          width: 24px;
+          height: 24px;
+          background-size: 7.5px auto;
+        }
+        .list-btn {
+          row-gap: 8px;
+        }
+      }
+      .text-box {
+        padding: 10px 0 10px 10px;
+
+        span {
+          &.category-span {
+            font-size: 10px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            display: inline-block;
+            text-align: left;
+            max-width: 100%;
+          }
+
+          &.truncate-span {
+            font-size: 15px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .slide-board-list {
+      .item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

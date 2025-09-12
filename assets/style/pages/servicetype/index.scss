@@ -1,0 +1,94 @@
+@charset "utf-8";
+@use "~/assets/style/_mixins.scss" as *;
+
+.sub-content-box {
+  margin-top: 60px;
+  padding-bottom: 140px;
+  .section2 {
+    margin-top: 55px;
+  }
+}
+
+.section2 {
+  .list-box {
+    .card-list-box {
+      padding: 19px;
+      .card-list-footer {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        margin-top: 50px;
+        button {
+          width: 127px;
+        }
+      }
+    }
+    .inner-body {
+      .info-box {
+        min-height: 97px;
+      }
+      .inner-col {
+        .info-box {
+          dl {
+            dd {
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .download-button {
+    height: auto !important;
+    img {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: -1px;
+    }
+    span {
+      color: #222;
+    }
+  }
+  .preview-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #0d6efd;
+    padding: 0 10px !important;
+    height: 35px !important;
+    img {
+      width: 16px;
+      height: 16px;
+      position: relative;
+    }
+    span {
+      color: #fff;
+    }
+  }
+
+  @include board-list-common;
+  .board-list-box {
+    table {
+      tbody {
+        td {
+          &.file-td {
+            width: 6%;
+          }
+        }
+      }
+    }
+  }
+  @include board-gallery-common;
+
+  .organization-content-box {
+    margin-top: 20px;
+  }
+}
+
+
+/*mo*/
+@media (max-width: 1199px) {
+  @include sub-service-detail-common-mo;
+}
