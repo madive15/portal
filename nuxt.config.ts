@@ -71,12 +71,12 @@ export default defineNuxtConfig({
   vite: {
     server: {
       allowedHosts: true,
-      hmr: {
-        protocol: 'ws', // 프록시가 https면 'wss'
-        host: 'dev.helplaw24.go.kr', // 브라우저에서 접근하는 호스트명 (예: dev.helplaw24.go.kr)
-        port: 3100, // 실제 dev 서버 포트
-        clientPort: 80 // 브라우저가 접속하는 포트 (Nginx가 80이면 80/443로)
-      }
+      // hmr: {
+      //   protocol: 'ws', // 프록시가 https면 'wss'
+      //   host: 'dev.helplaw24.go.kr', // 브라우저에서 접근하는 호스트명 (예: dev.helplaw24.go.kr)
+      //   port: 3100, // 실제 dev 서버 포트
+      //   clientPort: 80 // 브라우저가 접속하는 포트 (Nginx가 80이면 80/443로)
+      // }
     },
     optimizeDeps: {
       include: ['ant-design-vue', 'nos', 'nos-common']

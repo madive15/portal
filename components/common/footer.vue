@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useRequestURL } from '#app';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
-import { myDocOutVO } from '~/types/mydoc';
+import type { myDocOutVO } from '~/types/mydoc';
 
 const urlIframeSrc = ref(''); // 반응형 변수 선언
 const profile = ref('');
