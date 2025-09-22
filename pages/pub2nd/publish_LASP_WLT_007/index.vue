@@ -14,7 +14,7 @@ definePageMeta({
 const form = reactive({
   city: '',
   district: '',
-  issueType: '1', // "발급형태 선택(필수)"
+  issueType: '', // "발급형태 선택(필수)"
   receiveMethod: '' // "수령방법 > 구분(필수)"
 });
 
@@ -43,7 +43,7 @@ const onApply = () => {
 
     <CommonModal
       ref="modalRef"
-      title="주민등록등본 발급신청"
+      title="국가 유공자(유족또는가족)확인서"
       :width="720"
       :full="true"
     >
@@ -55,6 +55,47 @@ const onApply = () => {
       </template>
 
       <div class="body-cont-wrap">
+        <CommonTitle tag="h2" size="1" type="circle">신청인 정보</CommonTitle>
+
+        <div class="form-area">
+          <p class="form-ess_info">
+            <i class="red-span">*</i><span> 표시는 필수 입력 사항입니다. </span>
+          </p>
+          <div class="form-box">
+            <div class="form-item">
+              <span class="label-txt"> 성명 </span>
+              <div class="inner">
+                <a-form-item
+                  name=""
+                  label="성명"
+                  :labelCol="{ class: 'sr-only' }"
+                >
+                  <a-input class="text-bx" readonly value="장성진" />
+                </a-form-item>
+              </div>
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="form-item">
+              <span class="label-txt"> 주민등록번호 </span>
+              <div class="inner resident-number">
+                <a-input
+                  class="text-bx"
+                  title="주민등록번호 앞자리 입력"
+                  readonly
+                />
+                <span aria-hidden="true">-</span>
+                <a-input
+                  class="text-bx"
+                  type="password"
+                  readonly
+                  title="주민등록번호 뒷자리 입력"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <CommonTitle tag="h2" size="1" type="circle">신청 내용</CommonTitle>
 
         <div class="form-area">
@@ -64,85 +105,30 @@ const onApply = () => {
           <div class="form-box">
             <div class="form-item">
               <span class="label-txt">
-                주민등록상 주소 확인
+                보훈번호
                 <span class="red-span">
                   *<span class="sr-only">필수 입력 항목</span>
                 </span>
               </span>
-              <div class="inner">
-                <!-- 시 선택 -->
-                <a-select
-                  v-model:value="form.city"
-                  class="common-select"
-                  title="시 선택"
-                >
-                  <a-select-option value="서울특별시"
-                    >서울특별시</a-select-option
-                  >
-                  <a-select-option value="부산광역시"
-                    >부산광역시</a-select-option
-                  >
-                </a-select>
-
-                <!-- 구/도 선택 -->
-                <a-select
-                  v-model:value="form.district"
-                  class="common-select"
-                  title="구/도 선택"
-                >
-                  <a-select-option value="구로구">구로구</a-select-option>
-                  <a-select-option value="강서구">강서구</a-select-option>
-                </a-select>
+              <div class="inner resident-number">
+                <a-input class="text-bx" title="보훈번호 앞자리 입력" />
+                <span aria-hidden="true">-</span>
+                <a-input class="text-bx" title="보훈번호 뒷자리 입력" />
               </div>
-              <BullList type="refMark">
-                <li>
-                  회원정보 등록된 주소입니다. 주민등록상 주소와 다를 경우
-                  변경하세요.
-                </li>
-              </BullList>
             </div>
           </div>
-
           <div class="form-box">
             <div class="form-item">
-              <span class="label-txt"
-                >발급형태 선택
+              <span class="label-txt">
+                제출처
                 <span class="red-span">
                   *<span class="sr-only">필수 입력 항목</span>
                 </span>
               </span>
               <div class="inner">
-                <div>
-                  <a-radio-group v-model:value="form.issueType">
-                    <a-radio class="radio-bx" value="1">전체 발급</a-radio>
-                    <a-radio class="radio-bx" value="2">선택 발급</a-radio>
-                  </a-radio-group>
-                  <BullList type="dot" v-if="form.issueType === '1'">
-                    <li>
-                      과거주소 변동사항을 제외한 모든 정보가 표시됩니다. (예:
-                      주민등록번호 뒷자리, 세대 정보 등)
-                    </li>
-                  </BullList>
-                  <div class="form-choice-box" v-else>
-                    <BullList type="dot">
-                      <li>발급 문서에 표시할 정보를 선택하세요.</li>
-                    </BullList>
-                    <a-checkbox-group>
-                      <a-checkbox class="check-bx" value="1" name="type">
-                        과거의 주소 변동사항
-                      </a-checkbox>
-                      <a-checkbox class="check-bx" value="2" name="type">
-                        세대 구성 정보
-                      </a-checkbox>
-                      <a-checkbox class="check-bx" value="3" name="type">
-                        세대 구성원 정보
-                      </a-checkbox>
-                      <a-checkbox class="check-bx" value="4" name="type">
-                        주민등록번호 뒷자리
-                      </a-checkbox>
-                    </a-checkbox-group>
-                  </div>
-                </div>
+                <a-form-item label="제출처" :labelCol="{ class: 'sr-only' }">
+                  <a-input class="text-bx" />
+                </a-form-item>
               </div>
             </div>
           </div>
@@ -154,10 +140,10 @@ const onApply = () => {
           <p class="form-ess_info">
             <i class="red-span">*</i><span> 표시는 필수 입력 사항입니다. </span>
           </p>
-          <div class="form-box">
+          <div class="form-box bx-line">
             <div class="form-item">
-              <span class="label-txt"
-                >구분
+              <span class="label-txt">
+                구분
                 <span class="red-span">
                   *<span class="sr-only">필수 입력 항목</span>
                 </span>
@@ -181,12 +167,6 @@ const onApply = () => {
                       </template>
                     </CommonButton>
                   </span>
-                  <a-radio class="radio-bx" value="등기보통우편"
-                    >등기보통우편</a-radio
-                  >
-                  <a-radio class="radio-bx" value="일반보통우편"
-                    >일반보통우편</a-radio
-                  >
                 </a-radio-group>
               </div>
             </div>

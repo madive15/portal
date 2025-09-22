@@ -640,6 +640,87 @@ const data2 = [
     address: 'publish_LASP_ELE_026_02',
     component: '적용',
     comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_000',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '전자증명서(전자지갑) 내증명서 [팝업]',
+    address: 'publish_LASP_WLT_000',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_002',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '주민등록등본 발급신청 [팝업]',
+    address: 'publish_LASP_WLT_002',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_004',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '주민등록표등본 [팝업]',
+    address: 'publish_LASP_WLT_004',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_005',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '한부모가정증명서 [팝업]',
+    address: 'publish_LASP_WLT_005',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_006',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '국민기초생활수급자증명서 [팝업]',
+    address: 'publish_LASP_WLT_006',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_007',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '국가 유공자(유족또는가족)확인서 [팝업]',
+    address: 'publish_LASP_WLT_007',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_008',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '국가 유공자(유족또는가족)확인서 [팝업]',
+    address: 'publish_LASP_WLT_008',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_009',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '부가가치세과세표준증명 [팝업]',
+    address: 'publish_LASP_WLT_009',
+    component: '적용',
+    comp: '완료'
+  },
+  {
+    key: 'LASP_WLT_010',
+    main: '접수',
+    div: '전자접수 신청',
+    sub: '부가가치세사업자수입금액 [팝업]',
+    address: 'publish_LASP_WLT_010',
+    component: '적용',
+    comp: '완료'
   }
 ];
 
